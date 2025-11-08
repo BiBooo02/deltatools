@@ -1,0 +1,2462 @@
+{
+  "alati": [
+    {
+      "kategorija": "Valjci",
+      "artikli": [
+        {
+          "naziv": "Uložak deluks, termofuzija",
+          "dimenzije": "250x44x21",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013444",
+          "slika": "img/Slike za Delta tools/100148_013444_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b5"
+        },
+        {
+          "naziv": "Uložak deluks, termofuzija",
+          "dimenzije": "250x55x21",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013744",
+          "slika": "img/Slike za Delta tools/100148_013744_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b4"
+        },
+        {
+          "naziv": "Uložak deluks, šiven, specijalna pena 4mm",
+          "dimenzije": "270x52x21",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013544",
+          "slika": "img/Slike za Delta tools/100148_013544_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b3"
+        },
+        {
+          "naziv": "Uložak deluks, šiven, specijalna pena 8mm",
+          "dimenzije": "270x60x21",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013644",
+          "slika": "img/Slike za Delta tools/100148_013644_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b2"
+        },
+        {
+          "naziv": "Uložak deluks, termofuzija",
+          "dimenzije": "100x17x13",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "2, 10",
+          "transportno_pakovanje": "90, 250",
+          "sifra_artikla": "011904",
+          "slika": "img/Slike za Delta tools/100148_011904_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b1"
+        },
+        {
+          "naziv": "Uložak zeleno-plavi, termofuzija",
+          "dimenzije": "250x48x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "013720",
+          "slika": "img/Slike za Delta tools/100148_013720_slika_1.jpg",
+          "id": "md0ffmdqf6v4x7y3b6"
+        },
+        {
+          "naziv": "Uložak zeleno-plavi, šiven, specijalna pena 5mm",
+          "dimenzije": "250x58x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 55,
+          "sifra_artikla": "013820",
+          "slika": "img/Slike za Delta tools/100148_013820_slika_1.jpg",
+          "id": "md0ffmdqv6y3x4o5l1"
+        },
+        {
+          "naziv": "Uložak zeleno-plavi, šiven, specijalna pena 9mm",
+          "dimenzije": "250x66x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "013920",
+          "slika": "img/Slike za Delta tools/100148_013920_slika_1.jpg",
+          "id": "md0ffmdqv1u9z4o5m2"
+        },
+        {
+          "naziv": "Uložak zeleno-plavi, termofuzija",
+          "dimenzije": "100x15x11",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "011932",
+          "slika": "img/Slike za Delta tools/100148_011932_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l3"
+        },
+        {
+          "naziv": "Uložak zeleno-plavi jumbo, termofuzija",
+          "dimenzije": "100x32x11",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 16,
+          "sifra_artikla": "011943",
+          "slika": "img/Slike za Delta tools/100148_011943_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l4"
+        },
+        {
+          "naziv": "Uložak mikrostar, plava šapa, termofuzija",
+          "dimenzije": "250x48x9",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013461",
+          "slika": "img/Slike za Delta tools/100148_013461_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l5"
+        },
+        {
+          "naziv": "Uložak mikrostar, zelena šapa, termofuzija",
+          "dimenzije": "250x48x12",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013476",
+          "slika": "img/Slike za Delta tools/100148_013476_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l6"
+        },
+        {
+          "naziv": "Uložak mikrostar, plava šapa, termofuzija",
+          "dimenzije": "100x17x9",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "10, 2",
+          "transportno_pakovanje": "90, 250",
+          "sifra_artikla": "011898",
+          "slika": "img/Slike za Delta tools/100148_011898_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l7"
+        },
+        {
+          "naziv": "Uložak mikrostar, zelena šapa, termofuzija",
+          "dimenzije": "100x17x12",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 90,
+          "sifra_artikla": "011900",
+          "slika": "img/Slike za Delta tools/100148_011900_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l8"
+        },
+        {
+          "naziv": "Uložak sunđer, ravne ivice",
+          "dimenzije": "250x38x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013411",
+          "slika": "img/Slike za Delta tools/100148_013411_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l9"
+        },
+        {
+          "naziv": "Uložak sunđer, ravne ivice",
+          "dimenzije": "50x17x9, 110x17x9",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "2, 10, 20",
+          "transportno_pakovanje": "45, 250, 500",
+          "sifra_artikla": "011852",
+          "slika": "img/Slike za Delta tools/100148_011852_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l10"
+        },
+        {
+          "naziv": "Uložak sunđer, zaobljene ivice",
+          "dimenzije": "110x17x9",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "2, 10",
+          "transportno_pakovanje": "54, 250",
+          "sifra_artikla": "011876",
+          "slika": "img/Slike za Delta tools/100148_011876_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l11"
+        },
+        {
+          "naziv": "Uložak sunđer - pliš, zaobljene ivice",
+          "dimenzije": "110x17x9",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "011109",
+          "slika": "img/Slike za Delta tools/100148_011109_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l12"
+        },
+        {
+          "naziv": "Uložak velur, termofuzija",
+          "dimenzije": "230x48x5",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 54,
+          "sifra_artikla": "013799",
+          "slika": "img/Slike za Delta tools/100148_013799_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l13"
+        },
+        {
+          "naziv": "Valjak velur, termofuzija, komplet sa drškom",
+          "dimenzije": "180x41x5",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "032005",
+          "slika": "img/Slike za Delta tools/100148_032005_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l14"
+        },
+        {
+          "naziv": "Uložak velur, termofuzija",
+          "dimenzije": "50x15x5, 100x15x5",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "10, 20, 50",
+          "transportno_pakovanje": "1, 70",
+          "sifra_artikla": "011833",
+          "slika": "img/Slike za Delta tools/100148_011833_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l15"
+        },
+        {
+          "naziv": "Uložak zeleni fasadni, termofuzija",
+          "dimenzije": "250x55x21",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 35,
+          "sifra_artikla": "013732",
+          "slika": "img/Slike za Delta tools/100148_013732_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l20"
+        },
+        {
+          "naziv": "Uložak perla, termofuzija",
+          "dimenzije": "250x48x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013447",
+          "slika": "img/Slike za Delta tools/100148_013447_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l21"
+        },
+        {
+          "naziv": "Uložak perla, šiven, specijalna pena 4mm",
+          "dimenzije": "250x52x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013547",
+          "slika": "img/Slike za Delta tools/100148_013547_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l22"
+        },
+        {
+          "naziv": "Uložak sivi akrilni, termofuzija",
+          "dimenzije": "230x48x6/12",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": "54, 60",
+          "sifra_artikla": "018355",
+          "slika": "img/Slike za Delta tools/100148_018355_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l23"
+        },
+        {
+          "naziv": "Uložak mikrofiber, termofuzija",
+          "dimenzije": "230x48x12",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 54,
+          "sifra_artikla": "013023",
+          "slika": "img/Slike za Delta tools/100148_013023_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l24"
+        },
+        {
+          "naziv": "Uložak deluks, termofuzija",
+          "dimenzije": "110x15x12",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "2, 10",
+          "transportno_pakovanje": "50, 350",
+          "sifra_artikla": "011887",
+          "slika": "img/Slike za Delta tools/100148_011887_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l25"
+        },
+        {
+          "naziv": "Uložak velur, termofuzija",
+          "dimenzije": "250x48x5",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013850",
+          "slika": "img/Slike za Delta tools/100148_013850_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l26"
+        },
+        {
+          "naziv": "Uložak velur, termofuzija",
+          "dimenzije": "50x15x5, 100x15x5",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "2, 10, 20",
+          "transportno_pakovanje": "70, 375, 700",
+          "sifra_artikla": "011965",
+          "slika": "img/Slike za Delta tools/100148_011965_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l27"
+        },
+        {
+          "naziv": "Uložak najlon, termofuzija",
+          "dimenzije": "250x48x6",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "013867",
+          "slika": "img/Slike za Delta tools/013867.jpg",
+          "id": "md0ffmdqv9e3x4o5l28"
+        },
+        {
+          "naziv": "Uložak najlon, termofuzija",
+          "dimenzije": "100x17x6",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "011976",
+          "slika": "img/Slike za Delta tools/100148_011976_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l29"
+        },
+        {
+          "naziv": "Uložak jež",
+          "dimenzije": "250x41x11",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 56,
+          "sifra_artikla": "019000",
+          "slika": "img/Slike za Delta tools/100148_019000_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l30"
+        },
+        {
+          "naziv": "Valjak sa graničnikom, poliamidni konac",
+          "dimenzije": "100x30x12",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "030005",
+          "slika": "img/Slike za Delta tools/100148_030005_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l31"
+        },
+        {
+          "naziv": "Uložak zeleni, termofuzija",
+          "dimenzije": "230x48x18",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "018359",
+          "slika": "img/Slike za Delta tools/100148_018359_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l32"
+        },
+        {
+          "naziv": "Uložak žuti, termofuzija",
+          "dimenzije": "50x15x12, 100x15x12, 160x15x12",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": "10, 20, 50",
+          "transportno_pakovanje": "6, 38, 50, 54",
+          "sifra_artikla": "011821",
+          "slika": "img/Slike za Delta tools/100148_011821_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l34"
+        }
+      ]
+    },
+    {
+      "kategorija": "Molersko-farbarski pribor",
+      "artikli": [
+        {
+          "naziv": "Nosač za valjke",
+          "dimenzije": "50x190x6, 100-160x270x6, 100-160x410x6, 230x310x8, 250-270x310x8",
+          "jedinica_mere": "KD",
+          "transportno_pakovanje": "50, 80, 100, 120",
+          "sifra_artikla": "021619",
+          "slika": "img/Slike za Delta tools/100148_021619_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l16"
+        },
+        {
+          "naziv": "Teleskop, čelik",
+          "dimenzije": "130x23, 200x23, 300x23",
+          "jedinica_mere": "KD",
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "050513",
+          "slika": "img/Slike za Delta tools/100148_050513_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l17"
+        },
+        {
+          "naziv": "Teleskop, aluminijum",
+          "dimenzije": "200x22, 300x22",
+          "jedinica_mere": "KD",
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "050620",
+          "slika": "img/Slike za Delta tools/100148_050620_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l18"
+        },
+        {
+          "naziv": "Teleskop, aluminijum - petodelni",
+          "dimenzije": "500x36",
+          "jedinica_mere": "KD",
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "050650",
+          "slika": "img/Slike za Delta tools/100148_050650_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l19"
+        },
+        {
+          "naziv": "Mikser za boju, sintetičke boje",
+          "dimenzije": "do 10kg, 15kg i 20kg",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": "24,40",
+          "sifra_artikla": "050815",
+          "slika": "img/Slike za Delta tools/100148_050815_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l27"
+        },
+        {
+          "naziv": "Cediljka PVC",
+          "dimenzije": "20x24, 26x32",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 100,
+          "sifra_artikla": "050120",
+          "slika": "img/Slike za Delta tools/100148_050120_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l28"
+        },
+        {
+          "naziv": "Cediljka metalna",
+          "dimenzije": "26x30",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 100,
+          "sifra_artikla": "050226",
+          "slika": "img/Slike za Delta tools/100148_050226_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l29"
+        },
+        {
+          "naziv": "Posuda PVC",
+          "dimenzije": "15x28, 33x34",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": "5, 10",
+          "transportno_pakovanje": "50, 200",
+          "sifra_artikla": "050315",
+          "slika": "img/Slike za Delta tools/100148_050315_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l30"
+        },
+        {
+          "naziv": "Mješač plastični",
+          "dimenzije": "27cm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "051001",
+          "slika": "img/Slike za Delta tools/051001.jpg",
+          "id": "md0ffmdqv9e3x4o5l31"
+        },
+        {
+          "naziv": "Filter za boju",
+          "dimenzije": "190",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 250,
+          "transportno_pakovanje": "4 GN",
+          "sifra_artikla": "059902",
+          "slika": "img/Slike za Delta tools/059902.jpg",
+          "id": "md0ffmdqv9e3x4o5l32"
+        }
+      ]
+    },
+    {
+      "kategorija": "Četke",
+      "artikli": [
+        {
+          "naziv": "Četka TUTTI, spoj od rostfraja",
+          "dimenzije": "20x10, 30x10, 40x12, 50x12, 60x12, 70x14, 80x14, 100x14",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240, 480",
+          "sifra_artikla": "061102",
+          "slika": "img/Slike za Delta tools/100148_061102_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l20"
+        },
+        {
+          "naziv": "Četka LEGNO, spoj od rostfraja",
+          "dimenzije": "20x10, 30x10, 40x12, 50x12, 60x12, 70x14, 80x14, 100x14",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240, 480",
+          "sifra_artikla": "061502",
+          "slika": "img/Slike za Delta tools/100148_061502_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l21"
+        },
+        {
+          "naziv": "Četka ACQUA, spoj od rostfraja",
+          "dimenzije": "20x10, 30x10, 40x12, 50x12, 60x12, 70x14, 80x14, 100x14",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240, 480",
+          "sifra_artikla": "061402",
+          "slika": "img/Slike za Delta tools/100148_061402_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l22"
+        },
+        {
+          "naziv": "Četka DECO, za dekorativne tehnike",
+          "dimenzije": "70, 100",
+          "jedinica_mere": "KD",
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "064107",
+          "slika": "img/Slike za Delta tools/100148_064107_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l23"
+        },
+        {
+          "naziv": "Četkica slikarska, za rad na malim površinama",
+          "dimenzije": "6, 10, 14, 16, 20",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "064006",
+          "slika": "img/Slike za Delta tools/064006.jpg",
+          "id": "md0ffmdqv9e3x4o5l24"
+        },
+        {
+          "naziv": "Četka radijator, top 80",
+          "dimenzije": "1.0x7, 1.5x8, 2.0x8, 2.5x9",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "062210",
+          "slika": "img/Slike za Delta tools/100148_062210_slika_2.jpg",
+          "id": "md0ffmdqv9e3x4o5l25"
+        },
+        {
+          "naziv": "Četka ugaona, teleskopska, podesiva",
+          "dimenzije": "60x19",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "069960",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_069960_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l26"
+        },
+        {
+          "naziv": "Četka MASSIMO, spoj od rostfraja",
+          "dimenzije": "1.0x15, 1.5x16, 2.0x17, 2.5x19",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240",
+          "sifra_artikla": "061815",
+          "slika": "img/Slike za Delta tools/100148_061815_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l33"
+        },
+        {
+          "naziv": "Četka ekonomik",
+          "dimenzije": "20x9, 30x10, 40x11, 50x13, 60x13, 70x13, 80x13, 90x13, 100x13",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240, 480",
+          "sifra_artikla": "060106",
+          "slika": "img/Slike za Delta tools/100148_060106_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l35"
+        },
+        {
+          "naziv": "Četka parket, ergonomska, neklizajuća drška",
+          "dimenzije": "140x40",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "063614",
+          "slika": "img/Slike za Delta tools/100148_063614_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l36"
+        },
+        {
+          "naziv": "Četka parket",
+          "dimenzije": "120x25, 135x35",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 144",
+          "sifra_artikla": "063014",
+          "slika": "img/Slike za Delta tools/100148_063014_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l37"
+        },
+        {
+          "naziv": "Četka taper",
+          "dimenzije": "170x70",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 48,
+          "sifra_artikla": "065070",
+          "slika": "img/Slike za Delta tools/100148_065070_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l38"
+        },
+        {
+          "naziv": "Četka taper",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "069901",
+          "slika": "img/Slike za Delta tools/100148_069901_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l39"
+        },
+        {
+          "naziv": "Nosač metalni",
+          "dimenzije": "1,2m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 48,
+          "sifra_artikla": "069899",
+          "slika": "img/Slike za Delta tools/100148_069899_slika_1.jpg",
+          "id": "md0ffmdqv9e3x4o5l40"
+        }
+      ]
+    },
+    {
+      "kategorija": "Priprema površina",
+      "artikli": [
+        {
+          "naziv": "Špahtla rostfraj, nitnovana, drvena drška",
+          "dimenzije": "115x40, 115x60, 115x80, 115x100, 115x120, 115x140",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "071206",
+          "slika": "img/Slike za Delta tools/100148_071206_slika_1.jpg",
+          "id": "md0ffmdqmpmwi6n21ie"
+        },
+        {
+          "naziv": "Špahtla rostfraj gumena drška",
+          "dimenzije": "100x32, 100x50, 100x70, 100x100, 100x125",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "071305",
+          "slika": "img/Slike za Delta tools/100148_071305_slika_1.jpg",
+          "id": "md0ffmdq5hsikllnd5c"
+        },
+        {
+          "naziv": "Špahtla čelična, drvena drška",
+          "dimenzije": "95x25, 100x40, 115x60, 125x80, 135x100, 140x120, 140x140",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "070106",
+          "slika": "img/Slike za Delta tools/100148_070106_slika_1.jpg",
+          "id": "md0ffmdqwn8udjviueq"
+        },
+        {
+          "naziv": "Špahtla čelična, nitnovana, drvena drška",
+          "dimenzije": "115x40, 115x60, 115x80, 115x100, 115x120, 115x140",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "070208",
+          "slika": "img/Slike za Delta tools/100148_070208_slika_1.jpg",
+          "id": "md0ffmdq2k3o00qdgtr"
+        },
+        {
+          "naziv": "Špahtla fasadna, rostfraj, gumena drška",
+          "dimenzije": "600 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 36,
+          "sifra_artikla": "074600",
+          "slika": "img/Slike za Delta tools/100148_074600_slika_1.jpg",
+          "id": "md0ffmdqpzqp9332qg"
+        },
+        {
+          "naziv": "Špahtla nazubljena, čelična",
+          "dimenzije": "180 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "075123",
+          "slika": "img/Slike za Delta tools/100148_075123_slika_1.jpg",
+          "id": "md0ffmdqdouqdl40rja"
+        },
+        {
+          "naziv": "Špahtla fasadna, rostfraj, gumena drška",
+          "dimenzije": "300",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "075630",
+          "slika": "img/Slike za Delta tools/100148_075630_slika_1.jpg",
+          "id": "md0ffmdq39aht5hrkiu"
+        },
+        {
+          "naziv": "Četka čelična jednoredna",
+          "dimenzije": "260",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "081001",
+          "slika": "img/Slike za Delta tools/100148_081001_slika_1.jpg",
+          "id": "md0ffmdq6y7z1v3o4e"
+        },
+        {
+          "naziv": "Četka čelična petoredna",
+          "dimenzije": "280",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "081005",
+          "slika": "img/Slike za Delta tools/100148_081005_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4f"
+        },
+        {
+          "naziv": "Špahtla rostfraj, gumena drška sa zavrtnjem",
+          "dimenzije": "115x150",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "071315",
+          "slika": "img/Slike za Delta tools/100148_071315_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4g"
+        },
+        {
+          "naziv": "Špahtla rostfraj, višenamjenska",
+          "dimenzije": "100x60",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "071322",
+          "slika": "img/Slike za Delta tools/100148_071322_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4h"
+        },
+        {
+          "naziv": "Špahtla japan, metalna, set 4 komada",
+          "dimenzije": "48, 76, 98, 118",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "072002",
+          "slika": "img/Slike za Delta tools/100148_072002_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4i"
+        },
+        {
+          "naziv": "Špahtla japan, plastična, set 4 komada",
+          "dimenzije": "48, 76, 98, 118",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "072001",
+          "slika": "img/Slike za Delta tools/100148_072001_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4j"
+        },
+        {
+          "naziv": "Turpija ravna",
+          "dimenzije": "200mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "232320",
+          "slika": "img/Slike za Delta tools/100148_232320_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4k"
+        },
+        {
+          "naziv": "Nosač šmirgle, sa mehanizmom",
+          "dimenzije": "165x85, 210x105",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "083031",
+          "slika": "img/Slike za Delta tools/100148_083031_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4l"
+        },
+        {
+          "naziv": "Nosaš šmirgle, sa mehanizmom - teleskopski",
+          "dimenzije": "210x105",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "083033",
+          "slika": "img/Slike za Delta tools/100148_083033_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4m"
+        },
+        {
+          "naziv": "Nosač šmirgle, sa drškom",
+          "dimenzije": "230x80",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "083040",
+          "slika": "img/Slike za Delta tools/100148_083040_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4n"
+        },
+        {
+          "naziv": "Sunđer za šmirglanje",
+          "dimenzije": "100, 220",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 250,
+          "sifra_artikla": "091010",
+          "slika": "img/Slike za Delta tools/100148_091010_slika_1.jpg",
+          "id": "md0ffmdq7y7z1v3o4o"
+        }
+      ]
+    },
+    {
+      "kategorija": "Gleterice",
+      "artikli": [
+        {
+          "naziv": "Gleterica rostfraj gumena drška",
+          "dimenzije": "280 x 130 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "102030",
+          "slika": "img/Slike za Delta tools/100148_102030_slika_1.jpg",
+          "id": "md0ffmdq4rrl56t9ix4"
+        },
+        {
+          "naziv": "Gleterica plastična zaobljene ivice",
+          "dimenzije": "280 x 140 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "106020",
+          "slika": "img/Slike za Delta tools/100148_106020_slika_1.jpg",
+          "id": "md0ffmdq9jwme49eew"
+        },
+        {
+          "naziv": "Gleterica nazubljena rostfraj, gumena drška",
+          "dimenzije": "6 x 6",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "104016",
+          "slika": "img/Slike za Delta tools/100148_104016_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztl"
+        },
+        {
+          "naziv": "Gleterica rostfraj, drvena drška",
+          "dimenzije": "280 x 130",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "102020",
+          "slika": "img/Slike za Delta tools/100148_102020_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztm"
+        },
+        {
+          "naziv": "Gleterica rostfraj, pvc drška",
+          "dimenzije": "280 x 130",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "102010",
+          "slika": "img/Slike za Delta tools/100148_102010_slika_2.jpg",
+          "id": "md0ffmdqfbs9efdvztn"
+        },
+        {
+          "naziv": "Gleterica rostfraj, drvena drška",
+          "dimenzije": "380 x 130",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "102048",
+          "slika": "img/Slike za Delta tools/100148_102048_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvzto"
+        },
+        {
+          "naziv": "Gleterica SPATULATO, rostfraj, gumena drška",
+          "dimenzije": "280 x 120/100",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "105074",
+          "slika": "img/Slike za Delta tools/100148_105074_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztp"
+        },
+        {
+          "naziv": "Gleterica rostfraj, drvena drška",
+          "dimenzije": "380 x 130",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "102048",
+          "slika": "img/Slike za Delta tools/100148_102048_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztq"
+        },
+        {
+          "naziv": "Gleterica plastična, ravne ivice",
+          "dimenzije": "280 x 140",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "106001",
+          "slika": "img/Slike za Delta tools/100148_106001_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztr"
+        },
+        {
+          "naziv": "Strugač stiropora, ergonomska drška",
+          "dimenzije": "265x125, 380x160",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": "10, 20",
+          "sifra_artikla": "105041",
+          "slika": "img/Slike za Delta tools/100148_105041_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvzts"
+        },
+        {
+          "naziv": "Perdaška pvc, slivena drška sa osnovom",
+          "dimenzije": "250x150, 320x150, 450x150",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 35,
+          "sifra_artikla": "116033",
+          "slika": "img/Slike za Delta tools/100148_116033_slika_1.jpg",
+          "id": "md0ffmdqfbs9efdvztu"
+        }
+      ]
+    },
+    {
+      "kategorija": "Mikseri",
+      "artikli": [
+        {
+          "naziv": "Mikser spiralni",
+          "dimenzije": "60x8x400, 100x10x600",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "050910",
+          "slika": "img/Slike za Delta tools/050910.jpg",
+          "id": "md0ffmdqz5f4o6g3b4m"
+        },
+        {
+          "naziv": "Mikser duplo spiralni",
+          "dimenzije": "90x8x500, 110x9x600",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "051920",
+          "slika": "img/Slike za Delta tools/100148_051920_slika_1.jpg",
+          "id": "md0ffmdqz5f4o6g3b4n"
+        },
+        {
+          "naziv": "Mikser, SDS prihvat",
+          "dimenzije": "95x500",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "050874",
+          "slika": "img/Slike za Delta tools/100148_050874_slika_1.jpg",
+          "id": "md0ffmdqz5f4o6g3b4o"
+        },
+        {
+          "naziv": "Ravnjača, sa libelom i rukohvatom",
+          "dimenzije": "1.9m, 2.0m, 2.5m, 3.0m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "124020",
+          "slika": "img/Slike za Delta tools/100148_124020_slika_1.jpg",
+          "id": "md0ffmdqz5f4o6g3b4p"
+        },
+        {
+          "naziv": "Ravnjača, zakošena",
+          "dimenzije": "2.0m, 2.5m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "124520",
+          "slika": "img/Slike za Delta tools/100148_124520_slika_1.jpg",
+          "id": "md0ffmdqz5f4o6g3b4q"
+        }
+      ]
+    },
+    {
+      "kategorija": "Alat za gips",
+      "artikli": [
+        {
+          "naziv": "Rende za gips",
+          "dimenzije": "40x250 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "231025",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_231025_slika_1.jpg",
+          "id": "md0ffmdqniptks0ani"
+        },
+        {
+          "naziv": "Gipsarska testera - nož",
+          "dimenzije": "150 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "232000",
+          "slika": "img/Slike za Delta tools/100148_232000_slika_1.jpg",
+          "id": "md0ffmdqf9ufnl6bdog"
+        },
+        {
+          "naziv": "Bandaž traka staklena",
+          "dimenzije": "50 mm x 25 m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "141100",
+          "slika": "img/Slike za Delta tools/100148_141100_slika_1.jpg",
+          "id": "md0ffmdqzcpk700dd1"
+        },
+        {
+          "naziv": "Bandaž traka mrežasta",
+          "dimenzije": "50mm x 20m, 50mm x 90m, 100mm x 45m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "141020",
+          "slika": "img/Slike za Delta tools/100148_141020_slika_1.jpg",
+          "id": "md0ffmdqzcpk700dd2"
+        },
+        {
+          "naziv": "Gipsarska mistrija",
+          "dimenzije": "220x16mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "112002",
+          "slika": "img/Slike za Delta tools/112002.jpg",
+          "id": "md0ffmdqzcpk700dd3"
+        },
+        {
+          "naziv": "Gipsarska posuda",
+          "dimenzije": "130mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 5,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "119001",
+          "slika": "img/Slike za Delta tools/100148_119001_slika_1.jpg",
+          "id": "md0ffmdqzcpk700dd4"
+        },
+        {
+          "naziv": "Čekić tesarski",
+          "dimenzije": "600 g",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "209360",
+          "slika": "img/Slike za Delta tools/209360.jpg",
+          "id": "md0ffmdq38lpxyckny"
+        }
+      ]
+    },
+    {
+      "kategorija": "Alat i pribor za zidanje",
+      "artikli": [
+        {
+          "naziv": "Zidarska fangla, čelična",
+          "dimenzije": "180 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "119003",
+          "slika": "img/Slike za Delta tools/100148_119003_slika_1.jpg",
+          "id": "md0ffmdq5wapobq5eb9"
+        },
+        {
+          "naziv": "Fangla PVC",
+          "dimenzije": "160 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 5,
+          "transportno_pakovanje": 25,
+          "sifra_artikla": "119004",
+          "slika": "img/Slike za Delta tools/100148_119004_slika_1.jpg",
+          "id": "md0ffmdq5fb3i8q5m8l"
+        },
+        {
+          "naziv": "Zidarski konac",
+          "dimenzije": "25, 50 m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "129906",
+          "slika": "img/Slike za Delta tools/100148_129906_slika_1.jpg",
+          "id": "md0ffmdq8jm83d3541v"
+        },
+        {
+          "naziv": "Konac za obeležavanje i boja, metalno kućište",
+          "dimenzije": "konac 30 m, boja 150g",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": "1, 10",
+          "transportno_pakovanje": "48, 100",
+          "sifra_artikla": "129900",
+          "slika": "img/Slike za Delta tools/100148_129900_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchi5"
+        },
+        {
+          "naziv": "Kofa",
+          "dimenzije": "12l",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "051112",
+          "slika": "img/Slike za Delta tools/100148_051112_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchi6"
+        },
+        {
+          "naziv": "Olovke zidarske",
+          "dimenzije": "175mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "129903",
+          "slika": "img/Slike za Delta tools/100148_129903_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchi7"
+        },
+        {
+          "naziv": "Mistrija rostfraj, drvena drška",
+          "dimenzije": "100x60mm, 110x80mm, 120x100mm, 130x120mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "112008",
+          "slika": "img/Slike za Delta tools/100148_129900_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchi8"
+        },
+        {
+          "naziv": "Mistrija rostfraj, gumena drška",
+          "dimenzije": "160x100mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "112216",
+          "slika": "img/Slike za Delta tools/100148_112216_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchi9"
+        },
+        {
+          "naziv": "Mistrija čelična, obla, gumena drška",
+          "dimenzije": "200x120mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 72,
+          "sifra_artikla": "111000",
+          "slika": "img/Slike za Delta tools/100148_111000_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchiA"
+        },
+        {
+          "naziv": "Mistrija čelična, ravna, gumena drška",
+          "dimenzije": "160x120mm, 180x125mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 72,
+          "sifra_artikla": "111016",
+          "slika": "img/Slike za Delta tools/100148_111016_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchiB"
+        },
+        {
+          "naziv": "Mistrija rostfraj, zatvorena, za spoljašnje ivice",
+          "dimenzije": "80x60mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "114001",
+          "slika": "img/Slike za Delta tools/100148_114001_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchiC"
+        },
+        {
+          "naziv": "Mistrija rostfraj, otvorena, za unutrašnje ivice",
+          "dimenzije": "80x60mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "114002",
+          "slika": "img/Slike za Delta tools/100148_114002_slika_1.jpg",
+          "id": "md0ffmdq3fdb4ufchiD"
+        }
+      ]
+    },
+    {
+      "kategorija": "Alat i pribor za keramiku",
+      "artikli": [
+        {
+          "naziv": "Guma za fugovanje",
+          "dimenzije": "180 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 150,
+          "sifra_artikla": "139903",
+          "slika": "img/Slike za Delta tools/100148_139903_slika_1.jpg",
+          "id": "md0ffmdq03m744pnbgxq"
+        },
+        {
+          "naziv": "Gumena špahtla za silikon",
+          "dimenzije": "103 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 5,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "139911",
+          "slika": "img/Slike za Delta tools/100148_139911_slika_1.jpg",
+          "id": "md0ffmdqmn6ewwziw"
+        },
+        {
+          "naziv": "Krstići",
+          "dimenzije": "1mm, 2mm, 3mm, 4mm, 5mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 100,
+          "transportno_pakovanje": "400, 250, 200",
+          "sifra_artikla": "133011",
+          "slika": "img/Slike za Delta tools/100148_133011_slika_1.jpg",
+          "id": "md0ffmdq17si56c8156"
+        },
+        {
+          "naziv": "Nivelatori za pločice",
+          "dimenzije": "Nivelatori 1, 1.5, 2mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 100,
+          "transportno_pakovanje": 15,
+          "sifra_artikla": "133101",
+          "slika": "img/Slike za Delta tools/100148_133101_slika_1.jpg",
+          "id": "md0ffmdq5r7x77sy0bf"
+        },
+        {
+          "naziv": "Kajle za pločice",
+          "dimenzije": "",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 100,
+          "transportno_pakovanje": 6,
+          "sifra_artikla": "133178",
+          "slika": "img/Slike za Delta tools/100148_133178_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk58"
+        },
+        {
+          "naziv": "Klešta za nivelatore za pločice",
+          "dimenzije": "250 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "221612",
+          "slika": "img/Slike za Delta tools/100148_221612_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk59"
+        },
+        {
+          "naziv": "Keramičarski klin",
+          "dimenzije": "5mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 100,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "135005",
+          "slika": "img/Slike za Delta tools/100148_135005_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk5a"
+        },
+        {
+          "naziv": "Perdaška sa sunđerom, sunđer debljine 18mm",
+          "dimenzije": "270x140mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 40,
+          "sifra_artikla": "103020",
+          "slika": "img/Slike za Delta tools/100148_103020_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk5b"
+        },
+        {
+          "naziv": "Perdaška sa sunđerom,segmenta, sunđer debljine 30mm",
+          "dimenzije": "270x140mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "103042",
+          "slika": "img/Slike za Delta tools/100148_103042_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk5c"
+        },
+        {
+          "naziv": "Perdaška sa sunđerom, sunđer debljine 30mm",
+          "dimenzije": "280x140mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "103030",
+          "slika": "img/Slike za Delta tools/100148_103030_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk5d"
+        },
+        {
+          "naziv": "Perdaška sa gumom, guma debljine 8mm, zakošene ivice",
+          "dimenzije": "240x95mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 5,
+          "sifra_artikla": "103011",
+          "slika": "img/Slike za Delta tools/100148_103011_slika_1.jpg",
+          "id": "md0ffmdqixjsdcopk5e"
+        },
+        {
+          "naziv": "Perdaška sa gumom, guma debljine 10mm, ravne ivice",
+          "dimenzije": "280x140mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 36,
+          "sifra_artikla": "103010",
+          "slika": "img/Slike za Delta tools/100148_103010_Slika_01.jpg",
+          "id": "md0ffmdqixjsdcopk5f"
+        }
+      ]
+    },
+    {
+      "kategorija": "Skalpeli i sečiva",
+      "artikli": [
+        {
+          "naziv": "Nožići skalpela 1/10",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 25,
+          "transportno_pakovanje": 300,
+          "sifra_artikla": "093920",
+          "slika": "img/Slike za Delta tools/100148_093920_slika_1.jpg",
+          "id": "md0ffmdqrowrhtokfp9"
+        },
+        {
+          "naziv": "Skalpel, pvc",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 24,
+          "transportno_pakovanje": 360,
+          "sifra_artikla": "093021",
+          "slika": "img/Slike za Delta tools/100148_093021_slika_1.jpg",
+          "id": "md0ffmdqq5uwj9kw6u9"
+        },
+        {
+          "naziv": "Skalpel, aluminijum",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 96,
+          "sifra_artikla": "093036",
+          "slika": "img/Slike za Delta tools/100148_093036_slika_1.jpg",
+          "id": "md0ffmdqi0m03c08k5"
+        },
+        {
+          "naziv": "Skalpel sa zavrtnjem, kućište metalno, nazubljeno",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 24,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "093023",
+          "slika": "img/Slike za Delta tools/100148_093023_slika_1.jpg",
+          "id": "md0ffmdqc9p0bmk484"
+        },
+        {
+          "naziv": "Skalpel, metalna vođica, kućište plastično, nazubljeno",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 24,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "093022",
+          "slika": "img/Slike za Delta tools/100148_093022_slika_1.jpg",
+          "id": "md0ffmdqc9p0bmk485"
+        },
+        {
+          "naziv": "Skalpel sa zavrtnjem, kućište metalno, nazubljeno",
+          "dimenzije": "18 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 24,
+          "transportno_pakovanje": 240,
+          "sifra_artikla": "093024",
+          "slika": "img/Slike za Delta tools/100148_093024_slika_1.jpg",
+          "id": "md0ffmdqc9p0bmk486"
+        },
+        {
+          "naziv": "Strugač boje, trapezni",
+          "dimenzije": "60 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 300,
+          "sifra_artikla": "092010",
+          "slika": "img/Slike za Delta tools/100148_092010_slika_1.jpg",
+          "id": "md0ffmdqc9p0bmk487"
+        },
+        {
+          "naziv": "Makaze za lim",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 5,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "220025",
+          "slika": "img/Slike za Delta tools/222025.jpg",
+          "id": "md0ffmdqc9p0bmk488"
+        },
+        {
+          "naziv": "Makaze, pvc",
+          "dimenzije": "24cm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 144,
+          "sifra_artikla": "094011",
+          "slika": "img/Slike za Delta tools/100148_094011_slika_1.jpg",
+          "id": "md0ffmdqc9p0bmk489"
+        }
+      ]
+    },
+    {
+      "kategorija": "Pištolji",
+      "artikli": [
+        {
+          "naziv": "Pištolj za silikon, skeleton",
+          "dimenzije": "Šestougaoni",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125004",
+          "slika": "img/Slike za Delta tools/100148_125004_slika_1.jpg",
+          "id": "md0ffmdqsm0t19jactj"
+        },
+        {
+          "naziv": "Pištolj cevasti aluminijumsko kućište, dva dozera",
+          "dimenzije": "600 ml",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125006",
+          "slika": "img/Slike za Delta tools/100148_125006_slika_1.jpg",
+          "id": "md0ffmdqxj34isuozv"
+        },
+        {
+          "naziv": "Pištolj za pur penu",
+          "dimenzije": "325 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125008",
+          "slika": "img/Slike za Delta tools/100148_125008_slika_1.jpg",
+          "id": "md0ffmdqnt2t4hwl83"
+        },
+        {
+          "naziv": "Pištolj za silikon, skeleton, duga drška",
+          "dimenzije": "Obli",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "125005",
+          "slika": "img/Slike za Delta tools/100148_125005_slika_1.jpg",
+          "id": "md0ffmdqnt2t4hwl84"
+        },
+        {
+          "naziv": "Pištolj za silikon, nazubljeni",
+          "dimenzije": "Nazubljeni",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125002",
+          "slika": "img/Slike za Delta tools/100148_125002_slika_1.jpg",
+          "id": "md0ffmdqnt2t4hwl85"
+        },
+        {
+          "naziv": "Pištolj za pur penu",
+          "dimenzije": "350 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125010",
+          "slika": "img/Slike za Delta tools/100148_125010_slika_1.jpg",
+          "id": "md0ffmdqnt2t4hwl86"
+        },
+        {
+          "naziv": "Pištolj za pur penu, teflon",
+          "dimenzije": "350 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "125021",
+          "slika": "img/Slike za Delta tools/100148_125021_slika_1.jpg",
+          "id": "md0ffmdqnt2t4hwl87"
+        }
+      ]
+    },
+    {
+      "kategorija": "Merni alat",
+      "artikli": [
+        {
+          "naziv": "Metar, tri kočnice, gumirano kućište, magnet",
+          "dimenzije": "3,5, 7.5, 10m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": "36, 48, 60, 120",
+          "sifra_artikla": "121505",
+          "slika": "img/Slike za Delta tools/100148_121505_slika_1.jpg",
+          "id": "md0ffmdq13d0sbqu0dqn"
+        },
+        {
+          "naziv": "Metar",
+          "dimenzije": "2, 3, 5m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": "120, 240",
+          "sifra_artikla": "121003",
+          "slika": "img/Slike za Delta tools/100148_121003_slika_1.jpg",
+          "id": "md0ffmdq13d0sbqu0dqo"
+        },
+        {
+          "naziv": "Traka merna, metalna, traka zaštićena najlonom",
+          "dimenzije": "50 m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "122050",
+          "slika": "img/Slike za Delta tools/100148_122050_slika_1.jpg",
+          "id": "md0ffmdqnqzws1sajhe"
+        },
+        {
+          "naziv": "Traka merna, fiberglas",
+          "dimenzije": "30 m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "122030",
+          "slika": "img/Slike za Delta tools/100148_122030_slika_1.jpg",
+          "id": "md0ffmdqnqzws1sajhf"
+        },
+        {
+          "naziv": "Libela",
+          "dimenzije": "60, 80, 120 cm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "126008",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_126008_slika_1.jpg",
+          "id": "md0ffmdqfjbjixknmz"
+        },
+        {
+          "naziv": "Libela",
+          "dimenzije": "80, 120 cm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 30,
+          "sifra_artikla": "126508",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_126508_slika_1.jpg",
+          "id": "md0ffmdqfjbjixknn0"
+        },
+        {
+          "naziv": "Heftalica, podesiva jačina udara",
+          "dimenzije": "-",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "134100",
+          "slika": "img/Slike za Delta tools/100148_134100_slika_1.jpg",
+          "id": "md0ffmdq2yjx48209t"
+        },
+        {
+          "naziv": "Municija za heftalicu",
+          "dimenzije": "6, 8, 10mm",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 1000,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "134110",
+          "slika": "img/Slike za Delta tools/100148_134110_slika_1.jpg",
+          "id": "md0ffmdq2yjx48209u"
+        },
+        {
+          "naziv": "Ugaoni lenjir",
+          "dimenzije": "300mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "122130",
+          "slika": "img/Slike za Delta tools/100148_122130_slika_1.jpg",
+          "id": "md0ffmdq2yjx48209v"
+        },
+        {
+          "naziv": "Glinerica",
+          "dimenzije": "-",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 480,
+          "sifra_artikla": "244050",
+          "slika": "img/Slike za Delta tools/100148_244050_slika_1.jpg",
+          "id": "md0ffmdq2yjx48209w"
+        }
+      ]
+    },
+    {
+      "kategorija": "Klešta",
+      "artikli": [
+        {
+          "naziv": "Klešta kombinovana",
+          "dimenzije": "200 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "221018",
+          "slika": "img/Slike za Delta tools/221018.jpg",
+          "id": "md0ffmdqws454e8962q"
+        },
+        {
+          "naziv": "Klešta špicasta",
+          "dimenzije": "180 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "223018",
+          "slika": "img/Slike za Delta tools/223018.jpg",
+          "id": "md0ffmdq3sq4u4f8yyo"
+        },
+        {
+          "naziv": "Klešta za sečenje",
+          "dimenzije": "180 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "222018",
+          "slika": "img/Slike za Delta tools/222018.jpg",
+          "id": "md0ffmdqvb6hv75cfdr"
+        },
+        {
+          "naziv": "Klešta za skidanje izolacije",
+          "dimenzije": "150 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "224023",
+          "slika": "img/Slike za Delta tools/224023.jpg",
+          "id": "md0ffmdq25kny858w5l"
+        },
+        {
+          "naziv": "Klešta za pop nitne",
+          "dimenzije": "2.4 / 3.2 / 4.0 / 4.8 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "221601",
+          "slika": "img/Slike za Delta tools/221601.jpg",
+          "id": "md0ffmdqavmpdomlp4"
+        },
+        {
+          "naziv": "Klešta okrugla-armiračka",
+          "dimenzije": "230 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 60,
+          "sifra_artikla": "225023",
+          "slika": "img/Slike za Delta tools/225023.jpg",
+          "id": "md0ffmdqku0z3prpiv"
+        }
+      ]
+    },
+    {
+      "kategorija": "Testere",
+      "artikli": [
+        {
+          "naziv": "Ger sa testerom drveno kućište",
+          "dimenzije": "300 x 85 x 55 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "131130",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_131130_slika_1.jpg",
+          "id": "md0ffmdqn888u4kkiwe"
+        },
+        {
+          "naziv": "Ger sa testerom ABS kućište",
+          "dimenzije": "300 x 130 x 80 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 12,
+          "sifra_artikla": "131229",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_131229_slika_1.jpg",
+          "id": "md0ffmdq2tqdqg6obwn"
+        },
+        {
+          "naziv": "Ger sa testerom PVC kućište",
+          "dimenzije": "290 x 95 x 50 mm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 8,
+          "transportno_pakovanje": 24,
+          "sifra_artikla": "131201",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_131201_slika_1.jpg",
+          "id": "md0ffmdq7u6b62oo8w8"
+        },
+        {
+          "naziv": "Testera-bonsek",
+          "dimenzije": "bonsek",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 48,
+          "sifra_artikla": "212002",
+          "slika": "img/Slike za Delta tools/212002.jpg",
+          "id": "md0ffmdq3sojmwwp1z5"
+        },
+        {
+          "naziv": "Testera sa rukohvatom (sa 4 sečiva)",
+          "dimenzije": "41 cm",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 48,
+          "sifra_artikla": "215063",
+          "slika": "img/Slike za Delta tools/215063.jpg",
+          "id": "md0ffmdqaghytioaq7"
+        }
+      ]
+    },
+    {
+      "kategorija": "Rukavice",
+      "artikli": [
+        {
+          "naziv": "Rukavica, PU COMFORT bela/crna",
+          "dimenzije": "XL",
+          "jedinica_mere": "PAR",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "151310",
+          "slika": "img/Slike za Delta tools/151310 bela.jpg",
+          "id": "md0ffmdqv8e3y3f4g7"
+        },
+        {
+          "naziv": "Rukavica, nitril siva",
+          "dimenzije": "XL",
+          "jedinica_mere": "PAR",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "151321",
+          "slika": "img/Slike za Delta tools/151321.jpg",
+          "id": "md0ffmdqv8e3y3f4g8"
+        },
+        {
+          "naziv": "Rukavica, višeslojna latex",
+          "dimenzije": "XL",
+          "jedinica_mere": "PAR",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "151307",
+          "slika": "img/Slike za Delta tools/151307.jpg",
+          "id": "md0ffmdqv8e3y3f4g9"
+        },
+        {
+          "naziv": "Rukavica, latex standard",
+          "dimenzije": "XL",
+          "jedinica_mere": "PAR",
+          "kolicina_u_pakovanju": 12,
+          "transportno_pakovanje": 120,
+          "sifra_artikla": "151332",
+          "slika": "img/Slike za Delta tools/151332.jpg",
+          "id": "md0ffmdqv8e3y3f4g9"
+        }
+      ]
+    },
+    {
+      "kategorija": "Zaštita i zaštitne folije",
+      "artikli": [
+        {
+          "naziv": "Maska FFFP2, sa filterom, set 2 komada",
+          "dimenzije": "Univerzalna",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 2,
+          "transportno_pakovanje": 50,
+          "sifra_artikla": "153140",
+          "slika": "img/Slike za Delta tools/153140.jpg",
+          "id": "md0ffmdqv8e3y3f4ga"
+        },
+        {
+          "naziv": "Maska komfort",
+          "dimenzije": "Univerzalna",
+          "jedinica_mere": "GN",
+          "kolicina_u_pakovanju": 50,
+          "transportno_pakovanje": 20,
+          "sifra_artikla": "153005",
+          "slika": "img/Slike za Delta tools/153005.jpg",
+          "id": "md0ffmdqv8e3y3f4gb"
+        },
+        {
+          "naziv": "Zaštitno odijelo, papirno",
+          "dimenzije": "XXL",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 90,
+          "sifra_artikla": "153022",
+          "slika": "img/Slike za Delta tools/153022.jpg",
+          "id": "md0ffmdqv8e3y3f4gc"
+        },
+        {
+          "naziv": "Zaštitne naočari",
+          "dimenzije": "Univerzalna",
+          "jedinica_mere": "PAR",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 200,
+          "sifra_artikla": "153011",
+          "slika": "img/Slike za Delta tools/153011.jpg",
+          "id": "md0ffmdqv8e3y3f4gd"
+        },
+        {
+          "naziv": "Zaštitna folija, debljina 6,15,30",
+          "dimenzije": "4x5m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": "20, 50",
+          "sifra_artikla": "154020",
+          "slika": "img/Slike za Delta tools/154020.jpg",
+          "id": "md0ffmdqv8e3y3f4ge"
+        },
+        {
+          "naziv": "Zaštitna folija, debljina 6",
+          "dimenzije": "4x12.5m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 10,
+          "sifra_artikla": "154050",
+          "slika": "img/Slike za Delta tools/154050.jpg",
+          "id": "md0ffmdqv8e3y3f4gf"
+        },
+        {
+          "naziv": "Zaštitna folija, debljina 30",
+          "dimenzije": "2x50m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": 6,
+          "sifra_artikla": "154100",
+          "slika": "img/Slike za Delta tools/154100.jpg",
+          "id": "md0ffmdqv8e3y3f4gg"
+        },
+        {
+          "naziv": "Zaštitna prekrivac, dugotrajni",
+          "dimenzije": "3x4, 4x5 m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 1,
+          "transportno_pakovanje": "5, 10",
+          "sifra_artikla": "154134",
+          "slika": "img/Slike za Delta tools/154134.jpg",
+          "id": "md0ffmdqv8e3y3f4gh"
+        }
+      ]
+    },
+    {
+      "kategorija": "Trake",
+      "artikli": [
+        {
+          "naziv": "Traka maskirna UV otporna",
+          "dimenzije": "50mm x 33m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 36,
+          "sifra_artikla": "144700",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_144700_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47i"
+        },
+        {
+          "naziv": "Traka krep, debljina 145 mikrona",
+          "dimenzije": "19/25/30/38/50mm x 33m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": "6, 8, 10, 12, 16",
+          "transportno_pakovanje": "36, 48, 60, 72, 96",
+          "sifra_artikla": "144",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_144700_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47i"
+        },
+        {
+          "naziv": "Traka, amerikan srebrna, debljina 180 mikrona",
+          "dimenzije": "50mm x 10/50m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": "1, 6",
+          "transportno_pakovanje": "36, 72",
+          "sifra_artikla": "143110",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_143110_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47j"
+        },
+        {
+          "naziv": "Traka ambalažna, providna, debljina 45 mikrona",
+          "dimenzije": "48mm x 50m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 72,
+          "sifra_artikla": "145500",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_145500_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47k"
+        },
+        {
+          "naziv": "Traka ambalažna, braon, debljina 45 mikrona",
+          "dimenzije": "48mm x 50m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 6,
+          "transportno_pakovanje": 72,
+          "sifra_artikla": "145511",
+          "slika": "img/Slike za Delta tools/28.8.23/100148_145511_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47l"
+        },
+        {
+          "naziv": "Elektro izolir traka, crna",
+          "dimenzije": "18mm x 20m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 300,
+          "sifra_artikla": "146005",
+          "slika": "img/Slike za Delta tools/100148_146005_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47m"
+        },
+        {
+          "naziv": "Elektro izolir traka, miks",
+          "dimenzije": "18mm x 20m",
+          "jedinica_mere": "KD",
+          "kolicina_u_pakovanju": 10,
+          "transportno_pakovanje": 300,
+          "sifra_artikla": "146012",
+          "slika": "img/Slike za Delta tools/100148_146012_slika_1.jpg",
+          "id": "md0ffmdqv8e3y3f47q"
+        }
+      ]
+    }
+  ],
+  "premazi": {
+    "metal": {
+      "opis": "Industrijski premazi za metal obezbeđuju dugotrajnu zaštitu od korozije, habanja i ekstremnih vremenskih uslova, čime produžavaju vek trajanja metalnih konstrukcija i mašina.",
+      "kategorije": {
+        "modifikovani_alkidni_premazi": {
+          "naziv": "MODIFIKOVANI ALKIDNI PREMAZI",
+          "opis": "Tradicionalni premazi sa poboljšanim svojstvima",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA METAL ALKID EMAJL MF 800",
+              "tip": "Emajl",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Otpornost na koroziju",
+                "Dobra pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Metalne konstrukcije",
+                "Mašine",
+                "Oprema"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdrancidcyc7x5"
+            },
+            {
+              "naziv": "ULTRA METAL ALKID PRAJMER MP 800",
+              "tip": "Prajmer",
+              "boja": "Siva",
+              "svojstva": [
+                "Odlična adhezija",
+                "Antikorozivna zaštita",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Novi metalni površine",
+                "Priprema za farbanje"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdri3obh1w0fas"
+            },
+            {
+              "naziv": "ULTRA METAL ALKID PRAJMER MP 801",
+              "tip": "Prajmer",
+              "boja": "Crveno-braon",
+              "svojstva": [
+                "Fosfatajući prajmer",
+                "Odlična adhezija",
+                "Antikorozivna zaštita"
+              ],
+              "primenjuje_se": [
+                "Rđavi metalni površine",
+                "Industrijska oprema"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdr5e7o2lgxgu7"
+            },
+            {
+              "naziv": "ULTRA METAL DIREKT MFD 800",
+              "tip": "Direkt premaz",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Direktna primena",
+                "Otpornost na koroziju",
+                "Dobra pokrivnost"
+              ],
+              "primenjuje_se": [
+                "Rđavi metalni površine",
+                "Renoviranje"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdr5ardcbmya8u"
+            }
+          ]
+        },
+        "epoksidni_premazi": {
+          "naziv": "EPOKSIDNI PREMAZI",
+          "opis": "Vrhunski premazi sa izuzetnom otpornošću",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA METAL EPOXY CINK RICH MPZ 700",
+              "tip": "Cink bogati prajmer",
+              "boja": "Siva",
+              "svojstva": [
+                "Katodna zaštita",
+                "Izuzetna otpornost na koroziju",
+                "Dobra adhezija"
+              ],
+              "primenjuje_se": [
+                "Čelične konstrukcije",
+                "Mostovi",
+                "Industrijska oprema"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrg2ub75areoa"
+            },
+            {
+              "naziv": "ULTRA METAL EPOXY EMAJL MF 700",
+              "tip": "Emajl",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Izuzetna otpornost",
+                "Hemijska otpornost",
+                "Mehanička otpornost"
+              ],
+              "primenjuje_se": [
+                "Industrijska oprema",
+                "Hemiјski rezervoari",
+                "Podovi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrfdfdltey1s9"
+            },
+            {
+              "naziv": "ULTRA METAL EPOXY INTER COAT MI 700",
+              "tip": "Međusloj",
+              "boja": "Siva",
+              "svojstva": [
+                "Odlična adhezija",
+                "Međuslojna kompatibilnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Međusloj u višeslojnim sistemima"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrztp7rni82w"
+            },
+            {
+              "naziv": "ULTRA METAL EPOXY PRAJMER MP 700 C",
+              "tip": "Prajmer",
+              "boja": "Siva",
+              "svojstva": [
+                "Odlična adhezija",
+                "Antikorozivna zaštita",
+                "Hemijska otpornost"
+              ],
+              "primenjuje_se": [
+                "Novi metalni površine",
+                "Priprema za epoksidne sisteme"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdru15cstmg31"
+            },
+            {
+              "naziv": "ULTRA METAL EPOXY SOLID FINISH MFS 700",
+              "tip": "Završni premaz",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Izuzetna otpornost",
+                "Estetski izgled",
+                "Dugotrajnost"
+              ],
+              "primenjuje_se": [
+                "Završni sloj",
+                "Industrijska oprema",
+                "Konstrukcije"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdr7uuzacrulct"
+            },
+            {
+              "naziv": "ULTRA METAL EPOXY TAR MFT 700",
+              "tip": "Katran premaz",
+              "boja": "Crna",
+              "svojstva": [
+                "Otpornost na vlagu",
+                "Hemijska otpornost",
+                "Dobra adhezija"
+              ],
+              "primenjuje_se": [
+                "Podzemne konstrukcije",
+                "Rezervoari",
+                "Cevovodi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrjm6s4yk6gn"
+            }
+          ]
+        },
+        "poliuretanski_premazi": {
+          "naziv": "POLIURETANSKI PREMAZI ZA METAL",
+          "opis": "Savremeni premazi sa izuzetnim svojstvima",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA METAL POLIURETAN DIREKT MF 150",
+              "tip": "Direkt premaz",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Direktna primena",
+                "Izuzetna otpornost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Rđavi metalni površine",
+                "Renoviranje",
+                "Brze intervencije"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrdtavw7ttchk"
+            }
+          ]
+        },
+        "termostabilni_premazi": {
+          "naziv": "TERMOSTABILNI PREMAZI",
+          "opis": "Premazi otporni na visoke temperature",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA METAL TERMO MT 350",
+              "tip": "Termostabilni premaz",
+              "boja": "Siva",
+              "temperatura": "do 350°C",
+              "svojstva": [
+                "Otpornost na visoke temperature",
+                "Antikorozivna zaštita",
+                "Dobra adhezija"
+              ],
+              "primenjuje_se": [
+                "Dimnjaci",
+                "Kotlovi",
+                "Industrijske peći"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdr243tfcgjpog"
+            },
+            {
+              "naziv": "ULTRA METAL TERMO MT 600",
+              "tip": "Termostabilni premaz",
+              "boja": "Siva",
+              "temperatura": "do 600°C",
+              "svojstva": [
+                "Izuzetna otpornost na visoke temperature",
+                "Antikorozivna zaštita",
+                "Dugotrajnost"
+              ],
+              "primenjuje_se": [
+                "Industrijske peći",
+                "Dimnjaci",
+                "Kotlovi"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdrn6o67y2p5tk"
+            }
+          ]
+        }
+      }
+    },
+    "drvo": {
+      "opis": "Ultra premazi za drvo pružaju zaštitu od vlage, UV zraka i drugih spoljašnjih uticaja, povećavaju otpornost na habanje i hemijske supstance, čineći drvene površine izuzetno izdržljivim i lako održivim.",
+      "kategorije": {
+        "poliuretanski_premazi": {
+          "naziv": "POLIURETANSKI PREMAZI ZA DRVO",
+          "opis": "Vrhunski premazi za drvo sa izuzetnom trajnošću",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA WOOD PU TRANSPARENTNI IZOLANT WIT 100",
+              "tip": "Transparentni izolant",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Transparentnost",
+                "UV zaštita",
+                "Otpornost na vlagu"
+              ],
+              "primenjuje_se": [
+                "Drveni podovi",
+                "Mebl",
+                "Fasade"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdr7lgu9bl4dhc"
+            },
+            {
+              "naziv": "ULTRA WOOD PU BELI IZOLANT WIW 100",
+              "tip": "Beli izolant",
+              "boja": "Bela",
+              "svojstva": [
+                "Pokrivnost",
+                "UV zaštita",
+                "Otpornost na vlagu"
+              ],
+              "primenjuje_se": [
+                "Drveni podovi",
+                "Mebl",
+                "Fasade"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrigkznj74g0b"
+            },
+            {
+              "naziv": "ULTRA WOOD PU PRIMER TRANSPARENTNI WPT 100",
+              "tip": "Transparentni prajmer",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Odlična adhezija",
+                "Transparentnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za lakove"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrtq83ghgeh2"
+            },
+            {
+              "naziv": "ULTRA WOOD PU PRIMER TRANSPARENTNI WPT 101",
+              "tip": "Transparentni prajmer",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Odlična adhezija",
+                "Transparentnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za lakove"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrepy6hib053j"
+            },
+            {
+              "naziv": "ULTRA WOOD PU PRIMER BELI WPW 100",
+              "tip": "Beli prajmer",
+              "boja": "Bela",
+              "svojstva": [
+                "Odlična adhezija",
+                "Pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za emajle"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrglojt51cuqk"
+            },
+            {
+              "naziv": "ULTRA WOOD PU PRIMER BELI WPW 101",
+              "tip": "Beli prajmer",
+              "boja": "Bela",
+              "svojstva": [
+                "Odlična adhezija",
+                "Pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za emajle"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrctn2tbb023"
+            },
+            {
+              "naziv": "ULTRA WOOD PU PRIMER CRNI WPB 100",
+              "tip": "Crni prajmer",
+              "boja": "Crna",
+              "svojstva": [
+                "Odlična adhezija",
+                "Pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za emajle"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdr0lbuilf8evja"
+            },
+            {
+              "naziv": "ULTRA WOOD PU LAK WLT",
+              "tip": "Lak",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Transparentnost",
+                "UV zaštita",
+                "Otpornost na habanje"
+              ],
+              "primenjuje_se": [
+                "Završni sloj",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrxyx1id41tvj"
+            },
+            {
+              "naziv": "ULTRA WOOD PU EMAJL WF",
+              "tip": "Emajl",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Pokrivnost",
+                "UV zaštita",
+                "Otpornost na habanje"
+              ],
+              "primenjuje_se": [
+                "Završni sloj",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrqy8yp51332"
+            }
+          ]
+        },
+        "poliesterski_premazi": {
+          "naziv": "POLIESTERSKI PREMAZI",
+          "opis": "Tradicionalni premazi sa odličnim svojstvima",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA WOOD POLIESTER PRIMER BELI WPW 290SF",
+              "tip": "Beli prajmer",
+              "boja": "Bela",
+              "svojstva": [
+                "Odlična adhezija",
+                "Pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za emajle"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdr7eyab2p8yof"
+            },
+            {
+              "naziv": "ULTRA WOOD POLIESTER PRIMER TRANSPARENTNI WPT 200",
+              "tip": "Transparentni prajmer",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Odlična adhezija",
+                "Transparentnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za lakove"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrl5k30hv4t8b"
+            }
+          ]
+        },
+        "akrilati": {
+          "naziv": "AKRILATI",
+          "opis": "Savremeni premazi na bazi akrilata",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA WOOD AKRILNI PRAJMER WPT 300",
+              "tip": "Transparentni prajmer",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Odlična adhezija",
+                "Transparentnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za lakove"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrpgn0anm1zqk"
+            },
+            {
+              "naziv": "ULTRA WOOD AKRILNI PRAJMER BELI WPW 300",
+              "tip": "Beli prajmer",
+              "boja": "Bela",
+              "svojstva": [
+                "Odlična adhezija",
+                "Pokrivnost",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Priprema drvenih površina",
+                "Podloga za emajle"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrgb1fyf3ioz8"
+            },
+            {
+              "naziv": "ULTRA WOOD AKRILNI LAK WLT",
+              "tip": "Lak",
+              "boja": "Transparentan",
+              "svojstva": [
+                "Transparentnost",
+                "UV zaštita",
+                "Otpornost na habanje"
+              ],
+              "primenjuje_se": [
+                "Završni sloj",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdraq1u7kctip"
+            },
+            {
+              "naziv": "ULTRA WOOD AKRILNI EMAJL WF",
+              "tip": "Emajl",
+              "boja": "Različite boje",
+              "svojstva": [
+                "Pokrivnost",
+                "UV zaštita",
+                "Otpornost na habanje"
+              ],
+              "primenjuje_se": [
+                "Završni sloj",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/2.png",
+              "id": "md0ffmdrzbdp5zxbtk"
+            }
+          ]
+        },
+        "uv_lakovi": {
+          "naziv": "UV LAKOVI",
+          "opis": "Savremeni UV otvrdnjavajući premazi",
+          "proizvodi": [
+            {
+              "naziv": "ULTRA WOOD POLIESTER UV PRIMER BELI WPW 400",
+              "tip": "Beli UV prajmer",
+              "boja": "Bela",
+              "svojstva": [
+                "UV otvrdnjavanje",
+                "Odlična adhezija",
+                "Brzo sušenje"
+              ],
+              "primenjuje_se": [
+                "Industrijska proizvodnja",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdrh9cwtgohhd"
+            },
+            {
+              "naziv": "ULTRA WOOD POLIESTER UV PRIMER TRANSPARENTNI WPT 400",
+              "tip": "Transparentni UV prajmer",
+              "boja": "Transparentan",
+              "svojstva": [
+                "UV otvrdnjavanje",
+                "Odlična adhezija",
+                "Transparentnost"
+              ],
+              "primenjuje_se": [
+                "Industrijska proizvodnja",
+                "Mebl",
+                "Drveni podovi"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdryw0cfu0z7dn"
+            }
+          ]
+        },
+        "lepkovi": {
+          "naziv": "LEPKOVI",
+          "opis": "Profesionalni lepkovi za drvo",
+          "proizvodi": [
+            {
+              "naziv": "LEPAK D3",
+              "tip": "Lepak za drvo",
+              "klasa": "D3",
+              "svojstva": [
+                "Vodootpornost",
+                "Odlična adhezija",
+                "Dugotrajnost"
+              ],
+              "primenjuje_se": [
+                "Spojivanje drvenih elemenata",
+                "Mebl",
+                "Konstrukcije"
+              ],
+              "slika": "img/Irkom/1.png",
+              "id": "md0ffmdr2gmd96uf8jk"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
