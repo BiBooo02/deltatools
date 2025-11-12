@@ -1,59 +1,49 @@
 <template>
-  <div class="min-h-screen section-bg pt-20">
+  <div class="min-h-screen bg-white pt-20">
     <div class="container mx-auto px-6 py-12">
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black">
           Premazi
         </h1>
-        <p class="text-xl text-muted max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Premium premazi za metal i drvo sa izuzetnom trajnošću
         </p>
       </div>
 
-      <div v-if="loading" class="text-center text-primary">
-        <div
-          class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto"
-        ></div>
+      <div v-if="loading" class="text-center text-black">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"></div>
         <p class="mt-4">Učitavanje proizvoda...</p>
       </div>
 
-      <div v-else-if="error" class="text-center text-red-500">
+      <div v-else-if="error" class="text-center text-red-600">
         {{ error }}
       </div>
 
       <div v-else class="space-y-12">
-        <template
-          v-for="(material, materialKey) in filteredMaterials"
-          :key="materialKey"
-        >
+        <template v-for="(material, materialKey) in filteredMaterials" :key="materialKey">
           <div class="kategorija">
-            <h2 class="text-3xl font-bold mb-8 text-yellow-400">
-              Premazi za
-              {{ materialKey.charAt(0).toUpperCase() + materialKey.slice(1) }}
+            <h2 class="text-3xl font-bold mb-8 text-black">
+              Premazi za {{ materialKey.charAt(0).toUpperCase() + materialKey.slice(1) }}
             </h2>
-            <p class="text-muted mb-8">{{ material.opis }}</p>
+            <p class="text-gray-600 mb-8">{{ material.opis }}</p>
 
             <template v-if="filteredSubcategories(materialKey)">
               <div
-                v-for="(category, categoryKey) in filteredSubcategories(
-                  materialKey
-                )"
+                v-for="(category, categoryKey) in filteredSubcategories(materialKey)"
                 :key="categoryKey"
                 class="mb-8"
               >
-                <h3 class="text-2xl font-semibold mb-6 text-blue-400">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">
                   {{ category.naziv }}
                 </h3>
-                <p class="text-muted mb-6">{{ category.opis }}</p>
+                <p class="text-gray-600 mb-6">{{ category.opis }}</p>
                 <div class="artikli">
                   <div
                     v-for="product in category.proizvodi"
                     :key="product.id"
                     class="proizvod card-hover"
                   >
-                    <div
-                      class="aspect-square mb-4 overflow-hidden rounded-lg bg-gray-200"
-                    >
+                    <div class="aspect-square mb-4 overflow-hidden rounded-lg bg-gray-100">
                       <img
                         :src="product.slika"
                         :alt="product.naziv"
@@ -61,37 +51,27 @@
                         @error="handleImageError"
                       />
                     </div>
-                    <h4 class="text-lg font-semibold mb-2 text-primary">
+                    <h4 class="text-lg font-semibold mb-2 text-black">
                       {{ product.naziv }}
                     </h4>
-                    <div class="space-y-2 text-sm text-secondary">
-                      <p><strong>Tip:</strong> {{ product.tip }}</p>
-                      <p><strong>Boja:</strong> {{ product.boja }}</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                      <p><strong class="text-black">Tip:</strong> {{ product.tip }}</p>
+                      <p><strong class="text-black">Boja:</strong> {{ product.boja }}</p>
                       <p v-if="product.temperatura">
-                        <strong>Temperatura:</strong> {{ product.temperatura }}
+                        <strong class="text-black">Temperatura:</strong> {{ product.temperatura }}
                       </p>
                       <div v-if="product.svojstva && product.svojstva.length">
-                        <p><strong>Svojstva:</strong></p>
+                        <p><strong class="text-black">Svojstva:</strong></p>
                         <ul class="list-disc list-inside ml-2">
-                          <li
-                            v-for="svojstvo in product.svojstva"
-                            :key="svojstvo"
-                          >
+                          <li v-for="svojstvo in product.svojstva" :key="svojstvo">
                             {{ svojstvo }}
                           </li>
                         </ul>
                       </div>
-                      <div
-                        v-if="
-                          product.primenjuje_se && product.primenjuje_se.length
-                        "
-                      >
-                        <p><strong>Primenjuje se:</strong></p>
+                      <div v-if="product.primenjuje_se && product.primenjuje_se.length">
+                        <p><strong class="text-black">Primenjuje se:</strong></p>
                         <ul class="list-disc list-inside ml-2">
-                          <li
-                            v-for="primenjuje in product.primenjuje_se"
-                            :key="primenjuje"
-                          >
+                          <li v-for="primenjuje in product.primenjuje_se" :key="primenjuje">
                             {{ primenjuje }}
                           </li>
                         </ul>
@@ -107,19 +87,17 @@
                 :key="categoryKey"
                 class="mb-8"
               >
-                <h3 class="text-2xl font-semibold mb-6 text-blue-400">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">
                   {{ category.naziv }}
                 </h3>
-                <p class="text-muted mb-6">{{ category.opis }}</p>
+                <p class="text-gray-600 mb-6">{{ category.opis }}</p>
                 <div class="artikli">
                   <div
                     v-for="product in category.proizvodi"
                     :key="product.id"
                     class="proizvod card-hover"
                   >
-                    <div
-                      class="aspect-square mb-4 overflow-hidden rounded-lg bg-gray-200"
-                    >
+                    <div class="aspect-square mb-4 overflow-hidden rounded-lg bg-gray-100">
                       <img
                         :src="product.slika"
                         :alt="product.naziv"
@@ -127,37 +105,27 @@
                         @error="handleImageError"
                       />
                     </div>
-                    <h4 class="text-lg font-semibold mb-2 text-primary">
+                    <h4 class="text-lg font-semibold mb-2 text-black">
                       {{ product.naziv }}
                     </h4>
-                    <div class="space-y-2 text-sm text-secondary">
-                      <p><strong>Tip:</strong> {{ product.tip }}</p>
-                      <p><strong>Boja:</strong> {{ product.boja }}</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                      <p><strong class="text-black">Tip:</strong> {{ product.tip }}</p>
+                      <p><strong class="text-black">Boja:</strong> {{ product.boja }}</p>
                       <p v-if="product.temperatura">
-                        <strong>Temperatura:</strong> {{ product.temperatura }}
+                        <strong class="text-black">Temperatura:</strong> {{ product.temperatura }}
                       </p>
                       <div v-if="product.svojstva && product.svojstva.length">
-                        <p><strong>Svojstva:</strong></p>
+                        <p><strong class="text-black">Svojstva:</strong></p>
                         <ul class="list-disc list-inside ml-2">
-                          <li
-                            v-for="svojstvo in product.svojstva"
-                            :key="svojstvo"
-                          >
+                          <li v-for="svojstvo in product.svojstva" :key="svojstvo">
                             {{ svojstvo }}
                           </li>
                         </ul>
                       </div>
-                      <div
-                        v-if="
-                          product.primenjuje_se && product.primenjuje_se.length
-                        "
-                      >
-                        <p><strong>Primenjuje se:</strong></p>
+                      <div v-if="product.primenjuje_se && product.primenjuje_se.length">
+                        <p><strong class="text-black">Primenjuje se:</strong></p>
                         <ul class="list-disc list-inside ml-2">
-                          <li
-                            v-for="primenjuje in product.primenjuje_se"
-                            :key="primenjuje"
-                          >
+                          <li v-for="primenjuje in product.primenjuje_se" :key="primenjuje">
                             {{ primenjuje }}
                           </li>
                         </ul>
@@ -227,45 +195,19 @@ onMounted(loadProducts);
 </script>
 
 <style scoped>
-.gradient-text {
-  background: linear-gradient(135deg, #fbbf24 0%, #ffa500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-muted {
-  color: var(--text-muted);
-}
-
-.section-bg {
-  background: var(--bg-secondary);
-  transition: background-color 0.3s ease;
-  min-height: 100vh;
-}
-
-.text-primary {
-  color: var(--text-primary);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
 .kategorija {
   padding: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   margin-bottom: 30px;
   border-radius: 16px;
   transition: all 0.3s ease;
 }
 
 .kategorija h2 {
-  border-left: 6px solid var(--accent-color);
+  border-left: 6px solid #000000;
   padding-left: 10px;
-  color: var(--text-primary);
+  color: #000000;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -277,9 +219,8 @@ onMounted(loadProducts);
 }
 
 .proizvod {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -287,8 +228,7 @@ onMounted(loadProducts);
 
 .proizvod:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .proizvod img {
@@ -299,20 +239,17 @@ onMounted(loadProducts);
   margin-bottom: 15px;
 }
 
-.proizvod h3 {
+.proizvod h3,
+.proizvod h4 {
   margin: 10px 0;
   font-size: 18px;
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .proizvod p {
   margin: 8px 0;
   font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.proizvod strong {
-  color: var(--accent-color);
+  color: #6b7280;
 }
 
 .card-hover {
@@ -321,8 +258,7 @@ onMounted(loadProducts);
 
 .card-hover:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 768px) {
@@ -348,7 +284,8 @@ onMounted(loadProducts);
     padding: 15px;
   }
 
-  .proizvod h3 {
+  .proizvod h3,
+  .proizvod h4 {
     font-size: 16px;
   }
 

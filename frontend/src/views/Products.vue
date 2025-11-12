@@ -1,30 +1,27 @@
 <template>
-  <div class="min-h-screen section-bg pt-20">
+  <div class="min-h-screen bg-white pt-20">
     <div class="container mx-auto px-6 py-12">
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black">
           Građevinski alati
         </h1>
-        <p class="text-xl text-muted max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Profesionalni alati za farbanje, dekorativne i građevinske radove
         </p>
       </div>
 
-      <div v-if="loading" class="text-center text-primary">
-        <div
-          class="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto"
-        ></div>
+      <div v-if="loading" class="text-center text-black">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"></div>
         <p class="mt-4">Učitavanje proizvoda...</p>
       </div>
 
-      <div v-else-if="error" class="text-center text-red-500 p-8">
+      <div v-else-if="error" class="text-center text-red-600 p-8">
         <p class="text-xl font-bold mb-4">{{ error }}</p>
-        <p class="text-sm text-muted mb-4">
+        <p class="text-sm text-gray-600 mb-4">
           Proverite da li je backend server pokrenut i da li API endpoint radi.
         </p>
-        <p class="text-xs text-muted">
-          Pokušajte otvoriti: <code>/api/products</code> u browseru da proverite
-          da li API radi.
+        <p class="text-xs text-gray-500">
+          Pokušajte otvoriti: <code>/api/products</code> u browseru da proverite da li API radi.
         </p>
       </div>
 
@@ -34,7 +31,7 @@
           :key="category.kategorija"
           class="kategorija"
         >
-          <h2 class="text-3xl font-bold mb-8 text-yellow-400">
+          <h2 class="text-3xl font-bold mb-8 text-black">
             {{ category.kategorija }}
           </h2>
 
@@ -44,9 +41,7 @@
               :key="product.id"
               class="proizvod card-hover"
             >
-              <div
-                class="image-wrapper mb-4 overflow-hidden rounded-lg bg-gray-200"
-              >
+              <div class="image-wrapper mb-4 overflow-hidden rounded-lg bg-gray-100">
                 <img
                   :src="product.slika"
                   :alt="product.naziv"
@@ -55,19 +50,19 @@
                 />
               </div>
 
-              <h3 class="text-lg font-semibold mb-2 text-primary">
+              <h3 class="text-lg font-semibold mb-2 text-black">
                 {{ product.naziv }}
               </h3>
 
-              <div class="space-y-2 text-sm text-secondary">
-                <p><strong>Dimenzije:</strong> {{ product.dimenzije }}</p>
-                <p><strong>Šifra:</strong> {{ product.sifra_artikla }}</p>
+              <div class="space-y-2 text-sm text-gray-600">
+                <p><strong class="text-black">Dimenzije:</strong> {{ product.dimenzije }}</p>
+                <p><strong class="text-black">Šifra:</strong> {{ product.sifra_artikla }}</p>
                 <p>
-                  <strong>Količina:</strong> {{ product.kolicina_u_pakovanju }}
+                  <strong class="text-black">Količina:</strong> {{ product.kolicina_u_pakovanju }}
                   {{ product.jedinica_mere }}
                 </p>
                 <p>
-                  <strong>Transportno pakovanje:</strong>
+                  <strong class="text-black">Transportno pakovanje:</strong>
                   {{ product.transportno_pakovanje }}
                 </p>
               </div>
@@ -110,21 +105,16 @@ async function loadProducts() {
 
   try {
     await productsStore.loadProducts();
-    // Check if products were loaded
     if (!productsStore.products) {
-      error.value =
-        "Proizvodi nisu učitani. Proverite da li API endpoint radi.";
+      error.value = "Proizvodi nisu učitani. Proverite da li API endpoint radi.";
     }
   } catch (err) {
     console.error("Error loading products:", err);
-    error.value = `Greška pri učitavanju proizvoda: ${
-      err.message || "Nepoznata greška"
-    }`;
+    error.value = `Greška pri učitavanju proizvoda: ${err.message || "Nepoznata greška"}`;
     if (err.response) {
       error.value += ` (Status: ${err.response.status})`;
     } else if (err.request) {
-      error.value +=
-        " - Server nije dostupan. Proverite da li je backend pokrenut.";
+      error.value += " - Server nije dostupan. Proverite da li je backend pokrenut.";
     }
   } finally {
     loading.value = false;
@@ -139,45 +129,19 @@ onMounted(loadProducts);
 </script>
 
 <style scoped>
-.gradient-text {
-  background: linear-gradient(135deg, #fbbf24 0%, #ffa500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-muted {
-  color: var(--text-muted);
-}
-
-.section-bg {
-  background: var(--bg-secondary);
-  transition: background-color 0.3s ease;
-  min-height: 100vh;
-}
-
-.text-primary {
-  color: var(--text-primary);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
 .kategorija {
   padding: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   margin-bottom: 30px;
   border-radius: 16px;
   transition: all 0.3s ease;
 }
 
 .kategorija h2 {
-  border-left: 6px solid var(--accent-color);
+  border-left: 6px solid #000000;
   padding-left: 10px;
-  color: var(--text-primary);
+  color: #000000;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -189,9 +153,8 @@ onMounted(loadProducts);
 }
 
 .proizvod {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -199,35 +162,30 @@ onMounted(loadProducts);
 
 .proizvod:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .proizvod img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fills the container */
+  object-fit: cover;
   border-radius: 8px;
 }
 
 .image-wrapper {
-  height: 250px; /* Keeps the container height consistent */
+  height: 250px;
 }
 
 .proizvod h3 {
   margin: 10px 0;
   font-size: 18px;
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .proizvod p {
   margin: 8px 0;
   font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.proizvod strong {
-  color: var(--accent-color);
+  color: #6b7280;
 }
 
 .card-hover {
@@ -236,8 +194,7 @@ onMounted(loadProducts);
 
 .card-hover:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 768px) {
