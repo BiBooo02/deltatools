@@ -10,29 +10,19 @@
       }"
     >
       <div
-        class="container mx-auto flex justify-between items-center py-4 px-6"
+        class="container mx-auto flex items-center justify-between py-4 px-6"
+        style="height: 100px;" 
       >
-        <a
-          href="/"
-          @click.prevent="router.push('/')"
-          class="flex items-center logo-link"
-        >
+        <a href="/" @click.prevent="router.push('/')" class="flex items-center logo-link">
           <img
             src="\img\LOGO_DETA_TOOLS-removebg-preview.png"
             alt="Delta Tools Logo"
-            class="h-14 w-auto max-h-14 cursor-pointer object-contain"
+            class="cursor-pointer object-contain"
+            style="height: 100%; max-height: 120px;" 
             @error="handleLogoError"
           />
         </a>
-        <ul class="desktop-menu hidden md:flex space-x-8">
-          <li>
-            <a
-              href="#"
-              @click.prevent="handleNavClick('features')"
-              class="hover:text-gray-600 transition-colors duration-300 font-medium"
-              >Funkcije</a
-            >
-          </li>
+        <ul class="desktop-menu hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <li class="relative group">
             <a
               href="#"
@@ -197,6 +187,15 @@
               </div>
             </div>
           </li>
+          <li>
+            <a
+              href="#"
+              @click.prevent="handleNavClick('features')"
+              class="hover:text-gray-600 transition-colors duration-300 font-medium"
+              >Funkcije</a
+            >
+          </li>
+          
           <li>
             <a
               href="#"
