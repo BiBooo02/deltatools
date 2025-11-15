@@ -1863,7 +1863,7 @@
           "kolicina_u_pakovanju": 10,
           "transportno_pakovanje": 300,
           "sifra_artikla": "146005",
-          "slika": "img/Slike za Delta tools/100148_146005_slika_1.jpg",
+          "slika": "../frontend/img/Slike za Delta tools/100148_146005_slika_1.jpg",
           "id": "md0ffmdqv8e3y3f47m"
         },
         {
@@ -1873,7 +1873,7 @@
           "kolicina_u_pakovanju": 10,
           "transportno_pakovanje": 300,
           "sifra_artikla": "146012",
-          "slika": "img/Slike za Delta tools/100148_146012_slika_1.jpg",
+          "slika": "/img/Slike za Delta tools/100148_146012_slika_1.jpg",
           "id": "md0ffmdqv8e3y3f47q"
         }
       ]
