@@ -21,18 +21,20 @@
           Profesionalni alati za farbanje, dekorativne i građevinske radove, kao i vrhunski premazi za metal i drvo.
         </p>
         <div class="flex flex-col md:flex-row gap-4 justify-center animate-slide-up animation-delay-400">
-          <router-link
-            to="/#about"
+          <a
+            href="#about"
+            @click.prevent="scrollToSection('about')"
             class="font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-black text-white hover:bg-gray-800"
           >
             Saznaj više
-          </router-link>
-          <router-link
-            to="/#contact"
+          </a>
+          <a
+            href="#contact"
+            @click.prevent="scrollToSection('contact')"
             class="font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-white text-black border-2 border-white hover:bg-gray-100"
           >
             Kontaktirajte nas
-          </router-link>
+          </a>
         </div>
       </div>
       <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -42,89 +44,90 @@
       </div>
     </header>
 
-    <!-- About Us -->
-    <section id="about" class="min-h-screen py-20 animate-on-scroll bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
-            O Delta Tools-u
-          </h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-            Pružamo vrhunske alate za profesionalce u industriji farbanja, dekoracije i građevinarstva, kao i premium premaze za metal i drvo.
-          </p>
-        </div>
+<!-- About Us -->
+<section id="about" class="min-h-screen py-20 animate-on-scroll bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
+        O Delta Tools-u
+      </h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Pružamo vrhunske alate za profesionalce u industriji farbanja, dekoracije i građevinarstva, kao i premium premaze za metal i drvo.
+      </p>
+    </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div class="relative">
-            <img
-              src="/img/slika1.jpg"
-              class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
-            />
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <div class="relative">
+        <img
+          src="/img/slika1.jpg"
+          class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-3xl font-bold text-black">Naša priča</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Delta Tools pruža vrhunske alate dizajnirane za profesionalce u industriji farbanja, dekoracije i građevinarstva. Takođe nudimo premium premaze za metal i drvo koji osiguravaju dugotrajnu zaštitu i estetski izgled. Sa fokusom na inovacije i trajnost, naši proizvodi osiguravaju superiorne performanse i pouzdanost.
+        </p>
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <h4 class="text-xl font-semibold mb-2 text-white">Kvalitet</h4>
+            <p class="text-gray-300">Vrhunski materijali i izrada</p>
           </div>
-          <div class="space-y-6">
-            <h3 class="text-3xl font-bold text-black">Naša priča</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Delta Tools pruža vrhunske alate dizajnirane za profesionalce u industriji farbanja, dekoracije i građevinarstva. Takođe nudimo premium premaze za metal i drvo koji osiguravaju dugotrajnu zaštitu i estetski izgled. Sa fokusom na inovacije i trajnost, naši proizvodi osiguravaju superiorne performanse i pouzdanost.
-            </p>
-            <div class="grid grid-cols-2 gap-6 mt-8">
-              <div class="border border-gray-200 p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
-                <h4 class="text-xl font-semibold mb-2 text-black">Kvalitet</h4>
-                <p class="text-gray-600">Vrhunski materijali i izrada</p>
-              </div>
-              <div class="border border-gray-200 p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
-                <h4 class="text-xl font-semibold mb-2 text-black">Inovacije</h4>
-                <p class="text-gray-600">Savremeni dizajn i tehnologija</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6 order-2 md:order-1">
-            <h3 class="text-3xl font-bold text-black">Naša posvećenost</h3>
-            <p class="text-gray-600 leading-relaxed">
-              U Delta Tools-u smo posvećeni izvrsnosti. Naši alati i premazi su izrađeni da zadovolje najviše industrijske standarde, pomažući profesionalcima da postignu preciznost i efikasnost u svakom projektu.
-            </p>
-            <div class="grid grid-cols-2 gap-6 mt-8">
-              <div class="border border-gray-200 p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
-                <h4 class="text-xl font-semibold mb-2 text-black">Trajnost</h4>
-                <p class="text-gray-600">Izrađeno da traje i radi</p>
-              </div>
-              <div class="border border-gray-200 p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
-                <h4 class="text-xl font-semibold mb-2 text-black">Podrška</h4>
-                <p class="text-gray-600">24/7 korisnička podrška</p>
-              </div>
-            </div>
-          </div>
-          <div class="relative order-1 md:order-2">
-            <img
-              src="/img/workers-6762542_1280.jpg"
-              class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
-            />
+          <div class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <h4 class="text-xl font-semibold mb-2 text-white">Inovacije</h4>
+            <p class="text-gray-300">Savremeni dizajn i tehnologija</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="mt-20 py-12 bg-black">
-        <h3 class="text-2xl font-semibold text-white text-center mb-12">
-          Ponosni partneri
-        </h3>
-        <div class="container mx-auto px-6">
-          <div class="flex flex-col md:flex-row items-center justify-center gap-12 partner-logos">
-            <img
-              src="/img/MIMONT-logo-color.png"
-              alt="MIMONT Logo"
-              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
-            />
-            <img
-              src="/img/IRKOM-LOGO.png"
-              alt="IRKOM Logo"
-              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
-            />
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6 order-2 md:order-1">
+        <h3 class="text-3xl font-bold text-black">Naša posvećenost</h3>
+        <p class="text-gray-600 leading-relaxed">
+          U Delta Tools-u smo posvećeni izvrsnosti. Naši alati i premazi su izrađeni da zadovolje najviše industrijske standarde, pomažući profesionalcima da postignu preciznost i efikasnost u svakom projektu.
+        </p>
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <h4 class="text-xl font-semibold mb-2 text-white">Trajnost</h4>
+            <p class="text-gray-300">Izrađeno da traje i radi</p>
+          </div>
+          <div class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <h4 class="text-xl font-semibold mb-2 text-white">Podrška</h4>
+            <p class="text-gray-300">24/7 korisnička podrška</p>
           </div>
         </div>
       </div>
-    </section>
+      <div class="relative order-1 md:order-2">
+        <img
+          src="/img/workers-6762542_1280.jpg"
+          class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ponosni Partneri -->
+<section id="partners" class="py-16 bg-black">
+  <h3 class="text-2xl font-semibold text-white text-center mb-12">
+    Ponosni partneri
+  </h3>
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12 partner-logos">
+      <img
+        src="/img/MIMONT-logo-color.png"
+        alt="MIMONT Logo"
+        class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
+      />
+      <img
+        src="/img/IRKOM-LOGO.png"
+        alt="IRKOM Logo"
+        class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
+      />
+    </div>
+  </div>
+</section>
 
     <!-- Features -->
     <section id="features" class="min-h-screen py-20 animate-on-scroll bg-gray-50">
@@ -292,16 +295,16 @@
           </h2>
         </div>
 
-        <div class="bg-gray-50 border border-gray-200 p-8 rounded-3xl text-center max-w-2xl mx-auto">
-          <h3 class="text-2xl font-bold mb-6 text-black">
+        <div class="bg-black p-8 rounded-3xl text-center max-w-2xl mx-auto">
+          <h3 class="text-2xl font-bold mb-6 text-white">
             Zainteresovani za saradnju?
           </h3>
-          <p class="text-gray-600 mb-6">
+          <p class="text-white mb-6">
             Ako ste zainteresovani za naše usluge ili proizvode, slobodno nam pošaljite email. Radujemo se vašem javljanju!
           </p>
           <a
             href="mailto:office.deltatools@gmail.com"
-            class="inline-block bg-black text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-800 transition"
+            class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition"
           >
             Pošaljite nam email
           </a>
@@ -368,22 +371,11 @@
           </div>
         </div>
 
-        <div class="mt-16 pt-8 border-t border-gray-800">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 text-sm">
+        <div class="mt-16 pt-8 border-t border-gray-700">
+          <div>
+            <p class="text-gray-400 text-sm text-center">
               &copy; {{ new Date().getFullYear() }} Delta Tools d.o.o. Sva prava zadržana.
             </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">
-                Politika privatnosti
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">
-                Uslovi korišćenja
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">
-                Kolačići
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -424,6 +416,13 @@ const faqs = ref([
 
 function toggleFaq(index) {
   faqs.value[index].isOpen = !faqs.value[index].isOpen;
+}
+
+function scrollToSection(sectionId) {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 onMounted(() => {

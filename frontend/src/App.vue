@@ -10,10 +10,10 @@
       }"
     >
       <div
-        class="container mx-auto flex items-center justify-between py-4 px-6"
+        class="container mx-auto flex items-center justify-between py-4 px-4"
         style="height: 100px;" 
       >
-        <a href="/" @click.prevent="router.push('/')" class="flex items-center logo-link">
+      <a href="/" @click.prevent="router.push('/')" class="flex items-center logo-link mr-auto">
           <img
             src="\img\LOGO_DETA_TOOLS-removebg-preview.png"
             alt="Delta Tools Logo"
@@ -497,18 +497,18 @@ const dropdownMenuStyle = computed(() => {
 body {
   font-family: "Inter", sans-serif;
   background-color: #ffffff;
-  color: #000000;
+  color: #333;
 }
 
 .navbar {
   background: #ffffff;
-  border-bottom: 2px solid #333333;
+  border-bottom: 2px solid #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar a {
-  color: #000000;
+  color: #333;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -520,7 +520,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: #000000;
+  background: #333;
   transition: width 0.3s ease;
 }
 
@@ -529,16 +529,16 @@ body {
 }
 
 .navbar a:hover {
-  color: #000000;
+  color: #333;
 }
 
 .kontakt-btn {
-  background: #000000 !important;
+  background: #333 !important;
   color: #ffffff !important;
 }
 
 .kontakt-btn:hover {
-  background: #333333 !important;
+  background: #555 !important;
 }
 
 .kontakt-btn::after {
@@ -563,28 +563,28 @@ body {
 .navbar-hero {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid #333333;
+  border-bottom: 2px solid #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-hero a {
-  color: #000000;
+  color: #333;
   transition: all 0.3s ease;
 }
 
 .navbar-hero a:hover {
-  color: #000000;
+  color: #333;
 }
 
 .navbar-scrolled {
   background: #ffffff;
-  border-bottom: 2px solid #333333;
+  border-bottom: 2px solid #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .dropdown-menu {
   background: #ffffff;
-  border: 2px solid #000000;
+  border: 2px solid #333;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   animation: dropdownSlide 0.3s ease;
 }
@@ -601,7 +601,7 @@ body {
 }
 
 .dropdown-menu a {
-  color: #000000;
+  color: #333;
   border-bottom: 1px solid #e5e7eb;
   transition: all 0.3s ease;
 }
@@ -612,7 +612,7 @@ body {
 
 .dropdown-menu a:hover {
   background: #f9fafb;
-  color: #000000;
+  color: #333;
   padding-left: 20px;
 }
 
@@ -635,14 +635,14 @@ body {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: #000000;
+  background: #333;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
 }
 
 .navbar-hero .hamburger span {
-  background: #ffffff;
+  background: #333;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -659,7 +659,7 @@ body {
 
 .mobile-menu {
   position: fixed;
-  top: 50px;
+  top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -667,7 +667,8 @@ body {
   z-index: 40;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-  padding-top: 80px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
 }
 
 .mobile-menu.active {
@@ -676,7 +677,7 @@ body {
 
 .mobile-menu ul {
   list-style: none;
-  padding: 0;
+  padding: 20px 0;
   margin: 0;
 }
 
@@ -688,7 +689,7 @@ body {
 .mobile-menu button {
   display: block;
   padding: 20px;
-  color: #000000;
+  color: #333;
   text-decoration: none;
   font-size: 18px;
   transition: all 0.3s ease;
@@ -702,7 +703,7 @@ body {
 .mobile-menu a:hover,
 .mobile-menu button:hover {
   background: #f9fafb;
-  color: #374151;
+  color: #555;
 }
 
 @media (max-width: 768px) {
