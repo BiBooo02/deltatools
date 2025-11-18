@@ -130,7 +130,7 @@
 </section>
 
     <!-- Features -->
-    <section id="features" class="min-h-screen py-20 animate-on-scroll bg-gray-50">
+    <section id="features" class="min-h-screen py-20 animate-on-scroll bg-gray-50 flex items-center">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
@@ -182,7 +182,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="min-h-screen py-20 animate-on-scroll bg-white">
+    <section class="min-h-screen py-20 animate-on-scroll bg-white flex items-center">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
@@ -287,7 +287,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="min-h-screen py-20 animate-on-scroll bg-white">
+    <section id="contact" class="min-h-screen py-20 animate-on-scroll bg-white flex items-center">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">

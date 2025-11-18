@@ -10,8 +10,8 @@
       }"
     >
       <div
-        class="container mx-auto flex items-center justify-between py-4 px-4"
-        style="height: 100px;" 
+        class="container mx-auto flex items-center justify-between py-4"
+        style="height: 100px; padding-left: 0; padding-right: 1rem;"
       >
       <a href="/" @click.prevent="router.push('/')" class="flex items-center logo-link mr-auto">
           <img
@@ -89,7 +89,7 @@
               <!-- Alati subcategories side menu -->
               <div
                 v-if="activeSubmenu === 'alati'"
-                class="w-56 bg-white rounded-lg shadow-lg z-50"
+                class="bg-white rounded-lg shadow-lg z-50 flex"
                 @mouseenter="
                   keepDropdownOpen();
                   activeSubmenu = 'alati';
@@ -101,16 +101,22 @@
                 "
               >
                 <div
-                  v-for="cat in productsStore.alatiCategories"
-                  :key="cat.index"
+                  v-for="(chunk, chunkIndex) in chunkArray(productsStore.alatiCategories, 10)"
+                  :key="chunkIndex"
+                  class="w-56"
                 >
-                  <a
-                    href="#"
-                    @click.prevent="handleProductFilter('alati', cat.index)"
-                    class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                  <div
+                    v-for="cat in chunk"
+                    :key="cat.index"
                   >
-                    {{ cat.name }}
-                  </a>
+                    <a
+                      href="#"
+                      @click.prevent="handleProductFilter('alati', cat.index)"
+                      class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                    >
+                      {{ cat.name }}
+                    </a>
+                  </div>
                 </div>
               </div>
               <!-- Premazi main categories and subcategories side menu -->
@@ -491,6 +497,15 @@ const dropdownMenuStyle = computed(() => {
 
   return { minWidth: "700px" };
 });
+
+// Function to split array into chunks
+function chunkArray(array, size) {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size));
+  }
+  return chunks;
+}
 </script>
 
 <style>
@@ -548,6 +563,8 @@ body {
 .logo-link {
   display: flex;
   align-items: center;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .logo-link::after {
@@ -709,10 +726,25 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    margin-right: 1rem;
   }
 
   .desktop-menu {
     display: none;
+  }
+
+  .logo-link {
+    margin-right: auto;
+    margin-left: -1rem;
+  }
+
+  .logo-link img {
+    max-height: 80px;
+  }
+
+  .navbar .container {
+    padding-left: 0 !important;
+    padding-right: 0.5rem !important;
   }
 }
 </style>

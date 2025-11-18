@@ -154,7 +154,7 @@ onMounted(loadProducts);
 
 .proizvod {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #333333;
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
