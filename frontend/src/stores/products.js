@@ -49,12 +49,7 @@ export const useProductsStore = defineStore("products", () => {
 
       // Update local state instead of reloading
       if (products.value && response.data.product) {
-        if (productData.type === "alati") {
-          const category = products.value.alati[productData.categoryIndex];
-          if (category) {
-            category.artikli.push(response.data.product);
-          }
-        } else if (productData.type === "premazi") {
+        if (productData.type === "premazi") {
           const materialData = products.value.premazi[productData.material];
           if (
             materialData &&
@@ -63,6 +58,12 @@ export const useProductsStore = defineStore("products", () => {
             materialData.kategorije[productData.subcategory].proizvodi.push(
               response.data.product
             );
+          }
+        } else {
+          // Handle alati-like products
+          const category = products.value[productData.type]?.[productData.categoryIndex];
+          if (category) {
+            category.artikli.push(response.data.product);
           }
         }
       }
@@ -83,22 +84,7 @@ export const useProductsStore = defineStore("products", () => {
 
       // Update local state instead of reloading
       if (products.value) {
-        if (type === "alati") {
-          for (
-            let categoryIndex = 0;
-            categoryIndex < products.value.alati.length;
-            categoryIndex++
-          ) {
-            const category = products.value.alati[categoryIndex];
-            const productIndex = category.artikli.findIndex(
-              (product) => product.id === productId
-            );
-            if (productIndex !== -1) {
-              category.artikli.splice(productIndex, 1);
-              break;
-            }
-          }
-        } else if (type === "premazi") {
+        if (type === "premazi") {
           for (const [material, materialData] of Object.entries(
             products.value.premazi
           )) {
@@ -114,6 +100,22 @@ export const useProductsStore = defineStore("products", () => {
               }
             }
           }
+        } else if (products.value[type] && Array.isArray(products.value[type])) {
+          // Handle alati-like categories
+          for (
+            let categoryIndex = 0;
+            categoryIndex < products.value[type].length;
+            categoryIndex++
+          ) {
+            const category = products.value[type][categoryIndex];
+            const productIndex = category.artikli.findIndex(
+              (product) => product.id === productId
+            );
+            if (productIndex !== -1) {
+              category.artikli.splice(productIndex, 1);
+              return { success: true };
+            }
+          }
         }
       }
 
@@ -126,14 +128,25 @@ export const useProductsStore = defineStore("products", () => {
     }
   }
 
-  // Get categories for alati
-  const alatiCategories = computed(() => {
-    if (!products.value?.alati) return [];
-    return products.value.alati.map((cat, index) => ({
+  // Get all main categories (alati-like categories)
+  const mainCategories = computed(() => {
+    if (!products.value) return [];
+    return Object.keys(products.value)
+      .filter(key => Array.isArray(products.value[key]))
+      .map(key => ({
+        key,
+        name: key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' '),
+      }));
+  });
+
+  // Get categories for any main category
+  const getCategoriesForMain = (mainKey) => {
+    if (!products.value?.[mainKey] || !Array.isArray(products.value[mainKey])) return [];
+    return products.value[mainKey].map((cat, index) => ({
       index,
       name: cat.kategorija,
     }));
-  });
+  };
 
   // Get premazi categories
   const premaziCategories = computed(() => {
@@ -155,11 +168,29 @@ export const useProductsStore = defineStore("products", () => {
     );
   };
 
-  // Add category for alati
-  async function addAlatiCategory(categoryName) {
+  // Add main category (like alati or premazi)
+  async function addMainCategory(categoryName, categoryKey) {
+    try {
+      const response = await api.post("/categories/main", {
+        categoryName,
+        categoryKey,
+      });
+      await loadAdminProducts(); // Reload to get updated categories
+      return { success: true, data: response.data };
+    } catch (err) {
+      return {
+        success: false,
+        error: err.response?.data?.error || "Failed to add main category",
+      };
+    }
+  }
+
+  // Add category for alati or custom main categories
+  async function addAlatiCategory(categoryName, mainCategoryKey = "alati") {
     try {
       const response = await api.post("/categories/alati", {
         categoryName,
+        mainCategoryKey,
       });
       await loadAdminProducts(); // Reload to get updated categories
       return { success: true, data: response.data };
@@ -219,10 +250,13 @@ export const useProductsStore = defineStore("products", () => {
     loadAdminProducts,
     addProduct,
     deleteProduct,
+    addMainCategory,
     addAlatiCategory,
     addPremaziMaterial,
     addPremaziSubcategory,
-    alatiCategories,
+    mainCategories,
+    alatiCategories: computed(() => getCategoriesForMain('alati')),
+    getCategoriesForMain,
     premaziCategories,
     getPremaziSubcategories,
   };

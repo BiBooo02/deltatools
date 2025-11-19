@@ -20,17 +20,24 @@
           Upravljanje kategorijama
         </h2>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <!-- Add Alati Category -->
+        <div class="grid md:grid-cols-4 gap-6">
+          <!-- Add Main Category -->
           <div class="space-y-4">
             <h3 class="text-lg font-semibold text-yellow-400">
-              Dodaj kategoriju alata
+              Dodaj glavnu kategoriju
             </h3>
-            <form @submit.prevent="handleAddAlatiCategory" class="space-y-3">
+            <form @submit.prevent="handleAddMainCategory" class="space-y-3">
               <input
-                v-model="newAlatiCategory.name"
+                v-model="newMainCategory.name"
                 type="text"
-                placeholder="Naziv kategorije"
+                placeholder="Naziv kategorije (npr. Alati)"
+                class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-900"
+                required
+              />
+              <input
+                v-model="newMainCategory.key"
+                type="text"
+                placeholder="Ključ (npr. alati)"
                 class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-900"
                 required
               />
@@ -39,7 +46,55 @@
                 :disabled="addingCategory"
                 class="w-full py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
               >
-                {{ addingCategory ? "Dodavanje..." : "Dodaj kategoriju" }}
+                {{ addingCategory ? "Dodavanje..." : "Dodaj glavnu kategoriju" }}
+              </button>
+            </form>
+            <div
+              v-if="categoryMessage"
+              class="text-sm"
+              :class="
+                categoryMessage.type === 'success'
+                  ? 'text-green-400'
+                  : 'text-red-400'
+              "
+            >
+              {{ categoryMessage.text }}
+            </div>
+          </div>
+
+          <!-- Add Subcategory for Main Category -->
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold text-yellow-400">
+              Dodaj potkategoriju
+            </h3>
+            <form @submit.prevent="handleAddSubcategory" class="space-y-3">
+              <select
+                v-model="newSubcategory.mainCategoryKey"
+                class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-900"
+                required
+              >
+                <option value="">Izaberite glavnu kategoriju</option>
+                <option
+                  v-for="mainCat in productsStore.mainCategories"
+                  :key="mainCat.key"
+                  :value="mainCat.key"
+                >
+                  {{ mainCat.name }}
+                </option>
+              </select>
+              <input
+                v-model="newSubcategory.name"
+                type="text"
+                placeholder="Naziv potkategorije (npr. Četke i Valjci)"
+                class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-900"
+                required
+              />
+              <button
+                type="submit"
+                :disabled="addingCategory"
+                class="w-full py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
+              >
+                {{ addingCategory ? "Dodavanje..." : "Dodaj potkategoriju" }}
               </button>
             </form>
             <div
@@ -173,26 +228,32 @@
               required
             >
               <option value="">Izaberite tip proizvoda</option>
-              <option value="alati">Alati</option>
+              <option
+                v-for="mainCat in productsStore.mainCategories"
+                :key="mainCat.key"
+                :value="mainCat.key"
+              >
+                {{ mainCat.name }}
+              </option>
               <option value="premazi">Premazi</option>
             </select>
           </div>
 
-          <!-- Alati Category Selection -->
-          <div v-if="form.productType === 'alati'" class="space-y-4">
+          <!-- Alati-like Category Selection -->
+          <div v-if="form.productType && form.productType !== 'premazi'" class="space-y-4">
             <div>
-              <label for="alati-category" class="block mb-1 text-white"
-                >Kategorija alata</label
+              <label for="category" class="block mb-1 text-white"
+                >Kategorija</label
               >
               <select
-                id="alati-category"
+                id="category"
                 v-model="form.alatiCategory"
                 class="w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-900"
                 required
               >
                 <option value="">Izaberite kategoriju</option>
                 <option
-                  v-for="category in productsStore.alatiCategories"
+                  v-for="category in productsStore.getCategoriesForMain(form.productType)"
                   :key="category.index"
                   :value="category.index"
                 >
@@ -453,44 +514,50 @@
         </div>
 
         <div v-else class="space-y-4">
-          <!-- Alati Products -->
-          <div v-if="productsStore.products?.alati" class="mb-8">
-            <h3 class="text-2xl font-bold mb-4 text-yellow-400">Alati</h3>
+          <!-- Display all main categories (alati-like) -->
+          <div 
+            v-for="mainCat in productsStore.mainCategories"
+            :key="mainCat.key"
+            class="mb-8"
+          >
+            <div v-if="productsStore.products?.[mainCat.key]">
+              <h3 class="text-2xl font-bold mb-4 text-yellow-400">{{ mainCat.name }}</h3>
 
-            <div
-              v-for="(category, categoryIndex) in productsStore.products.alati"
-              :key="categoryIndex"
-              class="bg-gray-700 rounded-lg p-4 mb-4"
-            >
-              <h4 class="text-lg font-semibold mb-3 text-yellow-400">
-                {{ category.kategorija }}
-              </h4>
+              <div
+                v-for="(category, categoryIndex) in productsStore.products[mainCat.key]"
+                :key="categoryIndex"
+                class="bg-gray-700 rounded-lg p-4 mb-4"
+              >
+                <h4 class="text-lg font-semibold mb-3 text-yellow-400">
+                  {{ category.kategorija }}
+                </h4>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div
-                  v-for="product in category.artikli"
-                  :key="product.id"
-                  class="bg-gray-600 rounded-lg p-4"
-                >
-                  <div class="flex justify-between items-start mb-2">
-                    <h5 class="font-medium text-white">{{ product.naziv }}</h5>
-                    <button
-                      @click="handleDeleteProduct('alati', product.id)"
-                      class="text-red-500 hover:text-red-400 text-sm"
-                    >
-                      Obriši
-                    </button>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div
+                    v-for="product in category.artikli"
+                    :key="product.id"
+                    class="bg-gray-600 rounded-lg p-4"
+                  >
+                    <div class="flex justify-between items-start mb-2">
+                      <h5 class="font-medium text-white">{{ product.naziv }}</h5>
+                      <button
+                        @click="handleDeleteProduct(mainCat.key, product.id)"
+                        class="text-red-500 hover:text-red-400 text-sm"
+                      >
+                        Obriši
+                      </button>
+                    </div>
+                    <p class="text-sm text-gray-300">
+                      Dimenzije: {{ product.dimenzije }}
+                    </p>
+                    <p class="text-sm text-gray-300">
+                      Šifra: {{ product.sifra_artikla }}
+                    </p>
+                    <p class="text-sm text-gray-300">
+                      Količina: {{ product.kolicina_u_pakovanju }}
+                      {{ product.jedinica_mere }}
+                    </p>
                   </div>
-                  <p class="text-sm text-gray-300">
-                    Dimenzije: {{ product.dimenzije }}
-                  </p>
-                  <p class="text-sm text-gray-300">
-                    Šifra: {{ product.sifra_artikla }}
-                  </p>
-                  <p class="text-sm text-gray-300">
-                    Količina: {{ product.kolicina_u_pakovanju }}
-                    {{ product.jedinica_mere }}
-                  </p>
                 </div>
               </div>
             </div>
@@ -551,6 +618,17 @@
           </div>
         </div>
       </div>
+
+      <!-- Main Categories List -->
+      <div class="bg-gray-800 rounded-xl p-6 mb-8">
+        <h2 class="text-xl font-bold mb-4 text-white">Glavne kategorije</h2>
+        <ul>
+          <li v-for="category in mainCategories" :key="category" class="text-white mb-2">
+            {{ category }}
+            <button @click="deleteMainCategory(category)" class="text-red-500 hover:text-red-400 ml-2">Obriši</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -560,6 +638,7 @@ import { ref, reactive, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "../stores/auth";
 import { useProductsStore } from "../stores/products";
+import axios from "axios";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -594,7 +673,13 @@ const successMessage = ref("");
 const addingCategory = ref(false);
 const categoryMessage = ref(null);
 
-const newAlatiCategory = reactive({
+const newMainCategory = reactive({
+  name: "",
+  key: "",
+});
+
+const newSubcategory = reactive({
+  mainCategoryKey: "",
   name: "",
 });
 
@@ -614,8 +699,11 @@ const premaziSubcategories = computed(() => {
   return productsStore.getPremaziSubcategories(form.premaziCategory);
 });
 
+const mainCategories = ref([]);
+
 onMounted(async () => {
   await productsStore.loadAdminProducts();
+  fetchMainCategories();
 });
 
 async function handleAddProduct() {
@@ -623,9 +711,10 @@ async function handleAddProduct() {
 
   let productData = {};
 
-  if (form.productType === "alati") {
+  if (form.productType !== 'premazi') {
+    // Handle alati-like products
     productData = {
-      type: "alati",
+      type: form.productType,
       categoryIndex: parseInt(form.alatiCategory),
       product: {
         id: productsStore.generateId(),
@@ -697,25 +786,58 @@ function resetForm() {
   });
 }
 
-async function handleAddAlatiCategory() {
+async function handleAddMainCategory() {
   addingCategory.value = true;
   categoryMessage.value = null;
 
-  const result = await productsStore.addAlatiCategory(newAlatiCategory.name);
+  const result = await productsStore.addMainCategory(
+    newMainCategory.name,
+    newMainCategory.key.toLowerCase().replace(/\s+/g, '_')
+  );
 
   if (result.success) {
     categoryMessage.value = {
       type: "success",
-      text: "Kategorija uspešno dodata!",
+      text: "Glavna kategorija uspešno dodata!",
     };
-    newAlatiCategory.name = "";
+    newMainCategory.name = "";
+    newMainCategory.key = "";
     setTimeout(() => {
       categoryMessage.value = null;
     }, 3000);
   } else {
     categoryMessage.value = {
       type: "error",
-      text: result.error || "Greška pri dodavanju kategorije",
+      text: result.error || "Greška pri dodavanju glavne kategorije",
+    };
+  }
+
+  addingCategory.value = false;
+}
+
+async function handleAddSubcategory() {
+  addingCategory.value = true;
+  categoryMessage.value = null;
+
+  const result = await productsStore.addAlatiCategory(
+    newSubcategory.name,
+    newSubcategory.mainCategoryKey
+  );
+
+  if (result.success) {
+    categoryMessage.value = {
+      type: "success",
+      text: "Potkategorija uspešno dodata!",
+    };
+    newSubcategory.mainCategoryKey = "";
+    newSubcategory.name = "";
+    setTimeout(() => {
+      categoryMessage.value = null;
+    }, 3000);
+  } else {
+    categoryMessage.value = {
+      type: "error",
+      text: result.error || "Greška pri dodavanju potkategorije",
     };
   }
 
@@ -785,5 +907,25 @@ async function handleAddPremaziSubcategory() {
 async function handleLogout() {
   await authStore.logout();
   router.push("/login");
+}
+
+function fetchMainCategories() {
+  axios.get("/get-main-categories").then((response) => {
+    mainCategories.value = response.data;
+  });
+}
+
+function deleteMainCategory(category) {
+  if (confirm(`Da li ste sigurni da želite da obrišete kategoriju "${category}"?`)) {
+    axios
+      .delete("/delete-main-category", { data: { mainCategory: category } })
+      .then((response) => {
+        console.log(response.data.message);
+        fetchMainCategories(); // Osvežite listu nakon brisanja
+      })
+      .catch((error) => {
+        console.error("Greška prilikom brisanja kategorije:", error.response.data);
+      });
+  }
 }
 </script>

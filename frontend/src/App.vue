@@ -53,7 +53,7 @@
               @mouseleave="closeDropdown()"
               :style="dropdownMenuStyle"
             >
-              <!-- Main categories -->
+              <!-- Main categories - Alati -->
               <div class="w-56">
                 <div
                   class="font-bold px-4 py-2 cursor-pointer hover:bg-gray-100"
@@ -70,6 +70,27 @@
                 >
                   Građevinski alati
                 </div>
+
+                <!-- Dynamic Main Categories -->
+                <div
+                  v-for="mainCat in dynamicMainCategories"
+                  :key="mainCat.key"
+                  class="font-bold px-4 py-2 cursor-pointer hover:bg-gray-100"
+                  @mouseenter="
+                    activeSubmenu = mainCat.key;
+                    keepDropdownOpen();
+                  "
+                  @mouseleave="
+                    setTimeout(() => {
+                      if (!isDropdownOpen.value) activeSubmenu = null;
+                    }, 100)
+                  "
+                  @click="handleProductFilter(mainCat.key)"
+                >
+                  {{ mainCat.name }}
+                </div>
+
+                <!-- Premazi -->
                 <div
                   class="font-bold px-4 py-2 cursor-pointer hover:bg-gray-100"
                   @mouseenter="
@@ -86,6 +107,7 @@
                   Premazi
                 </div>
               </div>
+
               <!-- Alati subcategories side menu -->
               <div
                 v-if="activeSubmenu === 'alati'"
@@ -119,6 +141,40 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Dynamic main categories subcategories -->
+              <div
+                v-if="activeSubmenu && activeSubmenu !== 'alati' && activeSubmenu !== 'premazi'"
+                class="bg-white rounded-lg shadow-lg z-50 flex"
+                @mouseenter="
+                  keepDropdownOpen();
+                "
+                @mouseleave="
+                  setTimeout(() => {
+                    if (!isDropdownOpen.value) activeSubmenu = null;
+                  }, 100)
+                "
+              >
+                <div
+                  v-for="(chunk, chunkIndex) in chunkArray(productsStore.getCategoriesForMain(activeSubmenu), 10)"
+                  :key="chunkIndex"
+                  class="w-56"
+                >
+                  <div
+                    v-for="cat in chunk"
+                    :key="cat.index"
+                  >
+                    <a
+                      href="#"
+                      @click.prevent="handleProductFilter(activeSubmenu, cat.index)"
+                      class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                    >
+                      {{ cat.name }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               <!-- Premazi main categories and subcategories side menu -->
               <div
                 v-if="activeSubmenu === 'premazi'"
@@ -271,6 +327,34 @@
             </ul>
           </div>
         </li>
+
+        <!-- Dynamic Main Categories Mobile -->
+        <li v-for="mainCat in dynamicMainCategories" :key="mainCat.key">
+          <div>
+            <button
+              class="w-full text-left px-4 py-2 font-bold"
+              @click="
+                activeSubmenu = activeSubmenu === mainCat.key ? null : mainCat.key
+              "
+            >
+              {{ mainCat.name }}
+            </button>
+            <ul v-if="activeSubmenu === mainCat.key" class="pl-4">
+              <li v-for="cat in productsStore.getCategoriesForMain(mainCat.key)" :key="cat.index">
+                <a
+                  href="#"
+                  @click.prevent="
+                    handleProductFilter(mainCat.key, cat.index);
+                    closeMobileMenu();
+                  "
+                  class="block py-2"
+                  >{{ cat.name }}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+
         <li>
           <div>
             <button
@@ -359,6 +443,11 @@ const dropdownTimeout = ref(null);
 
 const dropdownWrapper = ref(null);
 
+// Computed property za dinamičke glavne kategorije (isključujući alati i premazi)
+const dynamicMainCategories = computed(() => {
+  return productsStore.mainCategories.filter(cat => cat.key !== 'alati');
+});
+
 const premaziSubmenus = computed(() => {
   const result = {};
   for (const cat of productsStore.premaziCategories) {
@@ -430,6 +519,7 @@ function closeAllDropdowns() {
 
 function handleProductFilter(type, categoryKey, subcategoryKey) {
   closeAllDropdowns();
+  
   if (type === "alati") {
     if (categoryKey === undefined) {
       router.push({ path: "/products" });
@@ -446,6 +536,13 @@ function handleProductFilter(type, categoryKey, subcategoryKey) {
         path: "/premazi",
         query: { material: categoryKey, subcategory: subcategoryKey },
       });
+    }
+  } else {
+    // Handle dynamic main categories
+    if (categoryKey === undefined) {
+      router.push({ path: "/products", query: { type: type } });
+    } else {
+      router.push({ path: "/products", query: { type: type, category: categoryKey } });
     }
   }
 }

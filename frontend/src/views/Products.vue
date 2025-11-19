@@ -3,10 +3,10 @@
     <div class="container mx-auto px-6 py-12">
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black">
-          Građevinski alati
+          {{ pageTitle }}
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Profesionalni alati za farbanje, dekorativne i građevinske radove
+          {{ pageDescription }}
         </p>
       </div>
 
@@ -86,17 +86,42 @@ const route = useRoute();
 
 const products = computed(() => productsStore.products);
 
-const selectedCategory = computed(() => {
-  const catIndex = route.query.category;
-  if (!catIndex || !products.value?.alati) return null;
-  return products.value.alati[catIndex];
+// Određivanje koji tip proizvoda prikazujemo
+const productType = computed(() => {
+  return route.query.type || 'alati';
 });
 
+// Naslov stranice
+const pageTitle = computed(() => {
+  if (productType.value === 'alati') {
+    return 'Građevinski alati';
+  }
+  // Formatiranje naziva za dinamičke kategorije
+  return productType.value.charAt(0).toUpperCase() + 
+         productType.value.slice(1).replace(/_/g, ' ');
+});
+
+// Opis stranice
+const pageDescription = computed(() => {
+  if (productType.value === 'alati') {
+    return 'Profesionalni alati za farbanje, dekorativne i građevinske radove';
+  }
+  return `Pregledajte naš asortiman proizvoda iz kategorije ${pageTitle.value.toLowerCase()}`;
+});
+
+// Odabrana kategorija (podkategorija)
+const selectedCategory = computed(() => {
+  const catIndex = route.query.category;
+  if (!catIndex || !products.value?.[productType.value]) return null;
+  return products.value[productType.value][catIndex];
+});
+
+// Filtrirane kategorije za prikaz
 const filteredCategories = computed(() => {
   if (selectedCategory.value) {
     return [selectedCategory.value];
   }
-  return products.value?.alati || [];
+  return products.value?.[productType.value] || [];
 });
 
 async function loadProducts() {

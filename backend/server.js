@@ -75,22 +75,8 @@ function generateSessionId() {
 
 // Find and remove product by ID
 function removeProductById(products, type, productId) {
-  if (type === "alati") {
-    for (
-      let categoryIndex = 0;
-      categoryIndex < products.alati.length;
-      categoryIndex++
-    ) {
-      const category = products.alati[categoryIndex];
-      const productIndex = category.artikli.findIndex(
-        (product) => product.id === productId
-      );
-      if (productIndex !== -1) {
-        category.artikli.splice(productIndex, 1);
-        return true;
-      }
-    }
-  } else if (type === "premazi") {
+  if (type === "premazi") {
+    // Handle premazi
     for (const [material, materialData] of Object.entries(products.premazi)) {
       for (const [categoryKey, categoryData] of Object.entries(
         materialData.kategorije
@@ -102,6 +88,22 @@ function removeProductById(products, type, productId) {
           categoryData.proizvodi.splice(productIndex, 1);
           return true;
         }
+      }
+    }
+  } else if (products[type] && Array.isArray(products[type])) {
+    // Handle alati-like categories (array-based)
+    for (
+      let categoryIndex = 0;
+      categoryIndex < products[type].length;
+      categoryIndex++
+    ) {
+      const category = products[type][categoryIndex];
+      const productIndex = category.artikli.findIndex(
+        (product) => product.id === productId
+      );
+      if (productIndex !== -1) {
+        category.artikli.splice(productIndex, 1);
+        return true;
       }
     }
   }
@@ -184,20 +186,7 @@ app.post("/api/products", requireAuth, async (req, res) => {
       return res.status(500).json({ error: "Failed to load products" });
     }
 
-    if (type === "alati") {
-      // Handle alati products
-      if (categoryIndex === undefined) {
-        return res
-          .status(400)
-          .json({ error: "Missing category index for alati" });
-      }
-
-      if (!products.alati[categoryIndex]) {
-        return res.status(400).json({ error: "Invalid category index" });
-      }
-
-      products.alati[categoryIndex].artikli.push(product);
-    } else if (type === "premazi") {
+    if (type === "premazi") {
       // Handle premazi products
       if (!material || !subcategory) {
         return res
@@ -218,7 +207,22 @@ app.post("/api/products", requireAuth, async (req, res) => {
         product
       );
     } else {
-      return res.status(400).json({ error: "Invalid product type" });
+      // Handle alati-like products (any array-based main category)
+      if (categoryIndex === undefined) {
+        return res
+          .status(400)
+          .json({ error: "Missing category index" });
+      }
+
+      if (!products[type] || !Array.isArray(products[type])) {
+        return res.status(400).json({ error: "Invalid main category type" });
+      }
+
+      if (!products[type][categoryIndex]) {
+        return res.status(400).json({ error: "Invalid category index" });
+      }
+
+      products[type][categoryIndex].artikli.push(product);
     }
 
     // Save updated data
@@ -270,10 +274,50 @@ app.delete("/api/products/:type/:productId", requireAuth, async (req, res) => {
   }
 });
 
-// Add category for alati
+// Add main category (like alati or premazi)
+app.post("/api/categories/main", requireAuth, async (req, res) => {
+  try {
+    const { categoryName, categoryKey } = req.body;
+    if (!categoryName || !categoryKey) {
+      return res.status(400).json({ error: "Category name and key are required" });
+    }
+
+    const products = await loadProducts();
+    if (!products) {
+      return res.status(500).json({ error: "Failed to load products" });
+    }
+
+    // Check if main category already exists
+    if (products[categoryKey]) {
+      return res.status(400).json({ error: "Main category already exists" });
+    }
+
+    // Add new main category with alati-like structure
+    products[categoryKey] = [];
+
+    const saved = await saveProducts(products);
+    if (!saved) {
+      return res.status(500).json({ error: "Failed to save products" });
+    }
+
+    res.json({
+      success: true,
+      message: "Main category added successfully",
+      category: {
+        key: categoryKey,
+        name: categoryName,
+      },
+    });
+  } catch (error) {
+    console.error("Error adding main category:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// Add category for alati or custom main categories
 app.post("/api/categories/alati", requireAuth, async (req, res) => {
   try {
-    const { categoryName } = req.body;
+    const { categoryName, mainCategoryKey } = req.body;
     if (!categoryName) {
       return res.status(400).json({ error: "Category name is required" });
     }
@@ -283,8 +327,15 @@ app.post("/api/categories/alati", requireAuth, async (req, res) => {
       return res.status(500).json({ error: "Failed to load products" });
     }
 
+    const targetKey = mainCategoryKey || "alati";
+
+    // Check if main category exists
+    if (!products[targetKey]) {
+      return res.status(400).json({ error: "Main category does not exist" });
+    }
+
     // Check if category already exists
-    const exists = products.alati.some(
+    const exists = products[targetKey].some(
       (cat) => cat.kategorija.toLowerCase() === categoryName.toLowerCase()
     );
     if (exists) {
@@ -292,7 +343,7 @@ app.post("/api/categories/alati", requireAuth, async (req, res) => {
     }
 
     // Add new category
-    products.alati.push({
+    products[targetKey].push({
       kategorija: categoryName,
       artikli: [],
     });
@@ -306,7 +357,7 @@ app.post("/api/categories/alati", requireAuth, async (req, res) => {
       success: true,
       message: "Category added successfully",
       category: {
-        index: products.alati.length - 1,
+        index: products[targetKey].length - 1,
         name: categoryName,
       },
     });
@@ -412,6 +463,20 @@ app.post(
     }
   }
 );
+
+// Delete main category
+app.delete("/delete-main-category", (req, res) => {
+  const { mainCategory } = req.body;
+
+  if (!categories[mainCategory]) {
+    return res.status(404).json({ error: "Glavna kategorija ne postoji." });
+  }
+
+  // Obrišite glavnu kategoriju
+  delete categories[mainCategory];
+
+  res.status(200).json({ message: "Glavna kategorija obrisana uspešno." });
+});
 
 // Logout
 app.post("/api/logout", requireAuth, (req, res) => {
