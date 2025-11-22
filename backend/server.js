@@ -1,14 +1,28 @@
 require("dotenv").config();
 const express = require("express");
-const fs = require("fs").promises;
-const fsSync = require("fs");
 const path = require("path");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const rateLimit = require("express-rate-limit");
+const mongoose = require("mongoose");
+const Products = require("./models/Product");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// MongoDB Connection
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("✅ MongoDB connected successfully");
+  })
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
+  });
 
 // Security middleware
 app.use(cors());
@@ -16,8 +30,8 @@ app.use(express.json({ limit: "10mb" }));
 
 // Rate limiting to prevent brute force attacks
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // 5 attempts per window
+  windowMs: 15 * 60 * 1000,
+  max: 5,
   message: "Previše pokušaja prijave. Pokušajte ponovo za 15 minuta.",
 });
 
@@ -37,32 +51,33 @@ const requireAuth = (req, res, next) => {
   next();
 };
 
-// Load products data
-async function loadProducts() {
-  try {
-    const filePath = path.join(__dirname, "gradjevinski_alat.json");
-    const data = await fs.readFile(filePath, "utf8");
-    return JSON.parse(data);
-  } catch (error) {
-    console.error("Error loading products:", error);
-    console.error(
-      "Looking for file at:",
-      path.join(__dirname, "gradjevinski_alat.json")
-    );
-    return null;
+// Get or create products document
+async function getProductsDocument() {
+  let products = await Products.findOne();
+  if (!products) {
+    // Create default structure if doesn't exist
+    products = new Products({
+      alati: [],
+    });
+    // Initialize premazi as a Map
+    products.premazi = new Map();
+    products.premazi.set("metal", { kategorije: new Map() });
+    products.premazi.set("drvo", { kategorije: new Map() });
+    await products.save();
+  } else {
+    // Ensure premazi is a Map if it exists as an object
+    if (products.premazi && !(products.premazi instanceof Map)) {
+      const premaziMap = new Map();
+      for (const [key, value] of Object.entries(products.premazi)) {
+        if (value && value.kategorije && !(value.kategorije instanceof Map)) {
+          value.kategorije = new Map(Object.entries(value.kategorije));
+        }
+        premaziMap.set(key, value);
+      }
+      products.premazi = premaziMap;
+    }
   }
-}
-
-// Save products data
-async function saveProducts(data) {
-  try {
-    const filePath = path.join(__dirname, "gradjevinski_alat.json");
-    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
-    return true;
-  } catch (error) {
-    console.error("Error saving products:", error);
-    return false;
-  }
+  return products;
 }
 
 // Generate session ID
@@ -73,43 +88,6 @@ function generateSessionId() {
   );
 }
 
-// Find and remove product by ID
-function removeProductById(products, type, productId) {
-  if (type === "premazi") {
-    // Handle premazi
-    for (const [material, materialData] of Object.entries(products.premazi)) {
-      for (const [categoryKey, categoryData] of Object.entries(
-        materialData.kategorije
-      )) {
-        const productIndex = categoryData.proizvodi.findIndex(
-          (product) => product.id === productId
-        );
-        if (productIndex !== -1) {
-          categoryData.proizvodi.splice(productIndex, 1);
-          return true;
-        }
-      }
-    }
-  } else if (products[type] && Array.isArray(products[type])) {
-    // Handle alati-like categories (array-based)
-    for (
-      let categoryIndex = 0;
-      categoryIndex < products[type].length;
-      categoryIndex++
-    ) {
-      const category = products[type][categoryIndex];
-      const productIndex = category.artikli.findIndex(
-        (product) => product.id === productId
-      );
-      if (productIndex !== -1) {
-        category.artikli.splice(productIndex, 1);
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
 // Routes
 
 // Admin login
@@ -117,16 +95,10 @@ app.post("/api/login", loginLimiter, async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    if (username !== ADMIN_USERNAME) {
+    if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    // Check password (using plain text for now, but can be upgraded to bcrypt)
-    if (password !== ADMIN_PASSWORD) {
-      return res.status(401).json({ error: "Invalid credentials" });
-    }
-
-    // Generate session
     const sessionId = generateSessionId();
     sessions.set(sessionId, {
       username,
@@ -147,11 +119,32 @@ app.post("/api/login", loginLimiter, async (req, res) => {
 // Get all products (public endpoint)
 app.get("/api/products", async (req, res) => {
   try {
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    const products = await getProductsDocument();
+
+    // Convert to plain object and handle Map properly
+    const productsObj = products.toObject();
+
+    // Convert premazi Maps to regular objects
+    if (productsObj.premazi) {
+      // Handle both Map and object formats
+      const premaziObj =
+        productsObj.premazi instanceof Map
+          ? Object.fromEntries(productsObj.premazi)
+          : productsObj.premazi;
+
+      Object.keys(premaziObj).forEach((materialKey) => {
+        if (premaziObj[materialKey] && premaziObj[materialKey].kategorije) {
+          const kategorije = premaziObj[materialKey].kategorije;
+          premaziObj[materialKey].kategorije =
+            kategorije instanceof Map
+              ? Object.fromEntries(kategorije)
+              : kategorije;
+        }
+      });
+      productsObj.premazi = premaziObj;
     }
-    res.json(products);
+
+    res.json(productsObj);
   } catch (error) {
     console.error("Error getting products:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -161,11 +154,31 @@ app.get("/api/products", async (req, res) => {
 // Get all products (admin endpoint - requires auth)
 app.get("/api/admin/products", requireAuth, async (req, res) => {
   try {
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    const products = await getProductsDocument();
+
+    const productsObj = products.toObject();
+
+    // Convert premazi Maps to regular objects
+    if (productsObj.premazi) {
+      // Handle both Map and object formats
+      const premaziObj =
+        productsObj.premazi instanceof Map
+          ? Object.fromEntries(productsObj.premazi)
+          : productsObj.premazi;
+
+      Object.keys(premaziObj).forEach((materialKey) => {
+        if (premaziObj[materialKey] && premaziObj[materialKey].kategorije) {
+          const kategorije = premaziObj[materialKey].kategorije;
+          premaziObj[materialKey].kategorije =
+            kategorije instanceof Map
+              ? Object.fromEntries(kategorije)
+              : kategorije;
+        }
+      });
+      productsObj.premazi = premaziObj;
     }
-    res.json(products);
+
+    res.json(productsObj);
   } catch (error) {
     console.error("Error getting products:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -181,55 +194,91 @@ app.post("/api/products", requireAuth, async (req, res) => {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    // Validate new product data
+    if (type !== "premazi") {
+      if (
+        !product.naziv ||
+        !product.jedinica_mere ||
+        !product.sifra_artikla ||
+        !product.id
+      ) {
+        return res.status(400).json({
+          error:
+            "Missing required product fields: naziv, jedinica_mere, sifra_artikla, id",
+        });
+      }
+    } else {
+      if (!product.naziv || !product.tip || !product.boja || !product.id) {
+        return res.status(400).json({
+          error: "Missing required product fields: naziv, tip, boja, id",
+        });
+      }
     }
 
+    const products = await getProductsDocument();
+
     if (type === "premazi") {
-      // Handle premazi products
       if (!material || !subcategory) {
         return res
           .status(400)
           .json({ error: "Missing material or subcategory for premazi" });
       }
 
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      if (!products.premazi.has(material)) {
+        return res.status(400).json({ error: "Invalid material" });
+      }
+
+      let materialData = products.premazi.get(material);
+
+      // Initialize kategorije Map if it doesn't exist
       if (
-        !products.premazi[material] ||
-        !products.premazi[material].kategorije[subcategory]
+        !materialData.kategorije ||
+        !(materialData.kategorije instanceof Map)
       ) {
-        return res
-          .status(400)
-          .json({ error: "Invalid material or subcategory" });
+        materialData.kategorije = new Map();
       }
 
-      products.premazi[material].kategorije[subcategory].proizvodi.push(
-        product
-      );
+      // Get or create subcategory
+      let subcategoryData = materialData.kategorije.get(subcategory);
+      if (!subcategoryData) {
+        subcategoryData = { naziv: subcategory, proizvodi: [] };
+      }
+
+      subcategoryData.proizvodi.push(product);
+      materialData.kategorije.set(subcategory, subcategoryData);
+      products.premazi.set(material, materialData);
+      products.markModified("premazi");
     } else {
-      // Handle alati-like products (any array-based main category)
+      // Handle alati-like products
       if (categoryIndex === undefined) {
-        return res
-          .status(400)
-          .json({ error: "Missing category index" });
+        return res.status(400).json({ error: "Missing category index" });
       }
 
-      if (!products[type] || !Array.isArray(products[type])) {
+      // Get the category array (handle both schema-defined and dynamic properties)
+      const productsObj = products.toObject();
+      const categoryArray = productsObj[type];
+
+      if (!categoryArray || !Array.isArray(categoryArray)) {
         return res.status(400).json({ error: "Invalid main category type" });
       }
 
-      if (!products[type][categoryIndex]) {
+      if (!categoryArray[categoryIndex]) {
         return res.status(400).json({ error: "Invalid category index" });
       }
 
-      products[type][categoryIndex].artikli.push(product);
+      // Get the actual Mongoose document array and push to it
+      const actualCategoryArray = products[type];
+      actualCategoryArray[categoryIndex].artikli.push(product);
+      products.markModified(type);
     }
 
-    // Save updated data
-    const saved = await saveProducts(products);
-    if (!saved) {
-      return res.status(500).json({ error: "Failed to save products" });
-    }
+    // Save - optional fields in schema allow existing incomplete data
+    await products.save();
 
     res.json({
       success: true,
@@ -248,21 +297,70 @@ app.delete("/api/products/:type/:productId", requireAuth, async (req, res) => {
     const { type, productId } = req.params;
     console.log(`Deleting ${type} product with ID: ${productId}`);
 
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    const products = await getProductsDocument();
+    let removed = false;
+
+    if (type === "premazi") {
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      for (const [materialKey, material] of products.premazi.entries()) {
+        if (material.kategorije) {
+          // Ensure kategorije is a Map
+          if (!(material.kategorije instanceof Map)) {
+            material.kategorije = new Map(
+              Object.entries(material.kategorije || {})
+            );
+          }
+
+          for (const [
+            categoryKey,
+            categoryData,
+          ] of material.kategorije.entries()) {
+            const productIndex = categoryData.proizvodi.findIndex(
+              (product) => product.id === productId
+            );
+            if (productIndex !== -1) {
+              categoryData.proizvodi.splice(productIndex, 1);
+              material.kategorije.set(categoryKey, categoryData);
+              products.premazi.set(materialKey, material);
+              products.markModified("premazi");
+              removed = true;
+              break;
+            }
+          }
+        }
+        if (removed) break;
+      }
+    } else {
+      // Handle alati-like products (including dynamic main categories)
+      const productsObj = products.toObject();
+      const categoryArray = productsObj[type];
+
+      if (categoryArray && Array.isArray(categoryArray)) {
+        const actualCategoryArray = products[type];
+        for (const category of actualCategoryArray) {
+          const productIndex = category.artikli.findIndex(
+            (product) => product.id === productId
+          );
+          if (productIndex !== -1) {
+            category.artikli.splice(productIndex, 1);
+            products.markModified(type);
+            removed = true;
+            break;
+          }
+        }
+      }
     }
 
-    const removed = removeProductById(products, type, productId);
     if (!removed) {
       return res.status(404).json({ error: "Product not found" });
     }
 
-    // Save updated data
-    const saved = await saveProducts(products);
-    if (!saved) {
-      return res.status(500).json({ error: "Failed to save products" });
-    }
+    // Save - optional fields in schema allow existing incomplete data
+    await products.save();
 
     res.json({
       success: true,
@@ -274,31 +372,53 @@ app.delete("/api/products/:type/:productId", requireAuth, async (req, res) => {
   }
 });
 
-// Add main category (like alati or premazi)
+// Add main category
 app.post("/api/categories/main", requireAuth, async (req, res) => {
   try {
     const { categoryName, categoryKey } = req.body;
     if (!categoryName || !categoryKey) {
-      return res.status(400).json({ error: "Category name and key are required" });
+      return res
+        .status(400)
+        .json({ error: "Category name and key are required" });
     }
 
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    // Don't allow overwriting alati or premazi
+    if (categoryKey === "alati" || categoryKey === "premazi") {
+      return res
+        .status(400)
+        .json({ error: "Cannot overwrite reserved category" });
     }
 
-    // Check if main category already exists
-    if (products[categoryKey]) {
+    const products = await getProductsDocument();
+
+    // Check if category already exists (handle both schema-defined and dynamic properties)
+    const productsObj = products.toObject();
+    if (productsObj[categoryKey]) {
       return res.status(400).json({ error: "Main category already exists" });
     }
 
-    // Add new main category with alati-like structure
-    products[categoryKey] = [];
+    // Set the new category as an array directly on the document
+    // For dynamic properties, use updateOne with $set operator which works reliably
+    const updateResult = await Products.updateOne(
+      { _id: products._id },
+      { $set: { [categoryKey]: [] } }
+    );
 
-    const saved = await saveProducts(products);
-    if (!saved) {
-      return res.status(500).json({ error: "Failed to save products" });
+    if (updateResult.modifiedCount === 0) {
+      console.error(
+        `Failed to update document. Matched: ${updateResult.matchedCount}, Modified: ${updateResult.modifiedCount}`
+      );
+      return res.status(500).json({ error: "Failed to save main category" });
     }
+
+    // Verify it was saved by checking the document
+    const verify = await Products.findById(products._id);
+    const verifyObj = verify.toObject();
+    console.log(
+      `Main category ${categoryKey} added. Document keys:`,
+      Object.keys(verifyObj)
+    );
+    console.log(`Category exists:`, verifyObj[categoryKey] !== undefined);
 
     res.json({
       success: true,
@@ -310,7 +430,9 @@ app.post("/api/categories/main", requireAuth, async (req, res) => {
     });
   } catch (error) {
     console.error("Error adding main category:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res
+      .status(500)
+      .json({ error: "Internal server error", details: error.message });
   }
 });
 
@@ -322,36 +444,51 @@ app.post("/api/categories/alati", requireAuth, async (req, res) => {
       return res.status(400).json({ error: "Category name is required" });
     }
 
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
-    }
-
+    const products = await getProductsDocument();
     const targetKey = mainCategoryKey || "alati";
 
-    // Check if main category exists
-    if (!products[targetKey]) {
+    // Get the category array (handle both schema-defined and dynamic properties)
+    const productsObj = products.toObject();
+    const targetCategory = productsObj[targetKey];
+
+    if (!targetCategory || !Array.isArray(targetCategory)) {
       return res.status(400).json({ error: "Main category does not exist" });
     }
 
-    // Check if category already exists
-    const exists = products[targetKey].some(
+    const exists = targetCategory.some(
       (cat) => cat.kategorija.toLowerCase() === categoryName.toLowerCase()
     );
     if (exists) {
       return res.status(400).json({ error: "Category already exists" });
     }
 
-    // Add new category
-    products[targetKey].push({
-      kategorija: categoryName,
-      artikli: [],
-    });
-
-    const saved = await saveProducts(products);
-    if (!saved) {
-      return res.status(500).json({ error: "Failed to save products" });
+    // Get the actual Mongoose array and push to it
+    const categoryArray = products[targetKey];
+    if (!categoryArray) {
+      return res.status(400).json({ error: "Main category array not found" });
     }
+
+    // Use updateOne with $push to add the new category
+    // This is more reliable for array updates
+    const updateResult = await Products.updateOne(
+      { _id: products._id },
+      { $push: { [targetKey]: { kategorija: categoryName, artikli: [] } } }
+    );
+
+    if (updateResult.modifiedCount === 0) {
+      console.error(
+        `Failed to update document. Matched: ${updateResult.matchedCount}, Modified: ${updateResult.modifiedCount}`
+      );
+      return res.status(500).json({ error: "Failed to save subcategory" });
+    }
+
+    // Verify it was saved
+    const verify = await Products.findById(products._id);
+    const verifyObj = verify.toObject();
+    console.log(
+      `Subcategory ${categoryName} added to ${targetKey}. Total categories:`,
+      verifyObj[targetKey]?.length
+    );
 
     res.json({
       success: true,
@@ -377,25 +514,24 @@ app.post("/api/categories/premazi/material", requireAuth, async (req, res) => {
         .json({ error: "Material name and key are required" });
     }
 
-    const products = await loadProducts();
-    if (!products) {
-      return res.status(500).json({ error: "Failed to load products" });
+    const products = await getProductsDocument();
+
+    // Ensure premazi is a Map
+    if (!(products.premazi instanceof Map)) {
+      products.premazi = new Map(Object.entries(products.premazi || {}));
     }
 
-    // Check if material already exists
-    if (products.premazi[materialKey]) {
+    if (products.premazi.has(materialKey)) {
       return res.status(400).json({ error: "Material already exists" });
     }
 
-    // Add new material
-    products.premazi[materialKey] = {
-      kategorije: {},
-    };
+    products.premazi.set(materialKey, {
+      kategorije: new Map(),
+    });
+    products.markModified("premazi");
 
-    const saved = await saveProducts(products);
-    if (!saved) {
-      return res.status(500).json({ error: "Failed to save products" });
-    }
+    // Save - optional fields in schema allow existing incomplete data
+    await products.save();
 
     res.json({
       success: true,
@@ -411,6 +547,344 @@ app.post("/api/categories/premazi/material", requireAuth, async (req, res) => {
   }
 });
 
+// Delete subcategory (alati-like categories)
+app.delete(
+  "/api/categories/alati/:mainCategoryKey/:categoryIndex",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { mainCategoryKey, categoryIndex } = req.params;
+      const index = parseInt(categoryIndex);
+
+      if (isNaN(index)) {
+        return res.status(400).json({ error: "Invalid category index" });
+      }
+
+      const products = await getProductsDocument();
+      const productsObj = products.toObject();
+      const targetKey = mainCategoryKey || "alati";
+
+      if (!productsObj[targetKey] || !Array.isArray(productsObj[targetKey])) {
+        return res.status(404).json({ error: "Main category not found" });
+      }
+
+      if (index < 0 || index >= productsObj[targetKey].length) {
+        return res.status(404).json({ error: "Category not found" });
+      }
+
+      // Get the category to delete to use it in $pull
+      const categoryToDelete = productsObj[targetKey][index];
+
+      if (!categoryToDelete) {
+        return res.status(404).json({ error: "Category not found" });
+      }
+
+      // Use $pull to remove the category by matching the kategorija field
+      const updateResult = await Products.updateOne(
+        { _id: products._id },
+        { $pull: { [targetKey]: { kategorija: categoryToDelete.kategorija } } }
+      );
+
+      if (updateResult.modifiedCount === 0) {
+        console.error(
+          `Failed to delete subcategory. Matched: ${updateResult.matchedCount}, Modified: ${updateResult.modifiedCount}`
+        );
+        return res.status(500).json({ error: "Failed to delete subcategory" });
+      }
+
+      console.log(
+        `Subcategory ${categoryToDelete.kategorija} deleted from ${targetKey} successfully`
+      );
+
+      res.json({
+        success: true,
+        message: "Category deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting category:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete premazi material
+app.delete(
+  "/api/categories/premazi/material/:materialKey",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { materialKey } = req.params;
+
+      const products = await getProductsDocument();
+
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      if (!products.premazi.has(materialKey)) {
+        return res.status(404).json({ error: "Material not found" });
+      }
+
+      // Delete the material
+      products.premazi.delete(materialKey);
+      products.markModified("premazi");
+      await products.save();
+
+      res.json({
+        success: true,
+        message: "Material deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting material:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete premazi subcategory
+app.delete(
+  "/api/categories/premazi/subcategory/:materialKey/:subcategoryKey",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { materialKey, subcategoryKey } = req.params;
+
+      const products = await getProductsDocument();
+
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      if (!products.premazi.has(materialKey)) {
+        return res.status(404).json({ error: "Material not found" });
+      }
+
+      const materialData = products.premazi.get(materialKey);
+
+      if (
+        !materialData.kategorije ||
+        !(materialData.kategorije instanceof Map)
+      ) {
+        return res.status(404).json({ error: "Subcategory not found" });
+      }
+
+      if (!materialData.kategorije.has(subcategoryKey)) {
+        return res.status(404).json({ error: "Subcategory not found" });
+      }
+
+      // Delete the subcategory
+      materialData.kategorije.delete(subcategoryKey);
+      products.premazi.set(materialKey, materialData);
+      products.markModified("premazi");
+      await products.save();
+
+      res.json({
+        success: true,
+        message: "Subcategory deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting subcategory:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete main category
+app.delete(
+  "/api/categories/main/:categoryKey",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { categoryKey } = req.params;
+
+      // Don't allow deleting reserved categories
+      if (categoryKey === "alati" || categoryKey === "premazi") {
+        return res
+          .status(400)
+          .json({ error: "Cannot delete reserved category" });
+      }
+
+      const products = await getProductsDocument();
+      const productsObj = products.toObject();
+
+      if (!productsObj[categoryKey]) {
+        return res.status(404).json({ error: "Main category not found" });
+      }
+
+      // Delete the category using updateOne with $unset operator
+      const updateResult = await Products.updateOne(
+        { _id: products._id },
+        { $unset: { [categoryKey]: "" } }
+      );
+
+      if (updateResult.modifiedCount === 0) {
+        console.error(
+          `Failed to delete category. Matched: ${updateResult.matchedCount}, Modified: ${updateResult.modifiedCount}`
+        );
+        return res
+          .status(500)
+          .json({ error: "Failed to delete main category" });
+      }
+
+      console.log(`Main category ${categoryKey} deleted successfully`);
+
+      res.json({
+        success: true,
+        message: "Main category deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting main category:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete subcategory (alati-like categories)
+app.delete(
+  "/api/categories/alati/:mainCategoryKey/:categoryIndex",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { mainCategoryKey, categoryIndex } = req.params;
+      const index = parseInt(categoryIndex);
+
+      if (isNaN(index)) {
+        return res.status(400).json({ error: "Invalid category index" });
+      }
+
+      const products = await getProductsDocument();
+      const productsObj = products.toObject();
+      const targetKey = mainCategoryKey || "alati";
+
+      if (!productsObj[targetKey] || !Array.isArray(productsObj[targetKey])) {
+        return res.status(404).json({ error: "Main category not found" });
+      }
+
+      if (index < 0 || index >= productsObj[targetKey].length) {
+        return res.status(404).json({ error: "Category not found" });
+      }
+
+      // Get the category to delete to use it in $pull
+      const categoryToDelete = productsObj[targetKey][index];
+
+      if (!categoryToDelete) {
+        return res.status(404).json({ error: "Category not found" });
+      }
+
+      // Use $pull to remove the category by matching the kategorija field
+      const updateResult = await Products.updateOne(
+        { _id: products._id },
+        { $pull: { [targetKey]: { kategorija: categoryToDelete.kategorija } } }
+      );
+
+      if (updateResult.modifiedCount === 0) {
+        console.error(
+          `Failed to delete subcategory. Matched: ${updateResult.matchedCount}, Modified: ${updateResult.modifiedCount}`
+        );
+        return res.status(500).json({ error: "Failed to delete subcategory" });
+      }
+
+      console.log(
+        `Subcategory ${categoryToDelete.kategorija} deleted from ${targetKey} successfully`
+      );
+
+      res.json({
+        success: true,
+        message: "Category deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting category:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete premazi material
+app.delete(
+  "/api/categories/premazi/material/:materialKey",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { materialKey } = req.params;
+
+      const products = await getProductsDocument();
+
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      if (!products.premazi.has(materialKey)) {
+        return res.status(404).json({ error: "Material not found" });
+      }
+
+      // Delete the material
+      products.premazi.delete(materialKey);
+      products.markModified("premazi");
+      await products.save();
+
+      res.json({
+        success: true,
+        message: "Material deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting material:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
+// Delete premazi subcategory
+app.delete(
+  "/api/categories/premazi/subcategory/:materialKey/:subcategoryKey",
+  requireAuth,
+  async (req, res) => {
+    try {
+      const { materialKey, subcategoryKey } = req.params;
+
+      const products = await getProductsDocument();
+
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
+      }
+
+      if (!products.premazi.has(materialKey)) {
+        return res.status(404).json({ error: "Material not found" });
+      }
+
+      const materialData = products.premazi.get(materialKey);
+
+      if (
+        !materialData.kategorije ||
+        !(materialData.kategorije instanceof Map)
+      ) {
+        return res.status(404).json({ error: "Subcategory not found" });
+      }
+
+      if (!materialData.kategorije.has(subcategoryKey)) {
+        return res.status(404).json({ error: "Subcategory not found" });
+      }
+
+      // Delete the subcategory
+      materialData.kategorije.delete(subcategoryKey);
+      products.premazi.set(materialKey, materialData);
+      products.markModified("premazi");
+      await products.save();
+
+      res.json({
+        success: true,
+        message: "Subcategory deleted successfully",
+      });
+    } catch (error) {
+      console.error("Error deleting subcategory:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
 // Add subcategory for premazi
 app.post(
   "/api/categories/premazi/subcategory",
@@ -424,30 +898,39 @@ app.post(
         });
       }
 
-      const products = await loadProducts();
-      if (!products) {
-        return res.status(500).json({ error: "Failed to load products" });
+      const products = await getProductsDocument();
+
+      // Ensure premazi is a Map
+      if (!(products.premazi instanceof Map)) {
+        products.premazi = new Map(Object.entries(products.premazi || {}));
       }
 
-      if (!products.premazi[materialKey]) {
+      if (!products.premazi.has(materialKey)) {
         return res.status(400).json({ error: "Material does not exist" });
       }
 
-      // Check if subcategory already exists
-      if (products.premazi[materialKey].kategorije[subcategoryKey]) {
+      let materialData = products.premazi.get(materialKey);
+
+      if (
+        !materialData.kategorije ||
+        !(materialData.kategorije instanceof Map)
+      ) {
+        materialData.kategorije = new Map();
+      }
+
+      if (materialData.kategorije.has(subcategoryKey)) {
         return res.status(400).json({ error: "Subcategory already exists" });
       }
 
-      // Add new subcategory
-      products.premazi[materialKey].kategorije[subcategoryKey] = {
+      materialData.kategorije.set(subcategoryKey, {
         naziv: subcategoryName,
         proizvodi: [],
-      };
+      });
 
-      const saved = await saveProducts(products);
-      if (!saved) {
-        return res.status(500).json({ error: "Failed to save products" });
-      }
+      products.premazi.set(materialKey, materialData);
+      products.markModified("premazi");
+
+      await products.save();
 
       res.json({
         success: true,
@@ -464,20 +947,6 @@ app.post(
   }
 );
 
-// Delete main category
-app.delete("/delete-main-category", (req, res) => {
-  const { mainCategory } = req.body;
-
-  if (!categories[mainCategory]) {
-    return res.status(404).json({ error: "Glavna kategorija ne postoji." });
-  }
-
-  // Obrišite glavnu kategoriju
-  delete categories[mainCategory];
-
-  res.status(200).json({ message: "Glavna kategorija obrisana uspešno." });
-});
-
 // Logout
 app.post("/api/logout", requireAuth, (req, res) => {
   const sessionId = req.headers.authorization?.replace("Bearer ", "");
@@ -487,48 +956,45 @@ app.post("/api/logout", requireAuth, (req, res) => {
   res.json({ success: true, message: "Logged out successfully" });
 });
 
-// Health check endpoint (must be before catch-all route)
+// Health check endpoint
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
     timestamp: new Date().toISOString(),
     port: PORT,
     nodeEnv: process.env.NODE_ENV || "development",
+    database:
+      mongoose.connection.readyState === 1 ? "connected" : "disconnected",
   });
 });
 
-// Serve static files from dist folder (frontend)
-// IMPORTANT: This must come AFTER API routes but BEFORE catch-all route
+// Serve static files from dist folder
 const distPath = path.join(__dirname, "../dist");
 const indexPath = path.join(__dirname, "../dist/index.html");
+const fs = require("fs");
 
-// Serve static assets (CSS, JS, images, etc.)
-if (fsSync.existsSync(distPath)) {
+if (fs.existsSync(distPath)) {
   app.use(
     express.static(distPath, {
-      maxAge: "1y", // Cache static assets
+      maxAge: "1y",
       etag: true,
     })
   );
 }
 
-// Catch-all handler: send back Vue app's index.html file for SPA routing
-// This must be LAST, after all API routes
+// Catch-all handler
 app.get("*", (req, res, next) => {
-  // Don't serve index.html for API routes
   if (req.path.startsWith("/api")) {
     return res.status(404).json({ error: "API route not found" });
   }
 
-  // Don't serve index.html for static assets
   if (
     req.path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)
   ) {
     return res.status(404).send("File not found");
   }
 
-  // Serve index.html for all other routes (SPA routing)
-  if (fsSync.existsSync(indexPath)) {
+  if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
   } else {
     res
@@ -547,11 +1013,10 @@ if (process.env.VERCEL !== "1") {
     console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
     console.log(`Admin username: ${ADMIN_USERNAME ? "SET" : "NOT SET"}`);
     console.log(
-      `Products file: ${path.join(__dirname, "gradjevinski_alat.json")}`
+      `MongoDB: ${
+        mongoose.connection.readyState === 1 ? "CONNECTED" : "DISCONNECTED"
+      }`
     );
-    console.log(`Dist folder: ${distPath}`);
-    console.log(`Dist exists: ${fsSync.existsSync(distPath)}`);
-    console.log(`Index.html exists: ${fsSync.existsSync(indexPath)}`);
   });
 }
 
@@ -560,8 +1025,7 @@ setInterval(() => {
   const now = Date.now();
   for (const [sessionId, session] of sessions.entries()) {
     if (now - session.createdAt > 24 * 60 * 60 * 1000) {
-      // 24 hours
       sessions.delete(sessionId);
     }
   }
-}, 60 * 60 * 1000); // Every hour
+}, 60 * 60 * 1000);

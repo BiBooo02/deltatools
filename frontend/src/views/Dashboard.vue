@@ -46,7 +46,9 @@
                 :disabled="addingCategory"
                 class="w-full py-2 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition disabled:opacity-50"
               >
-                {{ addingCategory ? "Dodavanje..." : "Dodaj glavnu kategoriju" }}
+                {{
+                  addingCategory ? "Dodavanje..." : "Dodaj glavnu kategoriju"
+                }}
               </button>
             </form>
             <div
@@ -240,7 +242,10 @@
           </div>
 
           <!-- Alati-like Category Selection -->
-          <div v-if="form.productType && form.productType !== 'premazi'" class="space-y-4">
+          <div
+            v-if="form.productType && form.productType !== 'premazi'"
+            class="space-y-4"
+          >
             <div>
               <label for="category" class="block mb-1 text-white"
                 >Kategorija</label
@@ -253,7 +258,9 @@
               >
                 <option value="">Izaberite kategoriju</option>
                 <option
-                  v-for="category in productsStore.getCategoriesForMain(form.productType)"
+                  v-for="category in productsStore.getCategoriesForMain(
+                    form.productType
+                  )"
                   :key="category.index"
                   :value="category.index"
                 >
@@ -515,31 +522,47 @@
 
         <div v-else class="space-y-4">
           <!-- Display all main categories (alati-like) -->
-          <div 
+          <div
             v-for="mainCat in productsStore.mainCategories"
             :key="mainCat.key"
             class="mb-8"
           >
             <div v-if="productsStore.products?.[mainCat.key]">
-              <h3 class="text-2xl font-bold mb-4 text-yellow-400">{{ mainCat.name }}</h3>
+              <h3 class="text-2xl font-bold mb-4 text-yellow-400">
+                {{ mainCat.name }}
+              </h3>
 
               <div
-                v-for="(category, categoryIndex) in productsStore.products[mainCat.key]"
+                v-for="(category, categoryIndex) in productsStore.products[
+                  mainCat.key
+                ]"
                 :key="categoryIndex"
                 class="bg-gray-700 rounded-lg p-4 mb-4"
               >
-                <h4 class="text-lg font-semibold mb-3 text-yellow-400">
-                  {{ category.kategorija }}
-                </h4>
+                <div class="flex justify-between items-center mb-3">
+                  <h4 class="text-lg font-semibold text-yellow-400">
+                    {{ category.kategorija }}
+                  </h4>
+                  <button
+                    @click="handleDeleteSubcategory(mainCat.key, categoryIndex)"
+                    class="text-red-500 hover:text-red-400 text-sm font-medium"
+                  >
+                    Obriši kategoriju
+                  </button>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                >
                   <div
                     v-for="product in category.artikli"
                     :key="product.id"
                     class="bg-gray-600 rounded-lg p-4"
                   >
                     <div class="flex justify-between items-start mb-2">
-                      <h5 class="font-medium text-white">{{ product.naziv }}</h5>
+                      <h5 class="font-medium text-white">
+                        {{ product.naziv }}
+                      </h5>
                       <button
                         @click="handleDeleteProduct(mainCat.key, product.id)"
                         class="text-red-500 hover:text-red-400 text-sm"
@@ -623,9 +646,18 @@
       <div class="bg-gray-800 rounded-xl p-6 mb-8">
         <h2 class="text-xl font-bold mb-4 text-white">Glavne kategorije</h2>
         <ul>
-          <li v-for="category in mainCategories" :key="category" class="text-white mb-2">
-            {{ category }}
-            <button @click="deleteMainCategory(category)" class="text-red-500 hover:text-red-400 ml-2">Obriši</button>
+          <li
+            v-for="category in mainCategories"
+            :key="category.key"
+            class="text-white mb-2"
+          >
+            {{ category.name }}
+            <button
+              @click="deleteMainCategory(category)"
+              class="text-red-500 hover:text-red-400 ml-2"
+            >
+              Obriši
+            </button>
           </li>
         </ul>
       </div>
@@ -699,11 +731,8 @@ const premaziSubcategories = computed(() => {
   return productsStore.getPremaziSubcategories(form.premaziCategory);
 });
 
-const mainCategories = ref([]);
-
 onMounted(async () => {
   await productsStore.loadAdminProducts();
-  fetchMainCategories();
 });
 
 async function handleAddProduct() {
@@ -711,7 +740,7 @@ async function handleAddProduct() {
 
   let productData = {};
 
-  if (form.productType !== 'premazi') {
+  if (form.productType !== "premazi") {
     // Handle alati-like products
     productData = {
       type: form.productType,
@@ -792,7 +821,7 @@ async function handleAddMainCategory() {
 
   const result = await productsStore.addMainCategory(
     newMainCategory.name,
-    newMainCategory.key.toLowerCase().replace(/\s+/g, '_')
+    newMainCategory.key.toLowerCase().replace(/\s+/g, "_")
   );
 
   if (result.success) {
@@ -909,23 +938,77 @@ async function handleLogout() {
   router.push("/login");
 }
 
-function fetchMainCategories() {
-  axios.get("/get-main-categories").then((response) => {
-    mainCategories.value = response.data;
-  });
+const mainCategories = computed(() => {
+  return productsStore.mainCategories;
+});
+
+async function deleteMainCategory(category) {
+  if (
+    !confirm(
+      `Da li ste sigurni da želite da obrišete glavnu kategoriju "${
+        category.name || category
+      }"?`
+    )
+  ) {
+    return;
+  }
+
+  const categoryKey = category.key || category;
+  const result = await productsStore.deleteMainCategory(categoryKey);
+
+  if (result.success) {
+    categoryMessage.value = {
+      type: "success",
+      text: "Glavna kategorija uspešno obrisana!",
+    };
+    // Reload products to refresh the list
+    await productsStore.loadAdminProducts();
+    setTimeout(() => {
+      categoryMessage.value = null;
+    }, 3000);
+  } else {
+    categoryMessage.value = {
+      type: "error",
+      text: result.error || "Greška pri brisanju glavne kategorije",
+    };
+  }
 }
 
-function deleteMainCategory(category) {
-  if (confirm(`Da li ste sigurni da želite da obrišete kategoriju "${category}"?`)) {
-    axios
-      .delete("/delete-main-category", { data: { mainCategory: category } })
-      .then((response) => {
-        console.log(response.data.message);
-        fetchMainCategories(); // Osvežite listu nakon brisanja
-      })
-      .catch((error) => {
-        console.error("Greška prilikom brisanja kategorije:", error.response.data);
-      });
+async function handleDeleteSubcategory(mainCategoryKey, categoryIndex) {
+  const category = productsStore.products?.[mainCategoryKey]?.[categoryIndex];
+  if (!category) {
+    alert("Kategorija nije pronađena");
+    return;
+  }
+
+  if (
+    !confirm(
+      `Da li ste sigurni da želite da obrišete kategoriju "${category.kategorija}"?`
+    )
+  ) {
+    return;
+  }
+
+  const result = await productsStore.deleteSubcategory(
+    mainCategoryKey,
+    categoryIndex
+  );
+
+  if (result.success) {
+    categoryMessage.value = {
+      type: "success",
+      text: "Kategorija uspešno obrisana!",
+    };
+    // Reload products to refresh the list
+    await productsStore.loadAdminProducts();
+    setTimeout(() => {
+      categoryMessage.value = null;
+    }, 3000);
+  } else {
+    categoryMessage.value = {
+      type: "error",
+      text: result.error || "Greška pri brisanju kategorije",
+    };
   }
 }
 </script>

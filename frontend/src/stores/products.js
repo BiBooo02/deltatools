@@ -241,6 +241,62 @@ export const useProductsStore = defineStore("products", () => {
     }
   }
 
+  // Delete main category
+  async function deleteMainCategory(categoryKey) {
+    try {
+      const response = await api.delete(`/categories/main/${categoryKey}`);
+      await loadAdminProducts(); // Reload to get updated categories
+      return { success: true, data: response.data };
+    } catch (err) {
+      return {
+        success: false,
+        error: err.response?.data?.error || "Failed to delete main category",
+      };
+    }
+  }
+
+  // Delete subcategory (alati-like categories)
+  async function deleteSubcategory(mainCategoryKey, categoryIndex) {
+    try {
+      const response = await api.delete(`/categories/alati/${mainCategoryKey}/${categoryIndex}`);
+      await loadAdminProducts(); // Reload to get updated categories
+      return { success: true, data: response.data };
+    } catch (err) {
+      return {
+        success: false,
+        error: err.response?.data?.error || "Failed to delete subcategory",
+      };
+    }
+  }
+
+  // Delete premazi material
+  async function deletePremaziMaterial(materialKey) {
+    try {
+      const response = await api.delete(`/categories/premazi/material/${materialKey}`);
+      await loadAdminProducts(); // Reload to get updated categories
+      return { success: true, data: response.data };
+    } catch (err) {
+      return {
+        success: false,
+        error: err.response?.data?.error || "Failed to delete material",
+      };
+    }
+  }
+
+  // Delete premazi subcategory
+  async function deletePremaziSubcategory(materialKey, subcategoryKey) {
+    try {
+      const response = await api.delete(`/categories/premazi/subcategory/${materialKey}/${subcategoryKey}`);
+      await loadAdminProducts(); // Reload to get updated categories
+      return { success: true, data: response.data };
+    } catch (err) {
+      return {
+        success: false,
+        error: err.response?.data?.error || "Failed to delete subcategory",
+      };
+    }
+  }
+
   return {
     products,
     loading,
@@ -254,6 +310,10 @@ export const useProductsStore = defineStore("products", () => {
     addAlatiCategory,
     addPremaziMaterial,
     addPremaziSubcategory,
+    deleteMainCategory,
+    deleteSubcategory,
+    deletePremaziMaterial,
+    deletePremaziSubcategory,
     mainCategories,
     alatiCategories: computed(() => getCategoriesForMain('alati')),
     getCategoriesForMain,

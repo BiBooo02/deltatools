@@ -43,6 +43,13 @@ ADMIN_USERNAME=deltaadmin
 ADMIN_PASSWORD=nimdaatled123!
 PORT=3000
 NODE_ENV=development
+MONGODB_URI=mongodb://localhost:27017/deltatools
+```
+
+**Za MongoDB Atlas:**
+
+```env
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/deltatools?retryWrites=true&w=majority
 ```
 
 3. **Instaliraj frontend dependencies:**
@@ -136,10 +143,13 @@ Nakon deployment-a, dodaj environment variables u Vercel dashboard:
 
 1. Idi na Project Settings → Environment Variables
 2. Dodaj sledeće varijable:
+   - `MONGODB_URI` - MongoDB connection string (npr. `mongodb+srv://username:password@cluster.mongodb.net/deltatools?retryWrites=true&w=majority`)
    - `ADMIN_USERNAME` - Admin korisničko ime (npr. `deltaadmin`)
    - `ADMIN_PASSWORD` - Admin lozinka (koristi jaku lozinku!)
    - `NODE_ENV` - `production`
    - `PORT` - (opciono, Vercel automatski postavlja)
+
+**Detaljne upute za deployment:** Pogledajte `VERCEL_DEPLOYMENT.md`
 
 **⚠️ VAŽNO:** Promijenite admin credentials prije deployment-a!
 
@@ -151,6 +161,10 @@ Nakon deployment-a, dodaj environment variables u Vercel dashboard:
 - `GET /api/admin/products` - Dohvati sve proizvode (zahtijeva autentifikaciju)
 - `POST /api/products` - Dodaj novi proizvod (zahtijeva autentifikaciju)
 - `DELETE /api/products/:type/:productId` - Obriši proizvod (zahtijeva autentifikaciju)
+- `POST /api/categories/main` - Dodaj glavnu kategoriju (zahtijeva autentifikaciju)
+- `DELETE /api/categories/main/:categoryKey` - Obriši glavnu kategoriju (zahtijeva autentifikaciju)
+- `POST /api/categories/alati` - Dodaj podkategoriju (zahtijeva autentifikaciju)
+- `DELETE /api/categories/alati/:mainCategoryKey/:categoryIndex` - Obriši podkategoriju (zahtijeva autentifikaciju)
 - `POST /api/login` - Admin login
 - `POST /api/logout` - Admin logout
 - `GET /api/health` - Health check
@@ -178,6 +192,7 @@ Nakon deployment-a, dodaj environment variables u Vercel dashboard:
 
 - Node.js
 - Express
+- MongoDB / Mongoose
 - CORS
 - bcrypt (za hash lozinki)
 - express-rate-limit (za zaštitu od brute force napada)

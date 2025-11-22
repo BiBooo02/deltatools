@@ -1896,11 +1896,7 @@
                 "Dobra pokrivnost",
                 "Brzo sušenje"
               ],
-              "primenjuje_se": [
-                "Metalne konstrukcije",
-                "Mašine",
-                "Oprema"
-              ],
+              "primenjuje_se": ["Metalne konstrukcije", "Mašine", "Oprema"],
               "slika": "/Irkom/1.png",
               "id": "md0ffmdrancidcyc7x5"
             },
@@ -1945,10 +1941,7 @@
                 "Otpornost na koroziju",
                 "Dobra pokrivnost"
               ],
-              "primenjuje_se": [
-                "Rđavi metalni površine",
-                "Renoviranje"
-              ],
+              "primenjuje_se": ["Rđavi metalni površine", "Renoviranje"],
               "slika": "/Irkom/1.png",
               "id": "md0ffmdr5ardcbmya8u"
             }
@@ -2001,9 +1994,7 @@
                 "Međuslojna kompatibilnost",
                 "Brzo sušenje"
               ],
-              "primenjuje_se": [
-                "Međusloj u višeslojnim sistemima"
-              ],
+              "primenjuje_se": ["Međusloj u višeslojnim sistemima"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdrztp7rni82w"
             },
@@ -2096,11 +2087,7 @@
                 "Antikorozivna zaštita",
                 "Dobra adhezija"
               ],
-              "primenjuje_se": [
-                "Dimnjaci",
-                "Kotlovi",
-                "Industrijske peći"
-              ],
+              "primenjuje_se": ["Dimnjaci", "Kotlovi", "Industrijske peći"],
               "slika": "/Irkom/1.png",
               "id": "md0ffmdr243tfcgjpog"
             },
@@ -2114,11 +2101,7 @@
                 "Antikorozivna zaštita",
                 "Dugotrajnost"
               ],
-              "primenjuje_se": [
-                "Industrijske peći",
-                "Dimnjaci",
-                "Kotlovi"
-              ],
+              "primenjuje_se": ["Industrijske peći", "Dimnjaci", "Kotlovi"],
               "slika": "/Irkom/1.png",
               "id": "md0ffmdrn6o67y2p5tk"
             }
@@ -2142,11 +2125,7 @@
                 "UV zaštita",
                 "Otpornost na vlagu"
               ],
-              "primenjuje_se": [
-                "Drveni podovi",
-                "Mebl",
-                "Fasade"
-              ],
+              "primenjuje_se": ["Drveni podovi", "Mebl", "Fasade"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdr7lgu9bl4dhc"
             },
@@ -2154,16 +2133,8 @@
               "naziv": "ULTRA WOOD PU BELI IZOLANT WIW 100",
               "tip": "Beli izolant",
               "boja": "Bela",
-              "svojstva": [
-                "Pokrivnost",
-                "UV zaštita",
-                "Otpornost na vlagu"
-              ],
-              "primenjuje_se": [
-                "Drveni podovi",
-                "Mebl",
-                "Fasade"
-              ],
+              "svojstva": ["Pokrivnost", "UV zaštita", "Otpornost na vlagu"],
+              "primenjuje_se": ["Drveni podovi", "Mebl", "Fasade"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdrigkznj74g0b"
             },
@@ -2203,11 +2174,7 @@
               "naziv": "ULTRA WOOD PU PRIMER BELI WPW 100",
               "tip": "Beli prajmer",
               "boja": "Bela",
-              "svojstva": [
-                "Odlična adhezija",
-                "Pokrivnost",
-                "Brzo sušenje"
-              ],
+              "svojstva": ["Odlična adhezija", "Pokrivnost", "Brzo sušenje"],
               "primenjuje_se": [
                 "Priprema drvenih površina",
                 "Podloga za emajle"
@@ -2219,11 +2186,7 @@
               "naziv": "ULTRA WOOD PU PRIMER BELI WPW 101",
               "tip": "Beli prajmer",
               "boja": "Bela",
-              "svojstva": [
-                "Odlična adhezija",
-                "Pokrivnost",
-                "Brzo sušenje"
-              ],
+              "svojstva": ["Odlična adhezija", "Pokrivnost", "Brzo sušenje"],
               "primenjuje_se": [
                 "Priprema drvenih površina",
                 "Podloga za emajle"
@@ -2235,11 +2198,7 @@
               "naziv": "ULTRA WOOD PU PRIMER CRNI WPB 100",
               "tip": "Crni prajmer",
               "boja": "Crna",
-              "svojstva": [
-                "Odlična adhezija",
-                "Pokrivnost",
-                "Brzo sušenje"
-              ],
+              "svojstva": ["Odlična adhezija", "Pokrivnost", "Brzo sušenje"],
               "primenjuje_se": [
                 "Priprema drvenih površina",
                 "Podloga za emajle"
@@ -2256,11 +2215,7 @@
                 "UV zaštita",
                 "Otpornost na habanje"
               ],
-              "primenjuje_se": [
-                "Završni sloj",
-                "Mebl",
-                "Drveni podovi"
-              ],
+              "primenjuje_se": ["Završni sloj", "Mebl", "Drveni podovi"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdrxyx1id41tvj"
             },
@@ -2268,16 +2223,8 @@
               "naziv": "ULTRA WOOD PU EMAJL WF",
               "tip": "Emajl",
               "boja": "Različite boje",
-              "svojstva": [
-                "Pokrivnost",
-                "UV zaštita",
-                "Otpornost na habanje"
-              ],
-              "primenjuje_se": [
-                "Završni sloj",
-                "Mebl",
-                "Drveni podovi"
-              ],
+              "svojstva": ["Pokrivnost", "UV zaštita", "Otpornost na habanje"],
+              "primenjuje_se": ["Završni sloj", "Mebl", "Drveni podovi"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdrqy8yp51332"
             }
@@ -2291,11 +2238,7 @@
               "naziv": "ULTRA WOOD POLIESTER PRIMER BELI WPW 290SF",
               "tip": "Beli prajmer",
               "boja": "Bela",
-              "svojstva": [
-                "Odlična adhezija",
-                "Pokrivnost",
-                "Brzo sušenje"
-              ],
+              "svojstva": ["Odlična adhezija", "Pokrivnost", "Brzo sušenje"],
               "primenjuje_se": [
                 "Priprema drvenih površina",
                 "Podloga za emajle"
@@ -2345,11 +2288,7 @@
               "naziv": "ULTRA WOOD AKRILNI PRAJMER BELI WPW 300",
               "tip": "Beli prajmer",
               "boja": "Bela",
-              "svojstva": [
-                "Odlična adhezija",
-                "Pokrivnost",
-                "Brzo sušenje"
-              ],
+              "svojstva": ["Odlična adhezija", "Pokrivnost", "Brzo sušenje"],
               "primenjuje_se": [
                 "Priprema drvenih površina",
                 "Podloga za emajle"
@@ -2366,11 +2305,7 @@
                 "UV zaštita",
                 "Otpornost na habanje"
               ],
-              "primenjuje_se": [
-                "Završni sloj",
-                "Mebl",
-                "Drveni podovi"
-              ],
+              "primenjuje_se": ["Završni sloj", "Mebl", "Drveni podovi"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdraq1u7kctip"
             },
@@ -2378,16 +2313,8 @@
               "naziv": "ULTRA WOOD AKRILNI EMAJL WF",
               "tip": "Emajl",
               "boja": "Različite boje",
-              "svojstva": [
-                "Pokrivnost",
-                "UV zaštita",
-                "Otpornost na habanje"
-              ],
-              "primenjuje_se": [
-                "Završni sloj",
-                "Mebl",
-                "Drveni podovi"
-              ],
+              "svojstva": ["Pokrivnost", "UV zaštita", "Otpornost na habanje"],
+              "primenjuje_se": ["Završni sloj", "Mebl", "Drveni podovi"],
               "slika": "/Irkom/2.png",
               "id": "md0ffmdrzbdp5zxbtk"
             }
@@ -2441,11 +2368,7 @@
               "naziv": "LEPAK D3",
               "tip": "Lepak za drvo",
               "klasa": "D3",
-              "svojstva": [
-                "Vodootpornost",
-                "Odlična adhezija",
-                "Dugotrajnost"
-              ],
+              "svojstva": ["Vodootpornost", "Odlična adhezija", "Dugotrajnost"],
               "primenjuje_se": [
                 "Spojivanje drvenih elemenata",
                 "Mebl",
