@@ -11,18 +11,28 @@
     >
       <div
         class="container mx-auto flex items-center justify-between py-4"
-        style="height: 100px; padding-left: 0; padding-right: 1rem;"
+        style="
+          height: 100px;
+          padding-left: 0;
+          padding-right: 1rem;
+          overflow: visible;
+        "
       >
-      <a href="/" @click.prevent="router.push('/')" class="flex items-center logo-link mr-auto">
+        <a
+          href="/"
+          @click.prevent="router.push('/')"
+          class="flex items-center logo-link mr-auto"
+        >
           <img
             src="\img\LOGO_DETA_TOOLS-removebg-preview.png"
             alt="Delta Tools Logo"
-            class="cursor-pointer object-contain"
-            style="height: 100%; max-height: 120px;" 
+            class="cursor-pointer object-contain logo-large"
             @error="handleLogoError"
           />
         </a>
-        <ul class="desktop-menu hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
+        <ul
+          class="desktop-menu hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2"
+        >
           <li class="relative group">
             <a
               href="#"
@@ -123,14 +133,14 @@
                 "
               >
                 <div
-                  v-for="(chunk, chunkIndex) in chunkArray(productsStore.alatiCategories, 10)"
+                  v-for="(chunk, chunkIndex) in chunkArray(
+                    productsStore.alatiCategories,
+                    10
+                  )"
                   :key="chunkIndex"
                   class="w-56"
                 >
-                  <div
-                    v-for="cat in chunk"
-                    :key="cat.index"
-                  >
+                  <div v-for="cat in chunk" :key="cat.index">
                     <a
                       href="#"
                       @click.prevent="handleProductFilter('alati', cat.index)"
@@ -144,11 +154,13 @@
 
               <!-- Dynamic main categories subcategories -->
               <div
-                v-if="activeSubmenu && activeSubmenu !== 'alati' && activeSubmenu !== 'premazi'"
-                class="bg-white rounded-lg shadow-lg z-50 flex"
-                @mouseenter="
-                  keepDropdownOpen();
+                v-if="
+                  activeSubmenu &&
+                  activeSubmenu !== 'alati' &&
+                  activeSubmenu !== 'premazi'
                 "
+                class="bg-white rounded-lg shadow-lg z-50 flex"
+                @mouseenter="keepDropdownOpen()"
                 @mouseleave="
                   setTimeout(() => {
                     if (!isDropdownOpen.value) activeSubmenu = null;
@@ -156,17 +168,19 @@
                 "
               >
                 <div
-                  v-for="(chunk, chunkIndex) in chunkArray(productsStore.getCategoriesForMain(activeSubmenu), 10)"
+                  v-for="(chunk, chunkIndex) in chunkArray(
+                    productsStore.getCategoriesForMain(activeSubmenu),
+                    10
+                  )"
                   :key="chunkIndex"
                   class="w-56"
                 >
-                  <div
-                    v-for="cat in chunk"
-                    :key="cat.index"
-                  >
+                  <div v-for="cat in chunk" :key="cat.index">
                     <a
                       href="#"
-                      @click.prevent="handleProductFilter(activeSubmenu, cat.index)"
+                      @click.prevent="
+                        handleProductFilter(activeSubmenu, cat.index)
+                      "
                       class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
                     >
                       {{ cat.name }}
@@ -257,7 +271,7 @@
               >Funkcije</a
             >
           </li>
-          
+
           <li>
             <a
               href="#"
@@ -334,13 +348,17 @@
             <button
               class="w-full text-left px-4 py-2 font-bold"
               @click="
-                activeSubmenu = activeSubmenu === mainCat.key ? null : mainCat.key
+                activeSubmenu =
+                  activeSubmenu === mainCat.key ? null : mainCat.key
               "
             >
               {{ mainCat.name }}
             </button>
             <ul v-if="activeSubmenu === mainCat.key" class="pl-4">
-              <li v-for="cat in productsStore.getCategoriesForMain(mainCat.key)" :key="cat.index">
+              <li
+                v-for="cat in productsStore.getCategoriesForMain(mainCat.key)"
+                :key="cat.index"
+              >
                 <a
                   href="#"
                   @click.prevent="
@@ -445,7 +463,7 @@ const dropdownWrapper = ref(null);
 
 // Computed property za dinamičke glavne kategorije (isključujući alati i premazi)
 const dynamicMainCategories = computed(() => {
-  return productsStore.mainCategories.filter(cat => cat.key !== 'alati');
+  return productsStore.mainCategories.filter((cat) => cat.key !== "alati");
 });
 
 const premaziSubmenus = computed(() => {
@@ -519,7 +537,7 @@ function closeAllDropdowns() {
 
 function handleProductFilter(type, categoryKey, subcategoryKey) {
   closeAllDropdowns();
-  
+
   if (type === "alati") {
     if (categoryKey === undefined) {
       router.push({ path: "/products" });
@@ -542,7 +560,10 @@ function handleProductFilter(type, categoryKey, subcategoryKey) {
     if (categoryKey === undefined) {
       router.push({ path: "/products", query: { type: type } });
     } else {
-      router.push({ path: "/products", query: { type: type, category: categoryKey } });
+      router.push({
+        path: "/products",
+        query: { type: type, category: categoryKey },
+      });
     }
   }
 }
@@ -617,6 +638,7 @@ body {
   border-bottom: 2px solid #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
 }
 
 .navbar a {
@@ -668,10 +690,26 @@ body {
   content: none !important;
 }
 
+.logo-link {
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+}
+
 .logo-link img {
   height: 3.5rem;
   max-height: 3.5rem;
   width: auto;
+}
+
+.logo-large {
+  height: 180px !important;
+  max-height: 280px !important;
+  width: auto !important;
+  margin-top: -70px;
+  margin-bottom: -90px;
+  position: relative;
+  z-index: 10;
 }
 
 .navbar-hero {
@@ -837,6 +875,13 @@ body {
 
   .logo-link img {
     max-height: 80px;
+  }
+
+  .logo-large {
+    height: 150px !important;
+    max-height: 150px !important;
+    margin-top: -25px;
+    margin-bottom: -25px;
   }
 
   .navbar .container {
