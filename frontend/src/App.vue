@@ -682,7 +682,7 @@ body {
 .logo-link {
   display: flex;
   align-items: center;
-  margin-left: 0;
+  margin-left: -4rem;
   padding-left: 0;
 }
 
