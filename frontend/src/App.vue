@@ -300,139 +300,172 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div
-      v-if="route.path !== '/admin/dashboard'"
-      class="mobile-menu"
-      :class="{ active: mobileMenuOpen }"
-    >
-      <ul>
+   <!-- Mobile Menu -->
+<div
+  v-if="route.path !== '/admin/dashboard'"
+  class="mobile-menu"
+  :class="{ active: mobileMenuOpen }"
+>
+  <ul>
+    <!-- PROIZVODI -->
+    <li>
+      <button
+        class="w-full text-left px-4 py-2 font-bold"
+        @click="mobileProductsOpen = !mobileProductsOpen"
+      >
+        Proizvodi
+      </button>
+
+      <ul v-if="mobileProductsOpen" class="pl-4">
+        <!-- GRAĐEVINSKI ALATI -->
         <li>
-          <a
-            href="#"
-            @click.prevent="
-              handleNavClick('features');
-              closeMobileMenu();
-            "
-            >Funkcije</a
-          >
-        </li>
-        <li>
-          <div>
+          <div class="flex items-center justify-between pr-4">
             <button
-              class="w-full text-left px-4 py-2 font-bold"
+              class="font-semibold py-2"
               @click="
-                activeSubmenu = activeSubmenu === 'alati' ? null : 'alati'
+                mobileActiveMain =
+                  mobileActiveMain === 'alati' ? null : 'alati'
               "
             >
               Građevinski alati
             </button>
-            <ul v-if="activeSubmenu === 'alati'" class="pl-4">
-              <li v-for="cat in productsStore.alatiCategories" :key="cat.index">
-                <a
-                  href="#"
-                  @click.prevent="
-                    handleProductFilter('alati', cat.index);
-                    closeMobileMenu();
-                  "
-                  class="block py-2"
-                  >{{ cat.name }}</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
 
-        <!-- Dynamic Main Categories Mobile -->
-        <li v-for="mainCat in dynamicMainCategories" :key="mainCat.key">
-          <div>
-            <button
-              class="w-full text-left px-4 py-2 font-bold"
-              @click="
-                activeSubmenu =
-                  activeSubmenu === mainCat.key ? null : mainCat.key
+            <a
+              href="#"
+              class="text-sm lowercase text-gray-500"
+              @click.prevent="
+                handleProductFilter('alati');
+                closeMobileMenu();
               "
             >
-              {{ mainCat.name }}
-            </button>
-            <ul v-if="activeSubmenu === mainCat.key" class="pl-4">
-              <li
-                v-for="cat in productsStore.getCategoriesForMain(mainCat.key)"
-                :key="cat.index"
-              >
-                <a
-                  href="#"
-                  @click.prevent="
-                    handleProductFilter(mainCat.key, cat.index);
-                    closeMobileMenu();
-                  "
-                  class="block py-2"
-                  >{{ cat.name }}</a
-                >
-              </li>
-            </ul>
+              prikaži sve
+            </a>
           </div>
+
+          <ul v-if="mobileActiveMain === 'alati'" class="pl-4">
+            <li
+              v-for="cat in productsStore.alatiCategories"
+              :key="cat.index"
+            >
+              <a
+                href="#"
+                class="block py-2"
+                @click.prevent="
+                  handleProductFilter('alati', cat.index);
+                  closeMobileMenu();
+                "
+              >
+                {{ cat.name }}
+              </a>
+            </li>
+          </ul>
         </li>
 
-        <li>
-          <div>
+        <!-- PREMAZI -->
+        <li class="mt-2">
+          <div class="flex items-center justify-between pr-4">
             <button
-              class="w-full text-left px-4 py-2 font-bold"
+              class="font-semibold py-2"
               @click="
-                activeSubmenu = activeSubmenu === 'premazi' ? null : 'premazi'
+                mobileActiveMain =
+                  mobileActiveMain === 'premazi' ? null : 'premazi'
               "
             >
               Premazi
             </button>
-            <ul v-if="activeSubmenu === 'premazi'" class="pl-4">
-              <li v-for="cat in productsStore.premaziCategories" :key="cat.key">
-                <button
-                  class="w-full text-left py-2"
-                  @click="
-                    showPremaziSubSub =
-                      showPremaziSubSub === cat.key ? null : cat.key
-                  "
-                >
-                  {{ cat.name }}
-                </button>
-                <ul v-if="showPremaziSubSub === cat.key" class="pl-4">
-                  <li v-for="sub in premaziSubmenus[cat.key]" :key="sub.key">
-                    <a
-                      href="#"
-                      @click.prevent="
-                        handleProductFilter('premazi', cat.key, sub.key);
-                        closeMobileMenu();
-                      "
-                      class="block py-2"
-                      >{{ sub.name }}</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
+
+            <a
+              href="#"
+              class="text-sm lowercase text-gray-500"
+              @click.prevent="
+                handleProductFilter('premazi');
+                closeMobileMenu();
+              "
+            >
+              prikaži sve
+            </a>
           </div>
-        </li>
-        <li>
-          <a
-            href="#"
-            @click.prevent="
-              handleNavClick('about');
-              closeMobileMenu();
-            "
-            >O nama</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            @click.prevent="
-              handleNavClick('contact');
-              closeMobileMenu();
-            "
-            >Kontakt</a
-          >
+
+          <ul v-if="mobileActiveMain === 'premazi'" class="pl-4">
+            <li
+              v-for="cat in productsStore.premaziCategories"
+              :key="cat.key"
+            >
+              <button
+                class="block py-2 font-medium"
+                @click="
+                  showPremaziSubSub =
+                    showPremaziSubSub === cat.key ? null : cat.key
+                "
+              >
+                {{ cat.name }}
+              </button>
+
+              <ul
+                v-if="showPremaziSubSub === cat.key"
+                class="pl-4"
+              >
+                <li
+                  v-for="sub in premaziSubmenus[cat.key]"
+                  :key="sub.key"
+                >
+                  <a
+                    href="#"
+                    class="block py-2"
+                    @click.prevent="
+                      handleProductFilter(
+                        'premazi',
+                        cat.key,
+                        sub.key
+                      );
+                      closeMobileMenu();
+                    "
+                  >
+                    {{ sub.name }}
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
       </ul>
-    </div>
+    </li>
+    <li>
+            <a
+              href="#"
+              @click.prevent="handleNavClick('features')"
+              class="hover:text-gray-600 transition-colors duration-300 font-medium"
+              >Funkcije</a
+            >
+          </li>
+    <!-- O NAMA -->
+    <li>
+      <a
+        href="#"
+        @click.prevent="
+          handleNavClick('about');
+          closeMobileMenu();
+        "
+      >
+        O nama
+      </a>
+    </li>
+
+    <!-- KONTAKT -->
+    <li>
+      <a
+        href="#"
+        @click.prevent="
+          handleNavClick('contact');
+          closeMobileMenu();
+        "
+      >
+        Kontakt
+      </a>
+    </li>
+  </ul>
+</div>
+
 
     <!-- Main Content -->
     <router-view />
@@ -449,6 +482,8 @@ const route = useRoute();
 const productsStore = useProductsStore();
 
 const mobileMenuOpen = ref(false);
+const mobileProductsOpen = ref(false);
+const mobileActiveMain = ref(null);
 const isHeroSection = ref(true);
 const navbar = ref(null);
 let lastScrollY = 0;
