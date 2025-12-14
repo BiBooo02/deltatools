@@ -870,7 +870,7 @@ body {
 
   .logo-link {
     margin-right: auto;
-    margin-left: -1rem;
+    margin-left: -4rem;
   }
 
   .logo-link img {
