@@ -2,7 +2,11 @@
 <html lang="sr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="img\LOGO_DETA_TOOLS-removebg-preview.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="img\LOGO_DETA_TOOLS-removebg-preview.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
@@ -19,7 +23,7 @@
     />
     <meta
       name="keywords"
-      content="građevinski alati, alati za farbanje, premazi za metal, premazi za drvo, profesionalni alati, Banja Luka, Bosna i Hercegovina"
+      content="građevinski alati, alati za farbanje, premazi za metal, premazi za drvo, profesionalni alati, Banja Luka, Bosna i Hercegovina, Delta Tools, alati za dekoraciju, farbanje alati, građevinski materijali, premazi za zaštitu, metal premazi, drvo premazi, profesionalni građevinski alati"
     />
     <meta name="author" content="Delta Tools d.o.o." />
     <meta name="robots" content="index, follow" />
@@ -36,8 +40,18 @@
       property="og:description"
       content="Vrhunski alati za profesionalce u industriji farbanja, dekoracije i građevinarstva, kao i premium premaze za metal i drvo."
     />
-    <meta property="og:image" content="/img/deltatoolslogo.png" />
+    <meta
+      property="og:image"
+      content="https://deltatools.ba/img/LOGO_DETA_TOOLS-removebg-preview.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Delta Tools Logo - Profesionalni alati za farbanje i građevinske radove"
+    />
     <meta property="og:locale" content="sr_RS" />
+    <meta property="og:site_name" content="Delta Tools" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -50,17 +64,68 @@
       property="twitter:description"
       content="Vrhunski alati za profesionalce u industriji farbanja, dekoracije i građevinarstva, kao i premium premaze za metal i drvo."
     />
-    <meta property="twitter:image" content="/img/deltatoolslogo.png" />
+    <meta
+      property="twitter:image"
+      content="https://deltatools.ba/img/LOGO_DETA_TOOLS-removebg-preview.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Delta Tools Logo - Profesionalni alati za farbanje i građevinske radove"
+    />
 
     <!-- Additional SEO -->
     <link rel="canonical" href="https://deltatools.ba/" />
     <meta name="geo.region" content="BA-BIH" />
     <meta name="geo.placename" content="Banja Luka" />
     <meta name="geo.position" content="44.7864;17.1851" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Delta Tools",
+        "url": "https://deltatools.ba",
+        "logo": "https://deltatools.ba/img/LOGO_DETA_TOOLS-removebg-preview.png",
+        "description": "Delta Tools pruža vrhunske alate za profesionalce u industriji farbanja, dekoracije i građevinarstva, kao i premium premaze za metal i drvo.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BA",
+          "addressLocality": "Banja Luka",
+          "addressRegion": "Republika Srpska"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["sr", "bs", "hr"]
+        },
+        "sameAs": [],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Bosna i Hercegovina"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Delta Tools",
+        "url": "https://deltatools.ba",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://deltatools.ba/products?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://deltatools.ba" />
   </head>
   <body>
     <div id="app"></div>

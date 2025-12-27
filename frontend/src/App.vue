@@ -25,7 +25,7 @@
         >
           <img
             src="\img\LOGO_DETA_TOOLS-removebg-preview.png"
-            alt="Delta Tools Logo"
+            alt="Delta Tools Logo - Profesionalni alati za farbanje i građevinske radove u Bosni i Hercegovini"
             class="cursor-pointer object-contain logo-large"
             @error="handleLogoError"
           />
@@ -300,172 +300,161 @@
     </nav>
 
     <!-- Mobile Menu -->
-   <!-- Mobile Menu -->
-<div
-  v-if="route.path !== '/admin/dashboard'"
-  class="mobile-menu"
-  :class="{ active: mobileMenuOpen }"
->
-  <ul>
-    <!-- PROIZVODI -->
-    <li>
-      <button
-        class="w-full text-left px-4 py-2 font-bold"
-        @click="mobileProductsOpen = !mobileProductsOpen"
-      >
-        Proizvodi
-      </button>
-
-      <ul v-if="mobileProductsOpen" class="pl-4">
-        <!-- GRAĐEVINSKI ALATI -->
+    <!-- Mobile Menu -->
+    <div
+      v-if="route.path !== '/admin/dashboard'"
+      class="mobile-menu"
+      :class="{ active: mobileMenuOpen }"
+    >
+      <ul>
+        <!-- PROIZVODI -->
         <li>
-          <div class="flex items-center justify-between pr-4">
-            <button
-              class="font-semibold py-2"
-              @click="
-                mobileActiveMain =
-                  mobileActiveMain === 'alati' ? null : 'alati'
-              "
-            >
-              Građevinski alati
-            </button>
+          <button
+            class="w-full text-left px-4 py-2 font-bold"
+            @click="mobileProductsOpen = !mobileProductsOpen"
+          >
+            Proizvodi
+          </button>
 
-            <a
-              href="#"
-              class="text-sm lowercase text-gray-500"
-              @click.prevent="
-                handleProductFilter('alati');
-                closeMobileMenu();
-              "
-            >
-              prikaži sve
-            </a>
-          </div>
+          <ul v-if="mobileProductsOpen" class="pl-4">
+            <!-- GRAĐEVINSKI ALATI -->
+            <li>
+              <div class="flex items-center justify-between pr-4">
+                <button
+                  class="font-semibold py-2"
+                  @click="
+                    mobileActiveMain =
+                      mobileActiveMain === 'alati' ? null : 'alati'
+                  "
+                >
+                  Građevinski alati
+                </button>
 
-          <ul v-if="mobileActiveMain === 'alati'" class="pl-4">
-            <li
-              v-for="cat in productsStore.alatiCategories"
-              :key="cat.index"
-            >
-              <a
-                href="#"
-                class="block py-2"
-                @click.prevent="
-                  handleProductFilter('alati', cat.index);
-                  closeMobileMenu();
-                "
-              >
-                {{ cat.name }}
-              </a>
-            </li>
-          </ul>
-        </li>
+                <a
+                  href="#"
+                  class="text-sm lowercase text-gray-500"
+                  @click.prevent="
+                    handleProductFilter('alati');
+                    closeMobileMenu();
+                  "
+                >
+                  prikaži sve
+                </a>
+              </div>
 
-        <!-- PREMAZI -->
-        <li class="mt-2">
-          <div class="flex items-center justify-between pr-4">
-            <button
-              class="font-semibold py-2"
-              @click="
-                mobileActiveMain =
-                  mobileActiveMain === 'premazi' ? null : 'premazi'
-              "
-            >
-              Premazi
-            </button>
-
-            <a
-              href="#"
-              class="text-sm lowercase text-gray-500"
-              @click.prevent="
-                handleProductFilter('premazi');
-                closeMobileMenu();
-              "
-            >
-              prikaži sve
-            </a>
-          </div>
-
-          <ul v-if="mobileActiveMain === 'premazi'" class="pl-4">
-            <li
-              v-for="cat in productsStore.premaziCategories"
-              :key="cat.key"
-            >
-              <button
-                class="block py-2 font-medium"
-                @click="
-                  showPremaziSubSub =
-                    showPremaziSubSub === cat.key ? null : cat.key
-                "
-              >
-                {{ cat.name }}
-              </button>
-
-              <ul
-                v-if="showPremaziSubSub === cat.key"
-                class="pl-4"
-              >
+              <ul v-if="mobileActiveMain === 'alati'" class="pl-4">
                 <li
-                  v-for="sub in premaziSubmenus[cat.key]"
-                  :key="sub.key"
+                  v-for="cat in productsStore.alatiCategories"
+                  :key="cat.index"
                 >
                   <a
                     href="#"
                     class="block py-2"
                     @click.prevent="
-                      handleProductFilter(
-                        'premazi',
-                        cat.key,
-                        sub.key
-                      );
+                      handleProductFilter('alati', cat.index);
                       closeMobileMenu();
                     "
                   >
-                    {{ sub.name }}
+                    {{ cat.name }}
                   </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- PREMAZI -->
+            <li class="mt-2">
+              <div class="flex items-center justify-between pr-4">
+                <button
+                  class="font-semibold py-2"
+                  @click="
+                    mobileActiveMain =
+                      mobileActiveMain === 'premazi' ? null : 'premazi'
+                  "
+                >
+                  Premazi
+                </button>
+
+                <a
+                  href="#"
+                  class="text-sm lowercase text-gray-500"
+                  @click.prevent="
+                    handleProductFilter('premazi');
+                    closeMobileMenu();
+                  "
+                >
+                  prikaži sve
+                </a>
+              </div>
+
+              <ul v-if="mobileActiveMain === 'premazi'" class="pl-4">
+                <li
+                  v-for="cat in productsStore.premaziCategories"
+                  :key="cat.key"
+                >
+                  <button
+                    class="block py-2 font-medium"
+                    @click="
+                      showPremaziSubSub =
+                        showPremaziSubSub === cat.key ? null : cat.key
+                    "
+                  >
+                    {{ cat.name }}
+                  </button>
+
+                  <ul v-if="showPremaziSubSub === cat.key" class="pl-4">
+                    <li v-for="sub in premaziSubmenus[cat.key]" :key="sub.key">
+                      <a
+                        href="#"
+                        class="block py-2"
+                        @click.prevent="
+                          handleProductFilter('premazi', cat.key, sub.key);
+                          closeMobileMenu();
+                        "
+                      >
+                        {{ sub.name }}
+                      </a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
+        <li>
+          <a
+            href="#"
+            @click.prevent="handleNavClick('features')"
+            class="hover:text-gray-600 transition-colors duration-300 font-medium"
+            >Funkcije</a
+          >
+        </li>
+        <!-- O NAMA -->
+        <li>
+          <a
+            href="#"
+            @click.prevent="
+              handleNavClick('about');
+              closeMobileMenu();
+            "
+          >
+            O nama
+          </a>
+        </li>
+
+        <!-- KONTAKT -->
+        <li>
+          <a
+            href="#"
+            @click.prevent="
+              handleNavClick('contact');
+              closeMobileMenu();
+            "
+          >
+            Kontakt
+          </a>
+        </li>
       </ul>
-    </li>
-    <li>
-            <a
-              href="#"
-              @click.prevent="handleNavClick('features')"
-              class="hover:text-gray-600 transition-colors duration-300 font-medium"
-              >Funkcije</a
-            >
-          </li>
-    <!-- O NAMA -->
-    <li>
-      <a
-        href="#"
-        @click.prevent="
-          handleNavClick('about');
-          closeMobileMenu();
-        "
-      >
-        O nama
-      </a>
-    </li>
-
-    <!-- KONTAKT -->
-    <li>
-      <a
-        href="#"
-        @click.prevent="
-          handleNavClick('contact');
-          closeMobileMenu();
-        "
-      >
-        Kontakt
-      </a>
-    </li>
-  </ul>
-</div>
-
+    </div>
 
     <!-- Main Content -->
     <router-view />

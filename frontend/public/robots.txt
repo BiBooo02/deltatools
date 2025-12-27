@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://deltatools.ba/sitemap.xml
+
+# Crawl-delay (opciono)
+Crawl-delay: 1
+

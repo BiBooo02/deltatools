@@ -143,9 +143,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, watch } from "vue";
 import { useProductsStore } from "../stores/products";
 import { useRoute } from "vue-router";
+import { useSEO } from "../composables/useSEO";
 
 const productsStore = useProductsStore();
 const loading = ref(false);
@@ -192,6 +193,22 @@ function handleImageError(event) {
 }
 
 onMounted(loadProducts);
+
+// SEO Meta Tags
+watch([selectedMaterial, selectedSubcategory], () => {
+  const materialName = selectedMaterial.value ? 
+    ` za ${selectedMaterial.value.charAt(0).toUpperCase() + selectedMaterial.value.slice(1)}` : '';
+  const subcategoryName = selectedSubcategory.value ? 
+    ` - ${selectedSubcategory.value.charAt(0).toUpperCase() + selectedSubcategory.value.slice(1)}` : '';
+  
+  useSEO({
+    title: `Premazi${materialName}${subcategoryName} - Delta Tools | Premium premazi za metal i drvo`,
+    description: `Premium premazi za metal i drvo sa izuzetnom trajnošću. Profesionalni premazi za zaštitu i dekoraciju u Bosni i Hercegovini.`,
+    keywords: `premazi za metal, premazi za drvo, zaštitni premazi, dekorativni premazi, profesionalni premazi, Banja Luka, Bosna i Hercegovina, Delta Tools${materialName ? `, premazi${materialName}` : ''}`,
+    url: `/premazi${selectedMaterial.value ? `?material=${selectedMaterial.value}` : ''}${selectedSubcategory.value ? `&subcategory=${selectedSubcategory.value}` : ''}`,
+    image: '/img/LOGO_DETA_TOOLS-removebg-preview.png'
+  });
+}, { immediate: true });
 </script>
 
 <style scoped>

@@ -11,7 +11,9 @@
       </div>
 
       <div v-if="loading" class="text-center text-black">
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"></div>
+        <div
+          class="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"
+        ></div>
         <p class="mt-4">Učitavanje proizvoda...</p>
       </div>
 
@@ -21,7 +23,8 @@
           Proverite da li je backend server pokrenut i da li API endpoint radi.
         </p>
         <p class="text-xs text-gray-500">
-          Pokušajte otvoriti: <code>/api/products</code> u browseru da proverite da li API radi.
+          Pokušajte otvoriti: <code>/api/products</code> u browseru da proverite
+          da li API radi.
         </p>
       </div>
 
@@ -41,7 +44,9 @@
               :key="product.id"
               class="proizvod card-hover"
             >
-              <div class="image-wrapper mb-4 overflow-hidden rounded-lg bg-gray-100">
+              <div
+                class="image-wrapper mb-4 overflow-hidden rounded-lg bg-gray-100"
+              >
                 <img
                   :src="product.slika"
                   :alt="product.naziv"
@@ -55,10 +60,17 @@
               </h3>
 
               <div class="space-y-2 text-sm text-gray-600">
-                <p><strong class="text-black">Dimenzije:</strong> {{ product.dimenzije }}</p>
-                <p><strong class="text-black">Šifra:</strong> {{ product.sifra_artikla }}</p>
                 <p>
-                  <strong class="text-black">Količina:</strong> {{ product.kolicina_u_pakovanju }}
+                  <strong class="text-black">Dimenzije:</strong>
+                  {{ product.dimenzije }}
+                </p>
+                <p>
+                  <strong class="text-black">Šifra:</strong>
+                  {{ product.sifra_artikla }}
+                </p>
+                <p>
+                  <strong class="text-black">Količina:</strong>
+                  {{ product.kolicina_u_pakovanju }}
                   {{ product.jedinica_mere }}
                 </p>
                 <p>
@@ -75,9 +87,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, watch } from "vue";
 import { useProductsStore } from "../stores/products";
 import { useRoute } from "vue-router";
+import { useSEO } from "../composables/useSEO";
 
 const productsStore = useProductsStore();
 const loading = ref(false);
@@ -88,23 +101,25 @@ const products = computed(() => productsStore.products);
 
 // Određivanje koji tip proizvoda prikazujemo
 const productType = computed(() => {
-  return route.query.type || 'alati';
+  return route.query.type || "alati";
 });
 
 // Naslov stranice
 const pageTitle = computed(() => {
-  if (productType.value === 'alati') {
-    return 'Građevinski alati';
+  if (productType.value === "alati") {
+    return "Građevinski alati";
   }
   // Formatiranje naziva za dinamičke kategorije
-  return productType.value.charAt(0).toUpperCase() + 
-         productType.value.slice(1).replace(/_/g, ' ');
+  return (
+    productType.value.charAt(0).toUpperCase() +
+    productType.value.slice(1).replace(/_/g, " ")
+  );
 });
 
 // Opis stranice
 const pageDescription = computed(() => {
-  if (productType.value === 'alati') {
-    return 'Profesionalni alati za farbanje, dekorativne i građevinske radove';
+  if (productType.value === "alati") {
+    return "Profesionalni alati za farbanje, dekorativne i građevinske radove";
   }
   return `Pregledajte naš asortiman proizvoda iz kategorije ${pageTitle.value.toLowerCase()}`;
 });
@@ -131,15 +146,19 @@ async function loadProducts() {
   try {
     await productsStore.loadProducts();
     if (!productsStore.products) {
-      error.value = "Proizvodi nisu učitani. Proverite da li API endpoint radi.";
+      error.value =
+        "Proizvodi nisu učitani. Proverite da li API endpoint radi.";
     }
   } catch (err) {
     console.error("Error loading products:", err);
-    error.value = `Greška pri učitavanju proizvoda: ${err.message || "Nepoznata greška"}`;
+    error.value = `Greška pri učitavanju proizvoda: ${
+      err.message || "Nepoznata greška"
+    }`;
     if (err.response) {
       error.value += ` (Status: ${err.response.status})`;
     } else if (err.request) {
-      error.value += " - Server nije dostupan. Proverite da li je backend pokrenut.";
+      error.value +=
+        " - Server nije dostupan. Proverite da li je backend pokrenut.";
     }
   } finally {
     loading.value = false;
@@ -151,6 +170,23 @@ function handleImageError(event) {
 }
 
 onMounted(loadProducts);
+
+// SEO Meta Tags
+watch(
+  [pageTitle, pageDescription],
+  () => {
+    useSEO({
+      title: `${pageTitle.value} - Delta Tools | Profesionalni alati za farbanje i građevinske radove`,
+      description: `${pageDescription.value}. Kvalitetni alati i premazi za profesionalce u Bosni i Hercegovini.`,
+      keywords: `građevinski alati, ${pageTitle.value.toLowerCase()}, alati za farbanje, profesionalni alati, Banja Luka, Bosna i Hercegovina, Delta Tools`,
+      url: `/products${route.query.type ? `?type=${route.query.type}` : ""}${
+        route.query.category ? `&category=${route.query.category}` : ""
+      }`,
+      image: "/img/LOGO_DETA_TOOLS-removebg-preview.png",
+    });
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped>
@@ -187,7 +223,8 @@ onMounted(loadProducts);
 
 .proizvod:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .proizvod img {
@@ -219,7 +256,8 @@ onMounted(loadProducts);
 
 .card-hover:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @media (max-width: 768px) {
