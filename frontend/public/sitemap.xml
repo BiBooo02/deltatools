@@ -23,7 +23,7 @@
   <!-- Premazi -->
   <url>
     <loc>https://deltatools.ba/premazi</loc>
-    <lastmod>2025-12-27</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://deltatools.ba/privacy-policy</loc>
-    <lastmod>2025-12-27</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://deltatools.ba/terms-of-service</loc>
-      <lastmod>2025-12-27</lastmod>
+    <lastmod>2025-12-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
