@@ -266,20 +266,21 @@
           <li>
             <a
               href="#"
+              @click.prevent="handleNavClick('about')"
+              class="hover:text-gray-600 transition-colors duration-300 font-medium"
+              >O nama</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
               @click.prevent="handleNavClick('features')"
               class="hover:text-gray-600 transition-colors duration-300 font-medium"
               >Funkcije</a
             >
           </li>
 
-          <li>
-            <a
-              href="#"
-              @click.prevent="handleNavClick('about')"
-              class="hover:text-gray-600 transition-colors duration-300 font-medium"
-              >O nama</a
-            >
-          </li>
+          
           <li>
             <a
               href="#"
@@ -420,14 +421,6 @@
             </li>
           </ul>
         </li>
-        <li>
-          <a
-            href="#"
-            @click.prevent="handleNavClick('features')"
-            class="hover:text-gray-600 transition-colors duration-300 font-medium"
-            >Funkcije</a
-          >
-        </li>
         <!-- O NAMA -->
         <li>
           <a
@@ -440,6 +433,15 @@
             O nama
           </a>
         </li>
+        <li>
+          <a
+            href="#"
+            @click.prevent="handleNavClick('features')"
+            class="hover:text-gray-600 transition-colors duration-300 font-medium"
+            >Funkcije</a
+          >
+        </li>
+        
 
         <!-- KONTAKT -->
         <li>
