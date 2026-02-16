@@ -160,16 +160,34 @@
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-12 partner-logos"
         >
-          <img
-            src="/img/MIMONT-logo-color.png"
-            alt="MIMONT Logo"
-            class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
-          />
-          <img
-            src="/img/IRKOM-LOGO.png"
-            alt="IRKOM Logo"
-            class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
-          />
+          <a href="https://www.mimont.rs" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/MIMONT-logo-color.png"
+              alt="MIMONT Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
+            />
+          </a>
+          <a href="https://www.irkom.rs" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/IRKOM-LOGO.png"
+              alt="IRKOM Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300"
+            />
+          </a>
+          <a href="https://www.dabel.rs" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/dabel-removebg-preview.png"
+              alt="Dabel Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
+            />
+          </a>
+          <a href="https://www.etalon-refinish.com/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/etalon_logo.png"
+              alt="Etalon Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
+            />
+          </a>
         </div>
       </div>
     </section>
