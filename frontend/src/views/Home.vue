@@ -85,34 +85,29 @@
         <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div class="relative">
             <img
-              src="/img/slika1.jpg"
+              src="/img/mei_final.png"
               alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
               class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div class="space-y-6">
-            <h3 class="text-3xl font-bold text-black">Naša priča</h3>
+            <h3 class="text-3xl font-bold text-black">Distributer Meiji Japan</h3>
             <p class="text-gray-600 leading-relaxed">
-              Delta Tools pruža vrhunske alate dizajnirane za profesionalce u
-              industriji farbanja, dekoracije i građevinarstva. Takođe nudimo
-              premium premaze za metal i drvo koji osiguravaju dugotrajnu
-              zaštitu i estetski izgled. Sa fokusom na inovacije i trajnost,
-              naši proizvodi osiguravaju superiorne performanse i pouzdanost.
+              Sa zadovoljstvom objavljujemo da smo postali distributer za Bosnu I Hercegovinu  Meiji Japan. Molimo vas da posjetite meijiair.co.jp/en/ .
+              Posebno smo uzbuđeni što predstavljamo naš prvi proizvod, pištolj za lakiranje Finer Core MMFT.
             </p>
-            <div class="grid grid-cols-2 gap-6 mt-8">
-              <div
-                class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg"
-              >
-                <h4 class="text-xl font-semibold mb-2 text-white">Kvalitet</h4>
-                <p class="text-gray-300">Vrhunski materijali i izrada</p>
-              </div>
-              <div
-                class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg"
-              >
-                <h4 class="text-xl font-semibold mb-2 text-white">Inovacije</h4>
-                <p class="text-gray-300">Savremeni dizajn i tehnologija</p>
-              </div>
-            </div>
+            <p class="text-gray-600 leading-relaxed">
+              Tehnologija visoke atomizacije MMFT
+              Otkako smo uspjeli proizvesti prvi pištolj za lakiranje na prvoj japanskoj mašini prije otprilike 100 godina,
+              Nastavili smo razvijati tehnologije za opremu za farbanje sve do danas.
+              Koristeći znanje koje smo razvijali tokom godina, usvojili smo upravljanje ravnim uzorkom (standardna specifikacija
+              za CORE) koji minimizira neravnine optimalnim pozicioniranjem sekundarnih otvora pištolja za prskanje, povećavajući otvore,
+              i raspoređujući ih pod određenim uglom.
+              Pored toga, usvojili smo jedinstvenu tehnologiju visoke atomizacije naše kompanije MMFT (Meiji Micros Fine Technology) koja
+              ubrzava atomizaciju pod niskim pritiskom kontrolisanjem vazduha na više nivoa, efikasno ga dovodeći do otvora,
+              i atomiziranjem kroz tanko oblikovanu strukturu.
+            </p>
+            
           </div>
         </div>
 
@@ -142,7 +137,7 @@
           </div>
           <div class="relative order-1 md:order-2">
             <img
-              src="/img/workers-6762542_1280.jpg"
+              src="/img/slika1.jpg"
               alt="Delta Tools - Profesionalni tim koji koristi naše alate za građevinske radove"
               class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
             />
@@ -152,8 +147,8 @@
     </section>
 
     <!-- Ponosni Partneri -->
-    <section id="partners" class="py-16 bg-black">
-      <h3 class="text-2xl font-semibold text-white text-center mb-12">
+    <section id="partners" class="py-16 bg-white">
+      <h3 class="text-2xl font-semibold text-black text-center mb-12">
         Ponosni partneri
       </h3>
       <div class="container mx-auto px-6">
@@ -454,7 +449,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-black text-white">
+    <footer class="py-14 md:py-16 bg-black text-white">
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div class="space-y-6">
@@ -555,7 +550,7 @@
           </div>
         </div>
 
-        <div class="mt-16 pt-8 border-t border-gray-700">
+        <div class="mt-12 pt-6 border-t border-gray-700">
           <div>
             <p class="text-gray-400 text-sm text-center">
               &copy; {{ new Date().getFullYear() }} Delta Tools d.o.o. Sva prava
@@ -684,13 +679,10 @@ onMounted(() => {
 }
 
 .partner-logos img {
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
   transition: all 0.3s ease;
 }
 
 .partner-logos img:hover {
-  opacity: 1;
   transform: scale(1.05);
 }
 </style>
