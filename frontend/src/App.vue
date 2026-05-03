@@ -723,17 +723,17 @@ body {
 }
 
 .logo-link img {
-  height: 3.5rem;
-  max-height: 3.5rem;
+  height: 4rem;
+  max-height: 4rem;
   width: auto;
 }
 
 .logo-large {
-  height: 180px !important;
-  max-height: 280px !important;
+  height: 220px !important;
+  max-height: 340px !important;
   width: auto !important;
-  margin-top: -70px;
-  margin-bottom: -90px;
+  margin-top: -82px;
+  margin-bottom: -108px;
   position: relative;
   z-index: 10;
 }
@@ -896,18 +896,7 @@ body {
 
   .logo-link {
     margin-right: auto;
-    margin-left: -4rem;
-  }
-
-  .logo-link img {
-    max-height: 80px;
-  }
-
-  .logo-large {
-    height: 150px !important;
-    max-height: 150px !important;
-    margin-top: -25px;
-    margin-bottom: -25px;
+    margin-left: -6.5rem;
   }
 
   .navbar .container {

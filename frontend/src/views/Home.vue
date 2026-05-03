@@ -83,11 +83,13 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div class="relative">
+          <div
+            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
+          >
             <img
               src="/img/mei_final.png"
               alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
-              class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+              class="w-full h-auto block max-w-full"
             />
           </div>
           <div class="space-y-6">
