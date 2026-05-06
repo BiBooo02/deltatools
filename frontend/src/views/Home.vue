@@ -76,9 +76,30 @@
           <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
             O Delta Tools-u
           </h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-            Pružamo vrhunske alate za profesionalce u industriji farbanja,
-            dekoracije i građevinarstva, kao i premium premaze za metal i drvo.
+          <div class="text-gray-600 text-lg max-w-3xl mx-auto space-y-5 leading-relaxed">
+            <p>
+              Delta Tools je kompanija koja gradi povjerenje kroz kvalitet, stručnost i profesionalan pristup.
+              Naša misija je da kupcima ponudimo provjerene proizvode i praktična rješenja koja olakšavaju
+              svakodnevni rad, povećavaju efikasnost i donose vrhunske rezultate.
+            </p>
+            <p>
+              Specijalizovani smo za profesionalne alate i opremu za stolare, bravare, molere, keramičare,
+              auto-lakirere, industriju i sve majstore koji traže sigurnost i pouzdan kvalitet. U ponudi
+              imamo boje i lakove za drvo i metal, industrijske premaze, proizvode za auto refinishing i auto
+              detailing, brusne i polirne sisteme, mašine, okove i kompletnu prateću opremu.
+            </p>
+            <p>
+              Sarađujemo sa provjerenim proizvođačima i biramo proizvode koji ispunjavaju visoke standarde
+              profesionalne upotrebe. Vjerujemo da pravi proizvod nije trošak, već investicija u bolji rezultat,
+              duži vijek trajanja i veću produktivnost.
+            </p>
+            <p>
+              Delta Tools nije samo prodajno mjesto, već pouzdan partner kroz savjetovanje, tehničku podršku i
+              iskustvo. Za svaki posao i svaki izazov nudimo rješenja na koja se možete osloniti.
+            </p>
+          </div>
+          <p class="mt-6 text-xl font-bold text-black">
+            Delta Tools - kvalitet, podrška i proizvodi za profesionalce koji znaju šta traže.
           </p>
         </div>
 
@@ -89,7 +110,7 @@
             <img
               src="/img/mei_final.png"
               alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
-              class="w-full h-auto block max-w-full"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover"
             />
           </div>
           <div class="space-y-6">
@@ -115,36 +136,176 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="space-y-6 order-2 md:order-1">
-            <h3 class="text-3xl font-bold text-black">Naša posvećenost</h3>
+            <h3 class="text-3xl font-bold text-black">Distributer Mimont</h3>
             <p class="text-gray-600 leading-relaxed">
-              U Delta Tools-u smo posvećeni izvrsnosti. Naši alati i premazi su
-              izrađeni da zadovolje najviše industrijske standarde, pomažući
-              profesionalcima da postignu preciznost i efikasnost u svakom
-              projektu.
+              MIMONT GROUP je osnovan 1999.godine. Uspešno poslovanje ostvaruje stručan tim
+              primenjujući svetske standarde i savremen način rada u neposrednom odnosu sa
+              partnerima. Naš tim se bavi isključivo usko specijalizovanim asortimanom čime
+              obezbeđujemo najkvalitetniji izbor artikala, kontinuirano snabdevanje, stabilan kvalitet i
+              konkurentne cene.
             </p>
-            <div class="grid grid-cols-2 gap-6 mt-8">
-              <div
-                class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg"
-              >
-                <h4 class="text-xl font-semibold mb-2 text-white">Trajnost</h4>
-                <p class="text-gray-300">Izrađeno da traje i radi</p>
-              </div>
-              <div
-                class="bg-black p-6 rounded-2xl hover:scale-105 transition-transform duration-300 hover:shadow-lg"
-              >
-                <h4 class="text-xl font-semibold mb-2 text-white">Podrška</h4>
-                <p class="text-gray-300">24/7 korisnička podrška</p>
-              </div>
-            </div>
+            <p class="text-gray-600 leading-relaxed">
+              Mimont je profesionalni snabdevač alatom za molerske, dekorativne i građevinske
+              radove. Više od dve decenije nudimo kvalitetna rešenja za maloprodajne objekte i 
+              trgovinske lance. Širok spektar naših proizvoda omogućava optimalnu iskorišćenost 
+              materijala korišćenjem odgovarajućeg alata, kako za profesionalce tako i za amatere. 
+              Osnova za uspešan rad je pravilan izbor odgovorajućeg valjka, četke, špahtle, gleterice, 
+              kao i kvalitetna zaštita radne površine kvalitetnim folijama i krep trakama. Dozvolite nam <br>
+              da Vam predstavimo Mimont proizvode.
+              <br>
+              <br>
+            </p>
+            <a
+              href="https://deltatools.ba/products"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-black text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-gray-800 hover:shadow-lg"
+            >
+              Pogledajte Mimont ponudu
+            </a>
           </div>
           <div class="relative order-1 md:order-2">
             <img
-              src="/img/slika1.jpg"
+              src="/img/mimontt.jpg"
               alt="Delta Tools - Profesionalni tim koji koristi naše alate za građevinske radove"
-              class="w-full h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+          <div
+            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
+          >
+            <img
+              src="/img/titanab.png"
+              alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover"
+            />
+          </div>
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-black">Distributer Titan</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Titan  je dugogodišnji proizvođač električnih alata i pribora. Sa sjedištem u
+              Njemačkoj, brend proizvodi mašine za poliranje, ekscentrične orbitalne brusilice,
+              rotacione čekiće, brusilice za zidove i plafone i još mnogo toga. Kompanija stalno
+              razvija nove, najsavremenije proizvode kako bi vam olakšala rad. Titan  na taj
+              način nudi svojim kupcima pošten kvalitet po poštenim cijenama.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+          <div class="space-y-6 order-2 md:order-1">
+            <h3 class="text-3xl font-bold text-black">Distributer Detailer&#39;s Buddy</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Detailer&#39;s Buddy je novi brend kompanije Alexport, osnovan 2024. godine.
+              Stvaranje Detailer&#39;s Buddyja bio je rad iz ljubavi i nauke. Naš tim u Alexport 
+              kompaniji posvetio je bezbroj sati razvoju asortimana proizvoda za detaljno 
+              čišćenje automobila koji ispunjava najviše standarde kvaliteta i performansi, a 
+              da pritom ne potroši previše novca. Dozvolite nam
+              da Vam predstavimo Detailer&#39;s Buddy proizvode.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Naši proizvodi su trenutno podijeljeni u četiri kategorije: Krpe i ubrusi od
+              mikrofibera, Četke za detaljno čišćenje, Aplikatori i pribor te Pribor za pranje. 
+              Kod nas ćete pronaći veliki izbor ubrusa od mikrofibera za svaku upotrebu, 
+              kao što su krpe za sušenje, poliranje, čišćenje prozora, unutrašnjosti i 
+              spoljašnjosti automobila. Različite vrste tkanja, obrade ivica, težine i sastava 
+              omogućavaju profesionalcima, kao i ljubiteljima automobila, da pronađu ono 
+              što im je potrebno, bez obzira na hemikalije ili sredstva za čišćenje koje 
+              koriste.
+            </p>
+          </div>
+          <div class="relative order-1 md:order-2">
+            <img
+              src="/img/buddy.png"
+              alt="Delta Tools - Profesionalni tim koji koristi naše alate za građevinske radove"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+          <div
+            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
+          >
+            <img
+              src="/img/dabell.jpg"
+              alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover"
+            />
+          </div>
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-black">Distributer Dabel</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Preduzeće Dabel postoji od 1993. godine i naša osnovna delatnost je distribucija okova
+              građevinske stolarije i okova za nameštaj.
+              Dabel čini tim ambicioznih, sposobnih, mladih ljudi koji su spremni za usavršavanje i dalji napredak u 
+              pružanju što boljih usluga. 
+              2005. godine je izgrađen poslovni objekat na površini od 5000 m2, u kojem se nalaze naša 
+              proizvodnja, carinski magacin, tehnička služba, službe otpreme i prodaje,  
+              kao i svi neophodni uslovi za kvalitetan rad preduzeća koje želi da zadrži poziciju lidera na srpskom 
+              tržištu. 
+              Briga o kupcima, korektan odnos sa partnerima, kao I briga o radnom okruženju su prioritetni za
+              nas.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+          <div class="space-y-6 order-2 md:order-1">
+            <h3 class="text-3xl font-bold text-black">Distributer Etalon</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Etalon predstavlja pouzdanog i tehnološki naprednog partnera u oblasti profesionalnog lakiranja i auto-detailinga. 
+              Njihov asortiman obuhvata vrhunske proizvode za pripremu, zaštitu i završnu obradu površina, razvijene prema najvišim 
+              standardima kvaliteta. Fokusirani na potrebe profesionalaca, Etalon kombinuje inovacije, dugotrajnost i preciznost
+              kako bi osigurao besprijekorne rezultate u svakom projektu, bez kompromisa.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Kao distributer, Etalon donosi kompletnu liniju opreme i materijala koji omogućavaju efikasan i pouzdan rad 
+              u radionicama svih veličina. Njihova ponuda uključuje napredne sisteme za nanošenje boje, brusne materijale, 
+              zaštitna sredstva i dodatnu opremu, pružajući sve što je potrebno za vrhunsku završnu obradu vozila. 
+              Partnerstvom s Etalonom, naša firma dobija pristup provjerenim rješenjima koja unapređuju kvalitet usluge 
+              i podižu profesionalne standarde.
+            </p>
+          </div>
+          <div class="relative order-1 md:order-2">
+            <img
+              src="/img/etalonn.png"
+              alt="Delta Tools - Profesionalni tim koji koristi naše alate za građevinske radove"
+              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover rounded-3xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+          <div
+            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
+          >
+            <img
+              src="/img/irkomm.png"
+              alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
+              class="w-full h-[220px] sm:h-[320px] md:h-[500px] object-cover"
+            />
+          </div>
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold text-black">Distributer Titan</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Irkom kroz svoju liniju Ultra Professional predstavlja sinonim za pouzdanost i vrhunski kvalitet u svijetu industrijskih boja i lakova. 
+              Sa dugogodišnjim iskustvom i kontinuiranim ulaganjem u razvoj, Irkom nudi proizvode koji odgovaraju najvišim 
+              standardima moderne industrije. Njihova rješenja su osmišljena da pruže dugotrajnu zaštitu, 
+              estetski vrhunsku završnicu i maksimalnu efikasnost u različitim uslovima primjene.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Kao distributer, Irkom omogućava pristup širokom spektru profesionalnih premaza prilagođenih potrebama građevinskog 
+              i industrijskog sektora. Njihov portfolio obuhvata visokokvalitetne boje, lakove i zaštitne premaze koji osiguravaju 
+              dugotrajnost i otpornost površina. Saradnjom s Irkomom, naša firma dobija pouzdanog partnera koji doprinosi unapređenju 
+              kvaliteta izvedenih radova i podizanju standarda u svakom projektu.
+            </p>
+          </div>
+        </div>
+        
       </div>
     </section>
 
@@ -180,8 +341,29 @@
           </a>
           <a href="https://www.etalon-refinish.com/" target="_blank" rel="noopener noreferrer">
             <img
-              src="/img/etalon_logo.png"
+              src="/img/etalonnew.png"
               alt="Etalon Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
+            />
+          </a>
+          <a href="https://detailers-buddy.com/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/buddylogo.png"
+              alt="Buddy Logo"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
+            />
+          </a>
+          <a href="https://meijiair.co.jp/en/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/meiji.png"
+              alt="Meiji"
+              class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
+            />
+          </a>
+          <a href="https://titan-tools.eu/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/img/TITAN-Logo.png"
+              alt="Titan"
               class="w-60 h-auto transform hover:scale-110 transition-transform duration-300 text-black"
             />
           </a>
