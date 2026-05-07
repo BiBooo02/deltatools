@@ -280,16 +280,16 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
           <div
-            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
+            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 bg-white"
           >
             <img
               src="/img/irkomm.png"
               alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
-              class="w-full h-[220px] sm:h-[320px] md:h-[500px] object-cover"
+              class="w-full h-[220px] sm:h-[320px] md:h-[500px] object-contain object-center"
             />
           </div>
           <div class="space-y-6">
-            <h3 class="text-3xl font-bold text-black">Distributer Titan</h3>
+            <h3 class="text-3xl font-bold text-black">Distributer Irkom</h3>
             <p class="text-gray-600 leading-relaxed">
               Irkom kroz svoju liniju Ultra Professional predstavlja sinonim za pouzdanost i vrhunski kvalitet u svijetu industrijskih boja i lakova. 
               Sa dugogodišnjim iskustvom i kontinuiranim ulaganjem u razvoj, Irkom nudi proizvode koji odgovaraju najvišim 
