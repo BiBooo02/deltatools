@@ -245,8 +245,7 @@
               pružanju što boljih usluga. 
               2005. godine je izgrađen poslovni objekat na površini od 5000 m2, u kojem se nalaze naša 
               proizvodnja, carinski magacin, tehnička služba, službe otpreme i prodaje,  
-              kao i svi neophodni uslovi za kvalitetan rad preduzeća koje želi da zadrži poziciju lidera na srpskom 
-              tržištu. 
+              kao i svi neophodni uslovi za kvalitetan rad preduzeća koje želi da zadrži poziciju lidera na tržištu. 
               Briga o kupcima, korektan odnos sa partnerima, kao I briga o radnom okruženju su prioritetni za
               nas.
             </p>
@@ -795,6 +794,18 @@ function scrollToSection(sectionId) {
 }
 
 onMounted(() => {
+  const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+  if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+    animatedElements.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    animatedElements.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -809,7 +820,6 @@ onMounted(() => {
     }
   );
 
-  const animatedElements = document.querySelectorAll(".animate-on-scroll");
   animatedElements.forEach((el) => observer.observe(el));
 });
 </script>
