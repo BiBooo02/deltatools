@@ -175,12 +175,11 @@
 
         <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
           <div
-            class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500"
-          >
+          class="relative overflow-hidden rounded-3xl shadow-2xl z-10 hover:scale-105 transition-transform duration-500 bg-neutral-950 flex items-center justify-center h-[360px] sm:h-[440px] md:h-[520px]"          >
             <img
-              src="/img/titanab.png"
+              src="/img/Titann.jpg"
               alt="Delta Tools - Profesionalni alati za farbanje i građevinske radove"
-              class="w-full h-[280px] sm:h-[360px] md:h-[500px] object-cover"
+              class="max-w-full max-h-full w-auto h-full object-contain"
             />
           </div>
           <div class="space-y-6">
