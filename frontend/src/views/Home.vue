@@ -471,86 +471,6 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section
-      class="min-h-screen py-20 animate-on-scroll bg-white flex items-center"
-    >
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-black">
-            Šta kažu naši klijenti
-          </h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-            Profesionalci iz industrije nam veruju svojim projektima
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <div
-            class="bg-gray-50 border border-gray-200 p-8 rounded-3xl hover:scale-105 transition-all duration-300 hover:shadow-xl"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-white font-bold text-lg">M</span>
-              </div>
-              <div>
-                <h4 class="font-semibold text-black">Marko Petrović</h4>
-                <p class="text-gray-600 text-sm">Građevinski majstor</p>
-              </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">
-              "Delta Tools alati su neophodni u mom poslu. Kvalitet je
-              izvanredan, a trajnost je impresivna. Preporučujem svim
-              profesionalcima."
-            </p>
-          </div>
-
-          <div
-            class="bg-gray-50 border border-gray-200 p-8 rounded-3xl hover:scale-105 transition-all duration-300 hover:shadow-xl"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-white font-bold text-lg">A</span>
-              </div>
-              <div>
-                <h4 class="font-semibold text-black">Ana Jovanović</h4>
-                <p class="text-gray-600 text-sm">Dekorativni majstor</p>
-              </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">
-              "Koristim Delta Tools premaze već 5 godina. Rezultati su uvek
-              odlični, a klijenti su zadovoljni kvalitetom završnih radova."
-            </p>
-          </div>
-
-          <div
-            class="bg-gray-50 border border-gray-200 p-8 rounded-3xl hover:scale-105 transition-all duration-300 hover:shadow-xl"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-12 h-12 bg-black rounded-full flex items-center justify-center mr-4"
-              >
-                <span class="text-white font-bold text-lg">S</span>
-              </div>
-              <div>
-                <h4 class="font-semibold text-black">Stefan Nikolić</h4>
-                <p class="text-gray-600 text-sm">Farbar</p>
-              </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">
-              "Profesionalni alati koji uvek ispunjavaju očekivanja. Delta Tools
-              je moj izbor za sve projekte - od malih popravki do velikih
-              objekata."
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="min-h-screen py-20 animate-on-scroll bg-gray-50">
       <div class="container mx-auto px-6">
@@ -771,12 +691,6 @@ const faqs = ref([
     question: "Da li nudite garanciju na proizvode?",
     answer:
       "Da, svi naši proizvodi dolaze sa garancijom. Kvalitet nam je prioritet, a mi stojimo iza svog proizvoda.",
-    isOpen: false,
-  },
-  {
-    question: "Da li organizujete obuke za korišćenje alata?",
-    answer:
-      "Da, redovno organizujemo obuke i demonstracije za profesionalce. Pratite naše događaje ili nas kontaktirajte za više informacija.",
     isOpen: false,
   },
 ]);
