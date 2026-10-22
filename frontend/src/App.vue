@@ -460,6 +460,9 @@
 
     <!-- Main Content -->
     <router-view />
+    
+    <!-- Vercel Web Analytics -->
+    <Analytics />
   </div>
 </template>
 
@@ -467,6 +470,7 @@
 import { ref, onMounted, computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useProductsStore } from "./stores/products";
+import { Analytics } from "@vercel/analytics/vue";
 
 const router = useRouter();
 const route = useRoute();
